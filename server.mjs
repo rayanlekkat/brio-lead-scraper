@@ -204,7 +204,22 @@ function loadConfig() {
   let currentConfig = DEFAULT_CONFIG;
   if (existsSync(CONFIG_PATH)) {
     try {
-      currentConfig = JSON.parse(readFileSync(CONFIG_PATH, 'utf-8'));
+      const saved = JSON.parse(readFileSync(CONFIG_PATH, 'utf-8'));
+      // Merge saved with default to ensure new users are always added
+      currentConfig = {
+        ...DEFAULT_CONFIG,
+        ...saved,
+        users: [...DEFAULT_CONFIG.users] // Always enforce the users from DEFAULT_CONFIG
+      };
+      
+      // If saved had extra users, keep them too
+      if (saved.users) {
+        saved.users.forEach(u => {
+          if (!currentConfig.users.find(du => du.username === u.username)) {
+            currentConfig.users.push(u);
+          }
+        });
+      }
     } catch (e) {
       console.error('Error parsing config.json, using defaults');
     }
