@@ -11,7 +11,7 @@ import express from 'express';
 import session from 'express-session';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import fetch from 'node-fetch';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,13 +20,22 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// ============== PERSISTENCE SETUP ==============
+// Move all data files to a /data folder for Railway Volumes support
+const DATA_DIR = join(__dirname, 'data');
+if (!existsSync(DATA_DIR)) {
+  mkdirSync(DATA_DIR, { recursive: true });
+}
+
 // Configuration
-const CONFIG_PATH = join(__dirname, 'config.json');
-const NEIGHBORHOODS_PATH = join(__dirname, 'neighborhoods.json');
-const LOGS_PATH = join(__dirname, 'logs.json');
+const CONFIG_PATH = join(DATA_DIR, 'config.json');
+const NEIGHBORHOODS_PATH = join(DATA_DIR, 'neighborhoods.json');
+const LOGS_PATH = join(DATA_DIR, 'logs.json');
 const MONTREAL_AREAS_PATH = join(__dirname, 'montreal-areas.json');
-const SCRAPE_PROGRESS_PATH = join(__dirname, 'scrape-progress.json');
-const LOCAL_LEADS_PATH = join(__dirname, 'local-leads.json');
+const SCRAPE_PROGRESS_PATH = join(DATA_DIR, 'scrape-progress.json');
+const LOCAL_LEADS_PATH = join(DATA_DIR, 'local-leads.json');
+const DNC_PATH = join(DATA_DIR, 'dnc-list.json');
+const LEADS_POOL_PATH = join(DATA_DIR, 'leads-pool.json');
 
 // ============== LOCAL LEADS STORAGE ==============
 // Store leads locally so they're NEVER lost, even if Airtable fails
@@ -191,11 +200,24 @@ const DEFAULT_CONFIG = {
 
 // Load or create config
 function loadConfig() {
+  let currentConfig = DEFAULT_CONFIG;
   if (existsSync(CONFIG_PATH)) {
-    return JSON.parse(readFileSync(CONFIG_PATH, 'utf-8'));
+    try {
+      currentConfig = JSON.parse(readFileSync(CONFIG_PATH, 'utf-8'));
+    } catch (e) {
+      console.error('Error parsing config.json, using defaults');
+    }
+  } else {
+    saveConfig(DEFAULT_CONFIG);
   }
-  saveConfig(DEFAULT_CONFIG);
-  return DEFAULT_CONFIG;
+  
+  // SECURE: Priority to Environment Variables (for Railway/Production)
+  if (process.env.DATAFORSEO_LOGIN) currentConfig.dataforseo.login = process.env.DATAFORSEO_LOGIN;
+  if (process.env.DATAFORSEO_PASSWORD) currentConfig.dataforseo.password = process.env.DATAFORSEO_PASSWORD;
+  if (process.env.AIRTABLE_API_KEY) currentConfig.airtable.apiKey = process.env.AIRTABLE_API_KEY;
+  if (process.env.AIRTABLE_BASE_ID) currentConfig.airtable.baseId = process.env.AIRTABLE_BASE_ID;
+  
+  return currentConfig;
 }
 
 function saveConfig(config) {
@@ -2035,11 +2057,8 @@ app.get('/api/automation/workflow', requireAuth, (req, res) => {
   });
 });
 
-// ============== LEAD MANAGEMENT ROUTES ==============
-
 // DNC List Management
-const DNC_PATH = join(__dirname, 'dnc-list.json');
-const LEADS_POOL_PATH = join(__dirname, 'leads-pool.json');
+// Paths are now handled in PERSISTENCE SETUP section at top of file
 
 function loadDNC() {
   if (existsSync(DNC_PATH)) {
