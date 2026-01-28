@@ -1103,42 +1103,42 @@
       <nav>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a class="nav-link active" data-page="dashboard">
+            <a class="nav-link active" data-page="dashboard" onclick="showPage('dashboard')" style="cursor: pointer;">
               <i class="fas fa-home"></i> Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-page="neighborhoods">
+            <a class="nav-link" data-page="neighborhoods" onclick="showPage('neighborhoods')" style="cursor: pointer;">
               <i class="fas fa-map-marker-alt"></i> Neighborhoods
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-page="scrape">
+            <a class="nav-link" data-page="scrape" onclick="showPage('scrape')" style="cursor: pointer;">
               <i class="fas fa-search"></i> Scrape Leads
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-page="leads">
+            <a class="nav-link" data-page="leads" onclick="showPage('leads')" style="cursor: pointer;">
               <i class="fas fa-users"></i> Leads
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-page="emails">
+            <a class="nav-link" data-page="emails" onclick="showPage('emails')" style="cursor: pointer;">
               <i class="fas fa-envelope"></i> Emails
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-page="pipeline">
+            <a class="nav-link" data-page="pipeline" onclick="showPage('pipeline')" style="cursor: pointer;">
               <i class="fas fa-heartbeat"></i> Pipeline
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-page="automation">
+            <a class="nav-link" data-page="automation" onclick="showPage('automation')" style="cursor: pointer;">
               <i class="fas fa-project-diagram"></i> Automation
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-page="settings">
+            <a class="nav-link" data-page="settings" onclick="showPage('settings')" style="cursor: pointer;">
               <i class="fas fa-cog"></i> Settings
             </a>
           </li>
@@ -2135,23 +2135,37 @@
     }
 
     function showPage(page) {
-      // Update nav
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      document.querySelector(`.nav-link[data-page="${page}"]`).classList.add('active');
+      console.log('📄 Navigating to page:', page);
+      
+      try {
+        // Update nav
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-link[data-page="${page}"]`);
+        if (activeLink) activeLink.classList.add('active');
 
-      // Show page
-      document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
-      document.getElementById(`page-${page}`).classList.remove('hidden');
+        // Show page
+        document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+        const pageElement = document.getElementById(`page-${page}`);
+        if (pageElement) {
+          pageElement.classList.remove('hidden');
+          console.log('✅ Page visible:', page);
+        } else {
+          console.warn('⚠️ Page not found:', `page-${page}`);
+        }
 
-      // Load data for page
-      if (page === 'dashboard') loadDashboard();
-      if (page === 'neighborhoods') loadNeighborhoods();
-      if (page === 'scrape') loadScrapeForm();
-      if (page === 'leads') loadLeads();
-      if (page === 'emails') loadEmailPage();
-      if (page === 'settings') loadSettings();
-      if (page === 'automation') loadAutomation();
-      if (page === 'pipeline') loadPipeline();
+        // Load data for page
+        if (page === 'dashboard') loadDashboard();
+        if (page === 'neighborhoods') loadNeighborhoods();
+        if (page === 'scrape') loadScrapeForm();
+        if (page === 'leads') loadLeads();
+        if (page === 'emails') loadEmailPage();
+        if (page === 'settings') loadSettings();
+        if (page === 'automation') loadAutomation();
+        if (page === 'pipeline') loadPipeline();
+      } catch (e) {
+        console.error('❌ Navigation error:', e);
+        alert('Navigation failed: ' + e.message);
+      }
     }
 
     // Dashboard
