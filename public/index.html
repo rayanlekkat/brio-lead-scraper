@@ -2089,6 +2089,8 @@
   </div>
 
   <script>
+    console.log('🔥 SCRIPT LOADING...');
+    
     // Global state
     let currentUser = null;
     let neighborhoods = [];
@@ -2107,7 +2109,7 @@
       return response.json();
     }
 
-    // Login function
+    // Login function - ATTACH TO WINDOW TO GUARANTEE ACCESS
     async function handleLogin() {
       console.log('handleLogin called!');
       
@@ -3734,6 +3736,15 @@ i
       window.location.href = `/api/export/instantly/csv?onlyWithEmail=true${campaign ? '&campaign=' + campaign : ''}`;
     }
 
+    // FORCE handleLogin to be globally accessible
+    window.handleLogin = handleLogin;
+    console.log('✅ handleLogin defined:', typeof window.handleLogin);
+    
+    // Verify button exists
+    const loginButton = document.getElementById('login-btn');
+    console.log('🔘 Login button found:', !!loginButton);
+    console.log('🔘 Button onclick:', loginButton?.getAttribute('onclick'));
+
     // Setup Enter key support for login
     document.getElementById('username')?.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
@@ -3751,6 +3762,8 @@ i
 
     // Init - check if already logged in
     checkAuth();
+    
+    console.log('🎯 SCRIPT FULLY LOADED. Login button should work now.');
   </script>
 </body>
 </html>
