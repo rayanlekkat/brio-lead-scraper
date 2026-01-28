@@ -224,6 +224,7 @@ function saveNeighborhoods(data) {
 let config = loadConfig();
 
 // Middleware
+app.set('trust proxy', 1); // Trust first proxy (Railway)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
@@ -231,7 +232,12 @@ app.use(session({
   secret: 'brio-nettoyage-secret-2026',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 24 * 60 * 60 * 1000 } // 24 hours
+  proxy: true,
+  cookie: { 
+    maxAge: 24 * 60 * 60 * 1000,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+  }
 }));
 
 // Auth middleware

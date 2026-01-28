@@ -10,8 +10,8 @@
     "password": "fee263980a3055a0"
   },
   "airtable": {
-    "apiKey": "pathvOBSacinIf2h1.46af676019bad0eeb7b7d0423dc760a77c7545911ee6a346a1ceabd9627a2178",
-    "baseId": "appGCsPFDcd7JXcll"
+    "apiKey": "",
+    "baseId": ""
   },
   "defaults": {
     "locationCode": "2124",
