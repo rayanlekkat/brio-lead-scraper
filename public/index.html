@@ -1718,26 +1718,23 @@
           </div>
         </div>
 
-        <!-- Instantly Export Options -->
+        <!-- Export by Campaign -->
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title"><i class="fab fa-lightning-bolt"></i> Export for Instantly</h3>
+            <h3 class="card-title"><i class="fas fa-download"></i> Export by Campaign</h3>
           </div>
           <p style="margin-bottom: 1rem; color: var(--text-light);">
-            Export your leads with emails in CSV format compatible with Instantly.io for cold email campaigns.
+            Select a campaign to export all its leads with emails for Instantly.
           </p>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="/api/export/instantly/csv?onlyWithEmail=true" class="btn btn-success">
-              <i class="fas fa-envelope"></i> Export With Emails Only
-            </a>
-            <a href="/api/export/instantly/csv?onlyWithEmail=false" class="btn btn-secondary">
-              <i class="fas fa-download"></i> Export All Leads
-            </a>
+          
+          <div id="export-campaigns-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+            <!-- Campaign cards will be loaded here -->
           </div>
+          
           <div style="margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
-            <h4 style="margin-bottom: 0.5rem;">CSV Columns:</h4>
+            <h4 style="margin-bottom: 0.5rem;">CSV Columns (Instantly format):</h4>
             <code style="font-size: 0.85rem; color: var(--text-light);">
-              email, first_name, company_name, website, phone, custom1 (category), custom2 (address), custom3 (rating), custom4 (neighborhood), custom5 (campaign)
+              email, first_name, company_name, website, phone, category, address, rating, neighborhood, campaign
             </code>
           </div>
         </div>
@@ -3397,237 +3394,7 @@
 
     // ============== EMAIL EXTRACTION ==============
     
-    let emailExtractionJobId = null;
-    let emailExtractionInterval = null;
-    let selectedEmailLeads = new Set();
-    let allEmailLeads = []; // Store all leads for client-side filtering
-
-    async function loadEmailPage() {
-      await loadEmailStats();
-      await loadEmailCampaigns();
-      await loadEmailAreas();
-      await loadEmailLeads();
-    }
-
-    async function loadEmailStats() {
-      try {
-        const data = await api('/local/leads/with-emails');
-        document.getElementById('email-total-leads').textContent = data.stats.totalLeads;
-        document.getElementById('email-with-email').textContent = data.stats.withEmail;
-        document.getElementById('email-with-website').textContent = data.stats.withWebsite;
-        document.getElementById('email-no-website').textContent = data.stats.noWebsite;
-      } catch (e) {
-        console.error('Failed to load email stats:', e);
-      }
-    }
-
-    async function loadEmailCampaigns() {
-      try {
-        const campaigns = await api('/local/campaigns');
-        const select = document.getElementById('email-campaign-filter');
-        select.innerHTML = '<option value="">All Campaigns</option>';
-        campaigns.forEach(c => {
-          select.innerHTML += `<option value="${c.id}">${c.name} (${c.leadsCount})</option>`;
-        });
-      } catch (e) {
-        console.error('Failed to load campaigns:', e);
-      }
-    }
-
-    async function loadEmailAreas() {
-      try {
-        const data = await api('/local/leads/with-emails?limit=5000');
-        const areas = new Set();
-        data.leads.forEach(lead => {
-          if (lead.neighborhood) areas.add(lead.neighborhood);
-        });
-        
-        const select = document.getElementById('email-area-filter');
-        select.innerHTML = '<option value="">All Areas</option>';
-        Array.from(areas).sort().forEach(area => {
-          select.innerHTML += `<option value="${area}">${area}</option>`;
-        });
-      } catch (e) {
-        console.error('Failed to load areas:', e);
-      }
-    }
-
-    async function loadEmailLeads() {
-      const emailFilter = document.getElementById('email-filter').value;
-      const industryFilter = document.getElementById('email-industry-filter').value;
-      const areaFilter = document.getElementById('email-area-filter').value;
-      const campaignFilter = document.getElementById('email-campaign-filter').value;
-      const searchText = document.getElementById('email-search')?.value?.toLowerCase() || '';
-      
-      // Build endpoint
-      let endpoint = '/local/leads/with-emails?limit=2000';
-      if (emailFilter === 'with-email') endpoint += '&hasEmail=true';
-      else if (emailFilter === 'no-email') endpoint += '&hasEmail=false';
-      if (campaignFilter) endpoint += `&campaign=${campaignFilter}`;
-      
-      try {
-        const data = await api(endpoint);
-        let leads = data.leads;
-        
-        // Client-side filtering for industry and area
-        if (industryFilter) {
-          leads = leads.filter(lead => {
-            const category = (lead.category || lead.searchCategory || '').toLowerCase();
-            return category.includes(industryFilter.toLowerCase());
-          });
-        }
-        
-        if (areaFilter) {
-          leads = leads.filter(lead => lead.neighborhood === areaFilter);
-        }
-        
-        if (searchText) {
-          leads = leads.filter(lead => 
-            (lead.name || '').toLowerCase().includes(searchText) ||
-            (lead.email || '').toLowerCase().includes(searchText) ||
-            (lead.category || '').toLowerCase().includes(searchText)
-          );
-        }
-        
-        allEmailLeads = leads; // Store for extraction
-        
-        // Update active filters display
-        updateActiveFiltersDisplay();
-        
-        const tbody = document.getElementById('email-leads-table');
-        document.getElementById('filtered-count-badge').textContent = leads.length;
-        
-        if (leads.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-light)">No leads found matching filters</td></tr>';
-        } else {
-          tbody.innerHTML = leads.slice(0, 500).map(lead => `
-            <tr>
-              <td><input type="checkbox" class="email-lead-checkbox" data-id="${lead.id}" ${selectedEmailLeads.has(lead.id) ? 'checked' : ''} onchange="toggleEmailLeadSelection('${lead.id}', this.checked)"></td>
-              <td>
-                <strong>${escapeHtml(lead.name || 'Unknown')}</strong>
-              </td>
-              <td>
-                <span class="badge" style="background: #f3f4f6; color: #374151; font-size: 0.7rem;">${escapeHtml(lead.category || lead.searchCategory || '-')}</span>
-              </td>
-              <td>
-                ${lead.email ? 
-                  `<span style="color: var(--secondary);"><i class="fas fa-check-circle"></i> ${escapeHtml(lead.email)}</span>` : 
-                  (lead.website ? '<span style="color: var(--warning);"><i class="fas fa-clock"></i> Pending</span>' : '<span style="color: var(--text-light);"><i class="fas fa-times"></i> No site</span>')
-                }
-              </td>
-              <td><span style="font-size: 0.8rem; color: var(--text-light);">${escapeHtml(lead.neighborhood || '-')}</span></td>
-              <td>${escapeHtml(lead.phone || '-')}</td>
-              <td>
-                ${lead.website && !lead.email ? 
-                  `<button class="btn btn-sm btn-primary" onclick="extractSingleEmail('${lead.id}', '${escapeHtml(lead.website)}', this)">
-                    <i class="fas fa-search"></i>
-                  </button>` : ''
-                }
-              </td>
-            </tr>
-          `).join('');
-        }
-        
-        document.getElementById('email-leads-count').textContent = `Showing ${Math.min(leads.length, 500)} of ${leads.length} leads`;
-      } catch (e) {
-        console.error('Failed to load email leads:', e);
-      }
-    }
-
-    function updateActiveFiltersDisplay() {
-      const filters = [];
-      const emailFilter = document.getElementById('email-filter').value;
-      const industryFilter = document.getElementById('email-industry-filter').value;
-      const areaFilter = document.getElementById('email-area-filter').value;
-      const campaignFilter = document.getElementById('email-campaign-filter');
-      
-      if (emailFilter !== 'all') filters.push(emailFilter === 'with-email' ? 'Has Email' : 'No Email');
-      if (industryFilter) filters.push(`Industry: ${industryFilter}`);
-      if (areaFilter) filters.push(`Area: ${areaFilter}`);
-      if (campaignFilter.value) filters.push(`Campaign: ${campaignFilter.options[campaignFilter.selectedIndex].text}`);
-      
-      const container = document.getElementById('active-filters');
-      const text = document.getElementById('active-filters-text');
-      
-      if (filters.length > 0) {
-        container.style.display = 'block';
-        text.textContent = filters.join(' | ');
-      } else {
-        container.style.display = 'none';
-      }
-    }
-
-    function clearEmailFilters() {
-      document.getElementById('email-filter').value = 'all';
-      document.getElementById('email-industry-filter').value = '';
-      document.getElementById('email-area-filter').value = '';
-      document.getElementById('email-campaign-filter').value = '';
-      document.getElementById('email-search').value = '';
-      loadEmailLeads();
-    }
-
-    function truncateUrl(url) {
-      if (!url) return '';
-      try {
-        const parsed = new URL(url.startsWith('http') ? url : 'https://' + url);
-        return parsed.hostname.replace('www.', '');
-      } catch {
-        return url.substring(0, 30);
-      }
-    }
-
-    function toggleEmailLeadSelection(id, checked) {
-      if (checked) {
-        selectedEmailLeads.add(id);
-      } else {
-        selectedEmailLeads.delete(id);
-      }
-    }
-
-    function toggleSelectAllEmails(checkbox) {
-      const checkboxes = document.querySelectorAll('.email-lead-checkbox');
-      checkboxes.forEach(cb => {
-        cb.checked = checkbox.checked;
-        toggleEmailLeadSelection(cb.dataset.id, checkbox.checked);
-      });
-    }
-
-    async function extractSingleEmail(leadId, website, btn) {
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-      
-      try {
-        const result = await api('/emails/extract/single', {
-          method: 'POST',
-          body: JSON.stringify({ url: website, leadId })
-        });
-        
-        if (result.bestEmail) {
-          btn.closest('tr').querySelector('td:nth-child(4)').innerHTML = 
-            `<span style="color: var(--secondary);"><i class="fas fa-check-circle"></i> ${escapeHtml(result.bestEmail)}</span>`;
-          btn.remove();
-          await loadEmailStats();
-        } else {
-          btn.innerHTML = '<i class="fas fa-times"></i>';
-          btn.classList.remove('btn-primary');
-          btn.classList.add('btn-secondary');
-          btn.disabled = true;
-        }
-      } catch (e) {
-        console.error('Failed to extract email:', e);
-        btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
-        btn.classList.add('btn-danger');
-      }
-    }
-
-    async function extractSelectedEmails() {
-      if (selectedEmailLeads.size === 0) {
-        alert('Please select leads to extract emails from');
-        return;
-      }
-      
-      const leadIds = Array.from(selectedEmailLeads);
-      await startEmailExtraction(leadIds);
+i 
     }
 
     async function startFilteredEmailExtraction() {
@@ -3726,6 +3493,185 @@
       const div = document.createElement('div');
       div.textContent = text;
       return div.innerHTML;
+    }
+
+    // ============== EMAIL PAGE ==============
+    
+    async function loadEmailPage() {
+      await loadEmailStats();
+      await loadEmailFilters();
+      await loadEmailLeads();
+      await loadExportCampaigns();
+    }
+
+    async function loadEmailStats() {
+      try {
+        const data = await api('/local/leads?limit=5000');
+        const leads = data.leads || [];
+        const withEmail = leads.filter(l => l.email).length;
+        const withWebsite = leads.filter(l => l.website && !l.email).length;
+        const noWebsite = leads.filter(l => !l.website && !l.email).length;
+        
+        document.getElementById('email-total-leads').textContent = leads.length;
+        document.getElementById('email-with-email').textContent = withEmail;
+        document.getElementById('email-with-website').textContent = withWebsite;
+        document.getElementById('email-no-website').textContent = noWebsite;
+      } catch (e) {
+        console.error('Failed to load email stats:', e);
+      }
+    }
+
+    async function loadEmailFilters() {
+      try {
+        const campaigns = await api('/local/campaigns');
+        const campaignSelect = document.getElementById('email-campaign-filter');
+        if (campaignSelect) {
+          campaignSelect.innerHTML = '<option value="">All Campaigns</option>';
+          campaigns.forEach(c => {
+            campaignSelect.innerHTML += `<option value="${c.id}">${c.name} (${c.leadsCount})</option>`;
+          });
+        }
+        
+        // Load areas from leads
+        const data = await api('/local/leads?limit=5000');
+        const areas = new Set();
+        (data.leads || []).forEach(l => { if (l.neighborhood) areas.add(l.neighborhood); });
+        
+        const areaSelect = document.getElementById('email-area-filter');
+        if (areaSelect) {
+          areaSelect.innerHTML = '<option value="">All Areas</option>';
+          Array.from(areas).sort().forEach(a => {
+            areaSelect.innerHTML += `<option value="${a}">${a}</option>`;
+          });
+        }
+      } catch (e) {
+        console.error('Failed to load filters:', e);
+      }
+    }
+
+    async function loadEmailLeads() {
+      const emailFilter = document.getElementById('email-filter')?.value || 'all';
+      const industryFilter = document.getElementById('email-industry-filter')?.value || '';
+      const areaFilter = document.getElementById('email-area-filter')?.value || '';
+      const campaignFilter = document.getElementById('email-campaign-filter')?.value || '';
+      const searchText = document.getElementById('email-search')?.value?.toLowerCase() || '';
+      
+      try {
+        const data = await api('/local/leads?limit=2000');
+        let leads = data.leads || [];
+        
+        // Apply filters
+        if (emailFilter === 'with-email') leads = leads.filter(l => l.email);
+        else if (emailFilter === 'no-email') leads = leads.filter(l => !l.email && l.website);
+        
+        if (industryFilter) leads = leads.filter(l => (l.category || '').toLowerCase().includes(industryFilter.toLowerCase()));
+        if (areaFilter) leads = leads.filter(l => l.neighborhood === areaFilter);
+        if (campaignFilter) leads = leads.filter(l => l.campaignId === campaignFilter);
+        if (searchText) leads = leads.filter(l => (l.name || '').toLowerCase().includes(searchText) || (l.email || '').toLowerCase().includes(searchText));
+        
+        const tbody = document.getElementById('email-leads-table');
+        const badge = document.getElementById('filtered-count-badge');
+        if (badge) badge.textContent = leads.length;
+        
+        if (!leads.length) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-light)">No leads found</td></tr>';
+        } else {
+          tbody.innerHTML = leads.slice(0, 200).map(l => `
+            <tr>
+              <td><input type="checkbox" class="email-cb" data-id="${l.id}"></td>
+              <td><strong>${escapeHtml(l.name || '')}</strong></td>
+              <td><span class="badge" style="background:#f3f4f6;color:#374151;font-size:0.7rem">${escapeHtml(l.category || '-')}</span></td>
+              <td>${l.email ? `<span style="color:var(--secondary)"><i class="fas fa-check-circle"></i> ${escapeHtml(l.email)}</span>` : (l.website ? '<span style="color:var(--warning)"><i class="fas fa-clock"></i></span>' : '-')}</td>
+              <td style="font-size:0.8rem;color:var(--text-light)">${escapeHtml(l.neighborhood || '-')}</td>
+              <td>${escapeHtml(l.phone || '-')}</td>
+              <td>${l.website && !l.email ? `<button class="btn btn-sm btn-primary" onclick="extractOneEmail('${l.id}','${l.website}',this)"><i class="fas fa-search"></i></button>` : ''}</td>
+            </tr>
+          `).join('');
+        }
+        document.getElementById('email-leads-count').textContent = `Showing ${Math.min(leads.length, 200)} of ${leads.length}`;
+      } catch (e) {
+        console.error('Failed to load leads:', e);
+      }
+    }
+
+    async function loadExportCampaigns() {
+      try {
+        const campaigns = await api('/local/campaigns');
+        const container = document.getElementById('export-campaigns-list');
+        if (!container) return;
+        
+        if (!campaigns.length) {
+          container.innerHTML = '<p style="color:var(--text-light)">No campaigns yet. Scrape some leads first.</p>';
+          return;
+        }
+        
+        // Get lead counts with emails per campaign
+        const data = await api('/local/leads?limit=5000');
+        const leads = data.leads || [];
+        
+        container.innerHTML = campaigns.map(c => {
+          const campaignLeads = leads.filter(l => l.campaignId === c.id);
+          const withEmail = campaignLeads.filter(l => l.email).length;
+          const total = campaignLeads.length;
+          
+          return `
+            <div style="background:var(--bg);border-radius:0.5rem;padding:1rem;border:1px solid var(--border)">
+              <h4 style="margin-bottom:0.5rem">${escapeHtml(c.name)}</h4>
+              <div style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.75rem">
+                <div><i class="fas fa-users"></i> ${total} leads</div>
+                <div><i class="fas fa-envelope"></i> ${withEmail} with email</div>
+                <div><i class="fas fa-map-marker-alt"></i> ${c.city || 'N/A'}</div>
+              </div>
+              <div style="display:flex;gap:0.5rem">
+                <a href="/api/export/instantly/csv?campaign=${c.id}&onlyWithEmail=true" class="btn btn-sm btn-success" ${withEmail === 0 ? 'disabled style="pointer-events:none;opacity:0.5"' : ''}>
+                  <i class="fas fa-envelope"></i> Export ${withEmail}
+                </a>
+                <a href="/api/export/instantly/csv?campaign=${c.id}&onlyWithEmail=false" class="btn btn-sm btn-secondary">
+                  <i class="fas fa-download"></i> All
+                </a>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error('Failed to load export campaigns:', e);
+      }
+    }
+
+    async function extractOneEmail(id, url, btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      try {
+        const result = await api('/emails/extract/single', { method: 'POST', body: JSON.stringify({ leadId: id, url }) });
+        if (result.bestEmail) {
+          btn.closest('tr').querySelector('td:nth-child(4)').innerHTML = `<span style="color:var(--secondary)"><i class="fas fa-check-circle"></i> ${escapeHtml(result.bestEmail)}</span>`;
+          btn.remove();
+          loadEmailStats();
+        } else {
+          btn.innerHTML = '<i class="fas fa-times"></i>';
+          btn.disabled = true;
+        }
+      } catch (e) {
+        btn.innerHTML = '<i class="fas fa-times"></i>';
+      }
+    }
+
+    function clearEmailFilters() {
+      document.getElementById('email-filter').value = 'all';
+      document.getElementById('email-industry-filter').value = '';
+      document.getElementById('email-area-filter').value = '';
+      document.getElementById('email-campaign-filter').value = '';
+      if (document.getElementById('email-search')) document.getElementById('email-search').value = '';
+      loadEmailLeads();
+    }
+
+    function startFilteredEmailExtraction() {
+      alert('Select leads using checkboxes, then click Extract Selected');
+    }
+
+    function exportFilteredToInstantly() {
+      const campaign = document.getElementById('email-campaign-filter')?.value || '';
+      window.location.href = `/api/export/instantly/csv?onlyWithEmail=true${campaign ? '&campaign=' + campaign : ''}`;
     }
 
     // Init

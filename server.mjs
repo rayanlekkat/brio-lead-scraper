@@ -178,8 +178,8 @@ const DEFAULT_CONFIG = {
     password: ''
   },
   airtable: {
-    apiKey: 'pathvOBSacinIf2h1.46af676019bad0eeb7b7d0423dc760a77c7545911ee6a346a1ceabd9627a2178',
-    baseId: 'appGCsPFDcd7JXcll'
+    apiKey: process.env.AIRTABLE_API_KEY || '',
+    baseId: process.env.AIRTABLE_BASE_ID || ''
   },
   defaults: {
     locationCode: '2124', // Canada
