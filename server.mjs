@@ -230,13 +230,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
 app.use(session({
   secret: 'brio-nettoyage-secret-2026',
-  resave: false,
-  saveUninitialized: false,
-  proxy: true,
+  resave: true,
+  saveUninitialized: true,
   cookie: { 
     maxAge: 24 * 60 * 60 * 1000,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+    secure: false, // Set to false to ensure it works across all connection types
+    sameSite: 'lax'
   }
 }));
 
