@@ -1089,7 +1089,7 @@
           <input type="password" id="password" placeholder="Enter password" required>
         </div>
         <div id="login-error" class="alert alert-error hidden"></div>
-        <button type="button" id="login-btn" class="btn btn-primary btn-block">
+        <button type="button" id="login-btn" onclick="handleLogin()" class="btn btn-primary btn-block">
           <i class="fas fa-sign-in-alt"></i> Sign In
         </button>
       </div>
@@ -2166,21 +2166,18 @@
         const result = await api('/me');
         if (result.user) {
           currentUser = result.user;
+          localStorage.setItem('brio_user', JSON.stringify(result.user));
           showApp();
           return;
         }
-      } catch (e) {}
-
-      // 2. Try LocalStorage Fallback (Bypass session issues)
-      const savedUser = localStorage.getItem('brio_user');
-      if (savedUser) {
-        try {
-          currentUser = JSON.parse(savedUser);
-          showApp();
-        } catch(e) {
-          localStorage.removeItem('brio_user');
-        }
+      } catch (e) {
+        // If API fails, clear localStorage to force fresh login
+        localStorage.removeItem('brio_user');
       }
+
+      // 2. Show login page (don't use localStorage fallback, it causes issues)
+      document.getElementById('login-page').style.display = 'flex';
+      document.getElementById('app').style.display = 'none';
     }
 
     // Logout
@@ -3723,36 +3720,20 @@ i
       window.location.href = `/api/export/instantly/csv?onlyWithEmail=true${campaign ? '&campaign=' + campaign : ''}`;
     }
 
-    // Setup login button immediately (script is at end of body, DOM is ready)
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const loginBtn = document.getElementById('login-btn');
+    // Setup Enter key support for login
+    document.getElementById('username')?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('password').focus();
+      }
+    });
 
-    console.log('Setting up login...', { usernameInput, passwordInput, loginBtn });
-
-    if (loginBtn) {
-      loginBtn.addEventListener('click', (e) => {
-        console.log('Login button clicked!');
+    document.getElementById('password')?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
         e.preventDefault();
         handleLogin();
-      });
-    }
-
-    if (usernameInput && passwordInput) {
-      usernameInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          passwordInput.focus();
-        }
-      });
-
-      passwordInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          handleLogin();
-        }
-      });
-    }
+      }
+    });
 
     // Init - check if already logged in
     checkAuth();
