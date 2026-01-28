@@ -266,15 +266,19 @@ app.set('trust proxy', 1); // Required for Railway HTTPS
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
+
+// Determine if running in production (Railway) or locally
+const isProduction = process.env.NODE_ENV === 'production' || process.env.RAILWAY_ENVIRONMENT;
+
 app.use(session({
   secret: 'brio-nettoyage-secret-2026',
   resave: true,
   saveUninitialized: true,
-  proxy: true,
+  proxy: isProduction,
   cookie: { 
     maxAge: 24 * 60 * 60 * 1000,
-    secure: true, // REQUIRED for HTTPS
-    sameSite: 'none' // REQUIRED for Railway
+    secure: isProduction, // Only require HTTPS in production
+    sameSite: isProduction ? 'none' : 'lax' // 'none' for Railway HTTPS, 'lax' for local
   }
 }));
 
