@@ -1,0 +1,3735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brio Nettoyage - Lead Scraper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #3b82f6;
+      --secondary: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* Login Page */
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    }
+
+    .login-card {
+      background: white;
+      padding: 3rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-logo h1 {
+      font-size: 1.75rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .login-logo p {
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border);
+    }
+
+    .btn-success {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #059669;
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    /* App Layout */
+    .app-container {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 260px;
+      background: var(--card);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-logo h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .sidebar-logo i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .nav-menu {
+      list-style: none;
+    }
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      background: var(--bg);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .nav-link i {
+      width: 20px;
+      text-align: center;
+    }
+
+    .main-content {
+      margin-left: 260px;
+      padding: 2rem;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .page-header h1 {
+      font-size: 1.75rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+    }
+
+    .stat-card .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-card .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .stat-card .stat-label {
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    .stat-icon.blue { background: #dbeafe; color: var(--primary); }
+    .stat-icon.green { background: #d1fae5; color: var(--secondary); }
+    .stat-icon.yellow { background: #fef3c7; color: var(--warning); }
+    .stat-icon.red { background: #fee2e2; color: var(--danger); }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--text-light);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:hover {
+      background: var(--bg);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .badge-success { background: #d1fae5; color: #059669; }
+    .badge-warning { background: #fef3c7; color: #d97706; }
+    .badge-danger { background: #fee2e2; color: #dc2626; }
+    .badge-info { background: #dbeafe; color: #2563eb; }
+
+    /* Progress Bar */
+    .progress-container {
+      background: var(--border);
+      border-radius: 1rem;
+      height: 8px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 1rem;
+      transition: width 0.3s;
+    }
+
+    /* Neighborhood List */
+    .neighborhood-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+      transition: all 0.2s;
+    }
+
+    .neighborhood-item:hover {
+      border-color: var(--primary);
+      background: var(--bg);
+    }
+
+    .neighborhood-info h4 {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .neighborhood-info p {
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    .neighborhood-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--card);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h3 {
+      font-size: 1.25rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    .modal-footer {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Alert */
+    .alert {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .alert-success {
+      background: #d1fae5;
+      color: #059669;
+    }
+
+    .alert-error {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .alert-info {
+      background: #dbeafe;
+      color: #2563eb;
+    }
+
+    /* Checkbox */
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    /* User menu */
+    .user-menu {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Scraping Status */
+    .scraping-status {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .scraping-status h3 {
+      margin-bottom: 1rem;
+    }
+
+    .scraping-status .progress-container {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .scraping-status .progress-bar {
+      background: white;
+    }
+
+    .scraping-status p {
+      margin-top: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+        z-index: 50;
+      }
+      
+      .main-content {
+        margin-left: 0;
+      }
+    }
+
+    /* ============== AUTOMATION WORKFLOW STYLES ============== */
+    
+    .workflow-canvas {
+      background: linear-gradient(90deg, #f1f5f9 1px, transparent 1px),
+                  linear-gradient(#f1f5f9 1px, transparent 1px);
+      background-size: 20px 20px;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      min-height: 300px;
+      position: relative;
+      overflow-x: auto;
+      padding: 2rem;
+    }
+
+    .workflow-node {
+      position: absolute;
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      min-width: 120px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+      z-index: 10;
+    }
+
+    .workflow-node:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .workflow-node.active {
+      border-color: var(--primary);
+      animation: pulse 2s infinite;
+    }
+
+    .workflow-node .node-icon {
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .workflow-node .node-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .workflow-node .node-status {
+      font-size: 0.65rem;
+      margin-top: 0.25rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 1rem;
+    }
+
+    .workflow-node[data-status="connected"] { border-color: var(--secondary); }
+    .workflow-node[data-status="connected"] .node-status { background: #d1fae5; color: #059669; }
+    .workflow-node[data-status="error"] { border-color: var(--danger); }
+    .workflow-node[data-status="error"] .node-status { background: #fee2e2; color: #dc2626; }
+    .workflow-node[data-status="running"] { border-color: var(--primary); }
+    .workflow-node[data-status="running"] .node-status { background: #dbeafe; color: #2563eb; }
+    .workflow-node[data-status="idle"] .node-status { background: #f1f5f9; color: #64748b; }
+
+    .workflow-node[data-type="trigger"] .node-icon { color: var(--secondary); }
+    .workflow-node[data-type="api"] .node-icon { color: var(--primary); }
+    .workflow-node[data-type="transform"] .node-icon { color: var(--warning); }
+    .workflow-node[data-type="loop"] .node-icon { color: #8b5cf6; }
+    .workflow-node[data-type="end"] .node-icon { color: var(--danger); }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+    }
+
+    /* SVG Connections */
+    .workflow-connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .workflow-connections path {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 2;
+    }
+
+    .workflow-connections path.loop-back {
+      stroke: #8b5cf6;
+      stroke-dasharray: 5, 5;
+    }
+
+    /* Logs */
+    .log-container {
+      max-height: 400px;
+      overflow-y: auto;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.8rem;
+      background: #1e293b;
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+
+    .log-entry {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #334155;
+      align-items: flex-start;
+    }
+
+    .log-entry:last-child { border-bottom: none; }
+
+    .log-time {
+      color: #64748b;
+      white-space: nowrap;
+      font-size: 0.7rem;
+    }
+
+    .log-node {
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .log-node[data-node="scraper"] { background: #dbeafe; color: #2563eb; }
+    .log-node[data-node="dataforseo"] { background: #fef3c7; color: #d97706; }
+    .log-node[data-node="airtable"] { background: #d1fae5; color: #059669; }
+    .log-node[data-node="deduplication"] { background: #ede9fe; color: #7c3aed; }
+    .log-node[data-node="rate-limiter"] { background: #fce7f3; color: #db2777; }
+    .log-node[data-node="workflow"] { background: #e0f2fe; color: #0284c7; }
+    .log-node[data-node="system"] { background: #f1f5f9; color: #475569; }
+    .log-node[data-node="qa-test"] { background: #ccfbf1; color: #0d9488; }
+
+    .log-message { color: #e2e8f0; flex: 1; }
+
+    .log-type {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .log-type[data-type="info"] { background: #3b82f6; }
+    .log-type[data-type="success"] { background: #10b981; }
+    .log-type[data-type="warning"] { background: #f59e0b; }
+    .log-type[data-type="error"] { background: #ef4444; }
+    .log-type[data-type="start"] { background: #8b5cf6; }
+    .log-type[data-type="complete"] { background: #10b981; }
+
+    /* Error List */
+    .error-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .error-item .error-icon {
+      color: var(--danger);
+      font-size: 1.25rem;
+    }
+
+    .error-item .error-content {
+      flex: 1;
+    }
+
+    .error-item .error-time {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .error-item .error-message {
+      font-weight: 500;
+      margin: 0.25rem 0;
+    }
+
+    .error-item .error-node {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* Job History */
+    .job-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-item .job-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .job-item .job-icon.success { background: #d1fae5; color: #059669; }
+    .job-item .job-icon.running { background: #dbeafe; color: #2563eb; }
+    .job-item .job-icon.error { background: #fee2e2; color: #dc2626; }
+
+    .job-item .job-info { flex: 1; }
+    .job-item .job-info h4 { font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .job-item .job-info p { font-size: 0.75rem; color: var(--text-light); }
+
+    .job-item .job-stats {
+      text-align: right;
+      font-size: 0.8rem;
+    }
+
+    .job-item .job-stats .leads-count {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Status indicators */
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .status-dot.connected { background: var(--secondary); }
+    .status-dot.error { background: var(--danger); }
+    .status-dot.unknown { background: var(--text-light); }
+    .status-dot.running { background: var(--primary); animation: pulse 1s infinite; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .tab {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--text-light);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Grid layout for automation */
+    .automation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .automation-grid .card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 1200px) {
+      .automation-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Step Indicator */
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--border);
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .step-item.active .step-number {
+      background: var(--primary);
+      color: white;
+    }
+
+    .step-item.completed .step-number {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .step-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .step-item.active .step-label {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .step-connector {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      margin: 0 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* City Card */
+    .city-card {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .city-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .city-card .city-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .city-card .city-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .city-card .city-progress {
+      margin-top: 0.5rem;
+    }
+
+    .city-card .progress-bar-small {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .city-card .progress-bar-small .fill {
+      height: 100%;
+      background: var(--secondary);
+      transition: width 0.3s;
+    }
+
+    /* Postal Code Item */
+    .postal-code-item {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .postal-code-item:hover {
+      border-color: var(--primary-light);
+    }
+
+    .postal-code-item.selected {
+      border-color: var(--primary);
+      background: #dbeafe;
+    }
+
+    .postal-code-item.scraped {
+      border-color: var(--secondary);
+    }
+
+    .postal-code-item .pc-code {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .postal-code-item .pc-area {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+
+    .postal-code-item .pc-status {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 1rem;
+    }
+
+    .postal-code-item .pc-status.complete {
+      background: #d1fae5;
+      color: #059669;
+    }
+
+    .postal-code-item .pc-status.partial {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .postal-code-item .pc-status.not-started {
+      background: #f1f5f9;
+      color: #64748b;
+    }
+
+    .postal-code-item .pc-leads {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+
+    /* Campaign Chips */
+    .campaign-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 2rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .campaign-chip:hover {
+      border-color: var(--primary-light);
+    }
+
+    .campaign-chip.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .campaign-chip .chip-count {
+      background: rgba(0,0,0,0.1);
+      padding: 0.1rem 0.5rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+    }
+
+    .campaign-chip.active .chip-count {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Lead Row Actions */
+    .lead-status-select {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .lead-phone-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .lead-phone-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="login-page" class="login-container">
+    <div class="login-card">
+      <div class="login-logo">
+        <h1><i class="fas fa-broom"></i> Brio Nettoyage</h1>
+        <p>B2B Lead Scraper</p>
+      </div>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required>
+        </div>
+        <div id="login-error" class="alert alert-error hidden"></div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-sign-in-alt"></i> Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <i class="fas fa-broom"></i>
+        <h2>Brio Nettoyage</h2>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link active" data-page="dashboard">
+              <i class="fas fa-home"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-page="neighborhoods">
+              <i class="fas fa-map-marker-alt"></i> Neighborhoods
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-page="scrape">
+              <i class="fas fa-search"></i> Scrape Leads
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-page="leads">
+              <i class="fas fa-users"></i> Leads
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-page="emails">
+              <i class="fas fa-envelope"></i> Emails
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-page="pipeline">
+              <i class="fas fa-heartbeat"></i> Pipeline
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-page="automation">
+              <i class="fas fa-project-diagram"></i> Automation
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-page="settings">
+              <i class="fas fa-cog"></i> Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="user-menu">
+        <div class="user-info">
+          <div class="user-avatar" id="user-avatar">A</div>
+          <div>
+            <strong id="user-name">Admin</strong>
+            <br><small style="color: var(--text-light)">Administrator</small>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-block btn-sm" id="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Dashboard Page -->
+      <div id="page-dashboard" class="page">
+        <div class="page-header">
+          <h1>Dashboard</h1>
+          <button class="btn btn-primary" onclick="showPage('scrape')">
+            <i class="fas fa-search"></i> Start Scraping
+          </button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-building"></i></div>
+            <div class="stat-value" id="stat-leads">0</div>
+            <div class="stat-label">Total Leads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="stat-value" id="stat-neighborhoods">0</div>
+            <div class="stat-label">Neighborhoods</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fas fa-bullhorn"></i></div>
+            <div class="stat-value" id="stat-campaigns">0</div>
+            <div class="stat-label">Campaigns</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-phone"></i></div>
+            <div class="stat-value" id="stat-calls">0</div>
+            <div class="stat-label">Calls Today</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Recent Leads</h3>
+            <button class="btn btn-secondary btn-sm" onclick="showPage('leads')">View All</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Phone</th>
+                  <th>Neighborhood</th>
+                  <th>Rating</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recent-leads-table">
+                <tr><td colspan="5" style="text-align: center; color: var(--text-light)">No leads yet</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neighborhoods Page -->
+      <div id="page-neighborhoods" class="page hidden">
+        <div class="page-header">
+          <h1>Neighborhoods</h1>
+          <button class="btn btn-primary" onclick="openAddNeighborhoodModal()">
+            <i class="fas fa-plus"></i> Add Neighborhood
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Target Neighborhoods</h3>
+            <div>
+              <span id="neighborhoods-count">0</span> neighborhoods configured
+            </div>
+          </div>
+          <div id="neighborhoods-list">
+            <p style="color: var(--text-light); text-align: center; padding: 2rem;">
+              No neighborhoods configured yet. Add your first neighborhood to start scraping leads.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrape Page - Hierarchical Location Flow -->
+      <div id="page-scrape" class="page hidden">
+        <div class="page-header">
+          <h1>Scrape Leads</h1>
+          <div id="overall-progress-badge" style="display: flex; align-items: center; gap: 0.5rem;">
+            <span class="badge badge-info" id="progress-badge">0% Complete</span>
+          </div>
+        </div>
+
+        <!-- Overall Progress -->
+        <div class="stats-grid" style="margin-bottom: 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-map"></i></div>
+            <div class="stat-value" id="total-postal-codes">0</div>
+            <div class="stat-label">Total Postal Codes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+            <div class="stat-value" id="scraped-postal-codes">0</div>
+            <div class="stat-label">Scraped</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fas fa-hourglass-half"></i></div>
+            <div class="stat-value" id="pending-postal-codes">0</div>
+            <div class="stat-label">Pending</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-users"></i></div>
+            <div class="stat-value" id="total-leads-collected">0</div>
+            <div class="stat-label">Total Leads</div>
+          </div>
+        </div>
+
+        <!-- Step Indicator -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem;">
+            <div class="step-item active" id="step-1">
+              <div class="step-number">1</div>
+              <div class="step-label">Select City</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-item" id="step-2">
+              <div class="step-number">2</div>
+              <div class="step-label">Choose Postal Codes</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-item" id="step-3">
+              <div class="step-number">3</div>
+              <div class="step-label">Scrape Mode</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-item" id="step-4">
+              <div class="step-number">4</div>
+              <div class="step-label">Scrape!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scraping Progress (shown when running) -->
+        <div id="scraping-progress" class="scraping-status hidden">
+          <h3><i class="fas fa-spinner fa-spin"></i> Scraping in Progress</h3>
+          <div class="progress-container">
+            <div class="progress-bar" id="scrape-progress-bar" style="width: 0%"></div>
+          </div>
+          <p id="scrape-status-text">Initializing...</p>
+        </div>
+
+        <!-- Step 1: City Selection -->
+        <div id="scrape-step-1" class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-city"></i> Step 1: Select City</h3>
+          </div>
+          <div id="cities-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
+            <!-- Cities will be loaded here -->
+          </div>
+        </div>
+
+        <!-- Step 2: Postal Code Selection (hidden initially) -->
+        <div id="scrape-step-2" class="card hidden">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-mail-bulk"></i> Step 2: Select Postal Codes in <span id="selected-city-name"></span></h3>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn btn-secondary btn-sm" onclick="selectAllPostalCodes()">Select All</button>
+              <button class="btn btn-secondary btn-sm" onclick="selectUnscrapedPostalCodes()">Select Unscraped</button>
+              <button class="btn btn-secondary btn-sm" onclick="goBackToStep1()"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+          </div>
+          <div id="postal-codes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; max-height: 400px; overflow-y: auto;">
+            <!-- Postal codes will be loaded here -->
+          </div>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong id="selected-postal-count">0</strong> postal codes selected
+            </div>
+            <button class="btn btn-primary" onclick="goToStep3()" id="proceed-step-3-btn" disabled>
+              Continue to Step 3 <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Scrape Configuration (hidden initially) -->
+        <div id="scrape-step-3" class="card hidden">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-cog"></i> Step 3: Configure Scraping</h3>
+            <button class="btn btn-secondary btn-sm" onclick="goBackToStep2()"><i class="fas fa-arrow-left"></i> Back</button>
+          </div>
+          <form id="scrape-form">
+            <div class="form-group">
+              <label>Selected Location</label>
+              <div class="alert alert-info" id="scrape-location-summary">
+                <!-- Summary will be shown here -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="scrape-mode">Scraping Mode</label>
+              <select id="scrape-mode">
+                <option value="all_businesses">ALL Local Businesses (Recommended for Cold Calling)</option>
+                <option value="category">Single Category Only</option>
+              </select>
+            </div>
+            <div class="form-group" id="category-select-group" style="display: none;">
+              <label for="scrape-category">Business Category</label>
+              <select id="scrape-category">
+                <option value="commercial cleaning">Commercial Cleaning</option>
+                <option value="office buildings">Office Buildings</option>
+                <option value="medical clinics">Medical Clinics</option>
+                <option value="dental offices">Dental Offices</option>
+                <option value="restaurants">Restaurants</option>
+                <option value="gyms">Gyms & Fitness</option>
+                <option value="salons">Hair Salons</option>
+                <option value="hotels">Hotels</option>
+                <option value="retail stores">Retail Stores</option>
+                <option value="professional services">Professional Services</option>
+                <optgroup label="🚗 Automotive & Dealerships">
+                  <option value="car dealership">Car Dealership / Concessionnaire Auto</option>
+                  <option value="used car dealer">Used Car Dealer</option>
+                  <option value="motorcycle dealer">Motorcycle Dealer</option>
+                  <option value="auto repair">Auto Repair / Mechanic</option>
+                  <option value="tire shop">Tire Shop</option>
+                  <option value="car wash">Car Wash</option>
+                </optgroup>
+                <optgroup label="🏢 Real Estate & Buildings">
+                  <option value="real estate agencies">Real Estate Agencies</option>
+                  <option value="property management">Property Management</option>
+                  <option value="apartment building">Apartment Buildings</option>
+                  <option value="condo building">Condo Buildings</option>
+                  <option value="syndic de copropriété">Syndic de Copropriété</option>
+                  <option value="gestion immobilière">Gestion Immobilière</option>
+                  <option value="immeuble à logements">Immeuble à Logements</option>
+                </optgroup>
+                <optgroup label="🏗️ Construction & Trades">
+                  <option value="contractor">Contractors</option>
+                  <option value="plumber">Plumbers</option>
+                  <option value="electrician">Electricians</option>
+                  <option value="HVAC">HVAC</option>
+                  <option value="renovation">Renovation</option>
+                  <option value="landscaping">Landscaping</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="scrape-campaign">Campaign Name</label>
+              <input type="text" id="scrape-campaign" placeholder="e.g., Longueuil All Businesses Jan 2026" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-block" style="font-size: 1.1rem; padding: 1rem;">
+              <i class="fas fa-rocket"></i> Start Scraping
+            </button>
+          </form>
+        </div>
+
+        <!-- Results -->
+        <div id="scrape-results" class="card hidden">
+          <div class="card-header">
+            <h3 class="card-title">Scraping Results</h3>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn btn-secondary btn-sm" id="export-csv-btn">
+                <i class="fas fa-file-csv"></i> Export CSV
+              </button>
+              <button class="btn btn-success btn-sm" id="import-to-airtable-btn">
+                <i class="fas fa-cloud-upload-alt"></i> Import to Airtable
+              </button>
+            </div>
+          </div>
+          <div class="alert alert-success" id="scrape-summary"></div>
+          <div class="table-container" style="max-height: 500px; overflow-y: auto;">
+            <table>
+              <thead style="position: sticky; top: 0; background: white;">
+                <tr>
+                  <th>Company</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Rating</th>
+                  <th>Category</th>
+                  <th>Postal Code</th>
+                </tr>
+              </thead>
+              <tbody id="scrape-results-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leads Page -->
+      <div id="page-leads" class="page hidden">
+        <div class="page-header">
+          <h1>Leads Database</h1>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-primary" onclick="exportLocalLeadsCSV()">
+              <i class="fas fa-file-csv"></i> Export CSV
+            </button>
+            <button class="btn btn-secondary" onclick="loadLeads()">
+              <i class="fas fa-sync"></i> Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid" style="margin-bottom: 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+            <div class="stat-value" id="leads-total-count">0</div>
+            <div class="stat-label">Total Leads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-phone-volume"></i></div>
+            <div class="stat-value" id="leads-with-phone">0</div>
+            <div class="stat-label">With Phone</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fas fa-bullhorn"></i></div>
+            <div class="stat-value" id="leads-campaigns-count">0</div>
+            <div class="stat-label">Campaigns</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-clock"></i></div>
+            <div class="stat-value" id="leads-new-count">0</div>
+            <div class="stat-label">New (Uncalled)</div>
+          </div>
+        </div>
+
+        <!-- Campaigns List -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-folder"></i> Campaigns</h3>
+          </div>
+          <div id="campaigns-list" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <div class="campaign-chip active" data-campaign="" onclick="filterByCampaign('')">
+              All Campaigns
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Leads</h3>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <input type="text" id="leads-search" placeholder="Search company, phone, address..." style="padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem; width: 250px;">
+              <select id="leads-filter" style="padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem;">
+                <option value="">All Status</option>
+                <option value="New">New</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Qualified">Qualified</option>
+                <option value="Not Interested">Not Interested</option>
+                <option value="Callback">Callback</option>
+              </select>
+            </div>
+          </div>
+          <div class="table-container" style="max-height: 600px; overflow-y: auto;">
+            <table>
+              <thead style="position: sticky; top: 0; background: white; z-index: 10;">
+                <tr>
+                  <th>Company</th>
+                  <th>Phone</th>
+                  <th>Category</th>
+                  <th>Address</th>
+                  <th>Campaign</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="leads-table">
+                <tr><td colspan="6" style="text-align: center; color: var(--text-light)">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="leads-pagination" style="padding: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+            <span id="leads-showing">Showing 0 leads</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emails Page -->
+      <div id="page-emails" class="page hidden">
+        <div class="page-header">
+          <h1>Email Extraction</h1>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-primary" onclick="startFilteredEmailExtraction()">
+              <i class="fas fa-search"></i> Extract Emails
+            </button>
+            <button class="btn btn-success" onclick="exportFilteredToInstantly()">
+              <i class="fas fa-download"></i> Export for Instantly
+            </button>
+          </div>
+        </div>
+
+        <!-- Email Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+            <div class="stat-value" id="email-total-leads">0</div>
+            <div class="stat-label">Total Leads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-envelope"></i></div>
+            <div class="stat-value" id="email-with-email">0</div>
+            <div class="stat-label">With Email</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fas fa-globe"></i></div>
+            <div class="stat-value" id="email-with-website">0</div>
+            <div class="stat-label">Has Website (No Email)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-times-circle"></i></div>
+            <div class="stat-value" id="email-no-website">0</div>
+            <div class="stat-label">No Website</div>
+          </div>
+        </div>
+
+        <!-- Filters Card -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-filter"></i> Filter Leads</h3>
+            <button class="btn btn-sm btn-secondary" onclick="clearEmailFilters()">
+              <i class="fas fa-times"></i> Clear Filters
+            </button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <!-- Email Status Filter -->
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>Email Status</label>
+              <select id="email-filter" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem;" onchange="loadEmailLeads()">
+                <option value="all">All Leads</option>
+                <option value="with-email">Has Email</option>
+                <option value="no-email">No Email (Has Website)</option>
+              </select>
+            </div>
+            
+            <!-- Industry/Category Filter -->
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>Industry / Category</label>
+              <select id="email-industry-filter" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem;" onchange="loadEmailLeads()">
+                <option value="">All Industries</option>
+                <optgroup label="Food & Beverage">
+                  <option value="restaurant">Restaurants</option>
+                  <option value="cafe">Cafes</option>
+                  <option value="bakery">Bakeries</option>
+                  <option value="bar">Bars</option>
+                </optgroup>
+                <optgroup label="Health & Wellness">
+                  <option value="gym">Gyms & Fitness</option>
+                  <option value="spa">Spas</option>
+                  <option value="salon">Salons</option>
+                  <option value="dental">Dental Clinics</option>
+                  <option value="medical">Medical Clinics</option>
+                  <option value="pharmacy">Pharmacies</option>
+                </optgroup>
+                <optgroup label="Professional Services">
+                  <option value="lawyer">Lawyers</option>
+                  <option value="accountant">Accountants</option>
+                  <option value="real estate">Real Estate</option>
+                  <option value="insurance">Insurance</option>
+                  <option value="consultant">Consultants</option>
+                </optgroup>
+                <optgroup label="Automotive">
+                  <option value="car dealer">Car Dealerships</option>
+                  <option value="auto repair">Auto Repair</option>
+                  <option value="car wash">Car Wash</option>
+                </optgroup>
+                <optgroup label="Retail">
+                  <option value="store">Retail Stores</option>
+                  <option value="boutique">Boutiques</option>
+                  <option value="grocery">Grocery Stores</option>
+                </optgroup>
+                <optgroup label="Property & Buildings">
+                  <option value="property management">Property Management</option>
+                  <option value="apartment">Apartment Buildings</option>
+                  <option value="condo">Condo Buildings</option>
+                </optgroup>
+                <optgroup label="Construction">
+                  <option value="contractor">Contractors</option>
+                  <option value="plumber">Plumbers</option>
+                  <option value="electrician">Electricians</option>
+                </optgroup>
+              </select>
+            </div>
+            
+            <!-- Area/Neighborhood Filter -->
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>Area / Neighborhood</label>
+              <select id="email-area-filter" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem;" onchange="loadEmailLeads()">
+                <option value="">All Areas</option>
+              </select>
+            </div>
+            
+            <!-- Campaign Filter -->
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>Campaign</label>
+              <select id="email-campaign-filter" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem;" onchange="loadEmailLeads()">
+                <option value="">All Campaigns</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Active Filters Display -->
+          <div id="active-filters" style="margin-top: 1rem; display: none;">
+            <strong>Active filters:</strong> <span id="active-filters-text"></span>
+          </div>
+        </div>
+
+        <!-- Extraction Progress -->
+        <div class="card" id="email-extraction-progress" style="display: none;">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-cog fa-spin"></i> Extracting Emails...</h3>
+            <span id="extraction-progress-text">0%</span>
+          </div>
+          <div class="progress-bar" style="height: 8px; background: var(--bg); border-radius: 4px; overflow: hidden;">
+            <div id="extraction-progress-bar" style="height: 100%; width: 0%; background: var(--primary); transition: width 0.3s;"></div>
+          </div>
+          <div style="margin-top: 1rem; display: flex; gap: 2rem;">
+            <div><strong>Processed:</strong> <span id="extraction-processed">0</span></div>
+            <div><strong>Emails Found:</strong> <span id="extraction-found">0</span></div>
+            <div><strong>Failed:</strong> <span id="extraction-failed">0</span></div>
+          </div>
+        </div>
+
+        <!-- Leads Table -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Leads <span id="filtered-count-badge" class="badge badge-info" style="margin-left: 0.5rem;">0</span></h3>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <input type="text" id="email-search" placeholder="Search company, email..." style="padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem; width: 200px;" oninput="loadEmailLeads()">
+            </div>
+          </div>
+          <div class="table-container" style="max-height: 500px; overflow-y: auto;">
+            <table>
+              <thead style="position: sticky; top: 0; background: white; z-index: 10;">
+                <tr>
+                  <th><input type="checkbox" id="select-all-emails" onchange="toggleSelectAllEmails(this)"></th>
+                  <th>Company</th>
+                  <th>Industry</th>
+                  <th>Email</th>
+                  <th>Area</th>
+                  <th>Phone</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="email-leads-table">
+                <tr><td colspan="7" style="text-align: center; color: var(--text-light)">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="padding: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+            <span id="email-leads-count">Showing 0 leads</span>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn btn-sm btn-primary" onclick="extractSelectedEmails()">
+                <i class="fas fa-search"></i> Extract Selected
+              </button>
+              <button class="btn btn-sm btn-success" onclick="exportFilteredToInstantly()">
+                <i class="fas fa-download"></i> Export Filtered
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instantly Export Options -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fab fa-lightning-bolt"></i> Export for Instantly</h3>
+          </div>
+          <p style="margin-bottom: 1rem; color: var(--text-light);">
+            Export your leads with emails in CSV format compatible with Instantly.io for cold email campaigns.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="/api/export/instantly/csv?onlyWithEmail=true" class="btn btn-success">
+              <i class="fas fa-envelope"></i> Export With Emails Only
+            </a>
+            <a href="/api/export/instantly/csv?onlyWithEmail=false" class="btn btn-secondary">
+              <i class="fas fa-download"></i> Export All Leads
+            </a>
+          </div>
+          <div style="margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+            <h4 style="margin-bottom: 0.5rem;">CSV Columns:</h4>
+            <code style="font-size: 0.85rem; color: var(--text-light);">
+              email, first_name, company_name, website, phone, custom1 (category), custom2 (address), custom3 (rating), custom4 (neighborhood), custom5 (campaign)
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Page -->
+      <div id="page-settings" class="page hidden">
+        <div class="page-header">
+          <h1>Settings</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">DataForSEO Credentials</h3>
+          </div>
+          <form id="dataforseo-form">
+            <div class="form-group">
+              <label for="dataforseo-login">Login Email</label>
+              <input type="email" id="dataforseo-login" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="dataforseo-password">Password</label>
+              <input type="password" id="dataforseo-password" placeholder="Leave empty to keep current">
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Save Credentials
+            </button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Scraping Defaults</h3>
+          </div>
+          <form id="defaults-form">
+            <div class="form-group">
+              <label for="default-location-code">Location Code</label>
+              <select id="default-location-code">
+                <option value="2124">Canada (2124)</option>
+                <option value="2840">United States (2840)</option>
+                <option value="2250">France (2250)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="default-language">Language</label>
+              <select id="default-language">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="default-min-rating">Minimum Rating</label>
+              <input type="number" id="default-min-rating" min="0" max="5" step="0.5" value="3.5">
+            </div>
+            <div class="form-group">
+              <label for="default-limit">Leads per Neighborhood</label>
+              <input type="number" id="default-limit" min="10" max="100" value="50">
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Save Defaults
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Pipeline Health Page -->
+      <div id="page-pipeline" class="page hidden">
+        <div class="page-header">
+          <h1>Lead Pipeline Health</h1>
+          <button class="btn btn-primary" onclick="refreshPipeline()">
+            <i class="fas fa-sync"></i> Refresh
+          </button>
+        </div>
+
+        <!-- Health Alerts -->
+        <div id="pipeline-alerts" style="margin-bottom: 1.5rem;"></div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-phone"></i></div>
+            <div class="stat-value" id="pipeline-available">0</div>
+            <div class="stat-label">Available Leads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fas fa-clock"></i></div>
+            <div class="stat-value" id="pipeline-callbacks">0</div>
+            <div class="stat-label">Pending Callbacks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-calendar"></i></div>
+            <div class="stat-value" id="pipeline-days">0</div>
+            <div class="stat-label">Days of Leads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-ban"></i></div>
+            <div class="stat-value" id="pipeline-dnc">0</div>
+            <div class="stat-label">DNC List Size</div>
+          </div>
+        </div>
+
+        <div class="automation-grid">
+          <!-- DNC Management -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-ban"></i> Do Not Call List</h3>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-secondary btn-sm" onclick="exportDNCCSV()">
+                  <i class="fas fa-file-csv"></i>
+                </button>
+                <button class="btn btn-secondary btn-sm" onclick="loadDNCList()">
+                  <i class="fas fa-sync"></i>
+                </button>
+              </div>
+            </div>
+            <form id="dnc-add-form" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+              <input type="text" id="dnc-phone" placeholder="Phone number" style="flex: 1; padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem;">
+              <input type="text" id="dnc-reason" placeholder="Reason" style="flex: 1; padding: 0.5rem; border: 1px solid var(--border); border-radius: 0.25rem;">
+              <button type="submit" class="btn btn-danger btn-sm">
+                <i class="fas fa-plus"></i> Add
+              </button>
+            </form>
+            <div id="dnc-list" style="max-height: 300px; overflow-y: auto;">
+              <p style="text-align: center; color: var(--text-light); padding: 1rem;">Loading...</p>
+            </div>
+          </div>
+
+          <!-- Lead Pool Stats -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-database"></i> Lead Pool Statistics</h3>
+            </div>
+            <div id="pool-stats">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+                  <div style="font-size: 1.5rem; font-weight: 700;" id="pool-unique">0</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Unique Phones Tracked</div>
+                </div>
+                <div style="padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+                  <div style="font-size: 1.5rem; font-weight: 700;" id="pool-scraped">0</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Total Scraped</div>
+                </div>
+                <div style="padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+                  <div style="font-size: 1.5rem; font-weight: 700;" id="pool-imported">0</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Total Imported</div>
+                </div>
+                <div style="padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+                  <div style="font-size: 1.5rem; font-weight: 700;" id="pool-duplicates">0</div>
+                  <div style="color: var(--text-light); font-size: 0.875rem;">Duplicates Blocked</div>
+                </div>
+              </div>
+              <div style="margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+                <strong>Last Scrape:</strong> <span id="pool-last-scrape">Never</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone Checker -->
+          <div class="card full-width">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-search"></i> Phone Number Checker</h3>
+            </div>
+            <form id="phone-check-form" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+              <input type="text" id="check-phone" placeholder="Enter phone number to check" style="flex: 1; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i> Check
+              </button>
+            </form>
+            <div id="phone-check-result"></div>
+          </div>
+
+          <!-- Call Outcome Quick Entry -->
+          <div class="card full-width">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-phone-alt"></i> Quick Call Outcome Entry</h3>
+            </div>
+            <form id="outcome-form" style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: end;">
+              <div class="form-group" style="margin: 0;">
+                <label>Phone Number</label>
+                <input type="text" id="outcome-phone" placeholder="+1 555 123 4567">
+              </div>
+              <div class="form-group" style="margin: 0;">
+                <label>Outcome</label>
+                <select id="outcome-result">
+                  <option value="interested">Interested</option>
+                  <option value="not_interested">Not Interested (add to DNC)</option>
+                  <option value="no_answer">No Answer</option>
+                  <option value="voicemail">Voicemail Left</option>
+                  <option value="wrong_number">Wrong Number (add to DNC)</option>
+                  <option value="callback">Callback Requested</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-success" style="height: 42px;">
+                <i class="fas fa-check"></i> Save
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Automation Page -->
+      <div id="page-automation" class="page hidden">
+        <div class="page-header">
+          <h1>Automation Dashboard</h1>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-secondary btn-sm" onclick="refreshAutomation()">
+              <i class="fas fa-sync"></i> Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="status-indicator">
+              <div class="status-dot" id="status-dot-server"></div>
+              <span>Server</span>
+            </div>
+            <div class="stat-value" style="font-size: 1rem; margin-top: 0.5rem;" id="status-server">Running</div>
+          </div>
+          <div class="stat-card">
+            <div class="status-indicator">
+              <div class="status-dot" id="status-dot-dataforseo"></div>
+              <span>DataForSEO</span>
+            </div>
+            <div class="stat-value" style="font-size: 1rem; margin-top: 0.5rem;" id="status-dataforseo">Unknown</div>
+            <button class="btn btn-secondary btn-sm" style="margin-top: 0.5rem;" onclick="testDataForSEO()">
+              <i class="fas fa-plug"></i> Test
+            </button>
+          </div>
+          <div class="stat-card">
+            <div class="status-indicator">
+              <div class="status-dot" id="status-dot-airtable"></div>
+              <span>Airtable</span>
+            </div>
+            <div class="stat-value" style="font-size: 1rem; margin-top: 0.5rem;" id="status-airtable">Unknown</div>
+            <button class="btn btn-secondary btn-sm" style="margin-top: 0.5rem;" onclick="testAirtable()">
+              <i class="fas fa-plug"></i> Test
+            </button>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="stat-value" id="stat-errors-24h">0</div>
+            <div class="stat-label">Errors (24h)</div>
+          </div>
+        </div>
+
+        <!-- Visual Workflow -->
+        <div class="card full-width">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-project-diagram"></i> Workflow Pipeline</h3>
+            <div id="active-jobs-indicator"></div>
+          </div>
+          <div class="workflow-canvas" id="workflow-canvas">
+            <svg class="workflow-connections" id="workflow-connections"></svg>
+            <!-- Nodes will be rendered here -->
+          </div>
+        </div>
+
+        <div class="automation-grid">
+          <!-- Logs -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-stream"></i> Activity Log</h3>
+              <select id="log-filter" style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border);">
+                <option value="">All Events</option>
+                <option value="info">Info</option>
+                <option value="success">Success</option>
+                <option value="error">Errors</option>
+                <option value="start">Start</option>
+                <option value="complete">Complete</option>
+              </select>
+            </div>
+            <div class="log-container" id="log-container">
+              <div style="color: #64748b; text-align: center; padding: 2rem;">
+                No logs yet. Start a scraping job to see activity.
+              </div>
+            </div>
+          </div>
+
+          <!-- Error Backlog -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-bug"></i> Error Backlog</h3>
+              <button class="btn btn-danger btn-sm" onclick="clearErrors()">
+                <i class="fas fa-trash"></i> Clear All
+              </button>
+            </div>
+            <div id="error-list" style="max-height: 350px; overflow-y: auto;">
+              <div style="color: var(--text-light); text-align: center; padding: 2rem;">
+                <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;"></i>
+                <p>No errors! Everything is running smoothly.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Job History -->
+          <div class="card full-width">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-history"></i> Job History</h3>
+              <span id="jobs-today-count">0 jobs today</span>
+            </div>
+            <div id="job-history" style="max-height: 300px; overflow-y: auto;">
+              <div style="color: var(--text-light); text-align: center; padding: 2rem;">
+                No jobs have been run yet. Start scraping to see history.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Neighborhood Modal -->
+  <div id="add-neighborhood-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add Neighborhood</h3>
+        <button class="modal-close" onclick="closeModal('add-neighborhood-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="add-neighborhood-form">
+          <div class="form-group">
+            <label for="neighborhood-name">Neighborhood Name</label>
+            <input type="text" id="neighborhood-name" placeholder="e.g., Downtown Montreal" required>
+          </div>
+          <div class="form-group">
+            <label for="neighborhood-location">Location (for API)</label>
+            <input type="text" id="neighborhood-location" placeholder="e.g., Downtown, Montreal, QC" required>
+            <small style="color: var(--text-light)">Use format: Neighborhood, City, Province/State</small>
+          </div>
+          <div class="form-group">
+            <label for="neighborhood-zip">ZIP/Postal Codes (comma-separated)</label>
+            <input type="text" id="neighborhood-zip" placeholder="e.g., H2Y, H2Z, H3B">
+          </div>
+          <div class="form-group">
+            <label for="neighborhood-description">Description (optional)</label>
+            <textarea id="neighborhood-description" rows="2" placeholder="e.g., Business district with many offices"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('add-neighborhood-modal')">Cancel</button>
+        <button class="btn btn-primary" onclick="addNeighborhood()">
+          <i class="fas fa-plus"></i> Add Neighborhood
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Global state
+    let currentUser = null;
+    let neighborhoods = [];
+    let currentScrapingJob = null;
+    let scrapedLeads = [];
+
+    // API helper
+    async function api(endpoint, options = {}) {
+      const response = await fetch(`/api${endpoint}`, {
+        ...options,
+        headers: {
+          'Content-Type': 'application/json',
+          ...options.headers,
+        },
+      });
+      return response.json();
+    }
+
+    // Check auth on load
+    async function checkAuth() {
+      try {
+        const result = await api('/me');
+        if (result.user) {
+          currentUser = result.user;
+          showApp();
+        }
+      } catch (e) {
+        // Not logged in
+      }
+    }
+
+    // Login
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorEl = document.getElementById('login-error');
+
+      try {
+        const result = await api('/login', {
+          method: 'POST',
+          body: JSON.stringify({ username, password }),
+        });
+
+        if (result.success) {
+          currentUser = { username: result.username };
+          showApp();
+        } else {
+          errorEl.textContent = result.error || 'Login failed';
+          errorEl.classList.remove('hidden');
+        }
+      } catch (e) {
+        errorEl.textContent = 'Login failed';
+        errorEl.classList.remove('hidden');
+      }
+    });
+
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', async () => {
+      await api('/logout', { method: 'POST' });
+      currentUser = null;
+      document.getElementById('login-page').style.display = 'flex';
+      document.getElementById('app').style.display = 'none';
+    });
+
+    // Show app after login
+    function showApp() {
+      document.getElementById('login-page').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      document.getElementById('user-name').textContent = currentUser.username;
+      document.getElementById('user-avatar').textContent = currentUser.username[0].toUpperCase();
+      loadDashboard();
+    }
+
+    // Navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const page = link.dataset.page;
+        showPage(page);
+      });
+    });
+
+    function showPage(page) {
+      // Update nav
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelector(`.nav-link[data-page="${page}"]`).classList.add('active');
+
+      // Show page
+      document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+      document.getElementById(`page-${page}`).classList.remove('hidden');
+
+      // Load data for page
+      if (page === 'dashboard') loadDashboard();
+      if (page === 'neighborhoods') loadNeighborhoods();
+      if (page === 'scrape') loadScrapeForm();
+      if (page === 'leads') loadLeads();
+      if (page === 'emails') loadEmailPage();
+      if (page === 'settings') loadSettings();
+      if (page === 'automation') loadAutomation();
+      if (page === 'pipeline') loadPipeline();
+    }
+
+    // Dashboard
+    async function loadDashboard() {
+      try {
+        const [neighborhoodData, leads, campaigns] = await Promise.all([
+          api('/neighborhoods'),
+          api('/airtable/leads'),
+          api('/airtable/campaigns'),
+        ]);
+
+        neighborhoods = neighborhoodData.neighborhoods || [];
+        
+        document.getElementById('stat-neighborhoods').textContent = neighborhoods.length;
+        document.getElementById('stat-leads').textContent = leads.length || 0;
+        document.getElementById('stat-campaigns').textContent = campaigns.length || 0;
+        document.getElementById('stat-calls').textContent = '0';
+
+        // Recent leads
+        const tbody = document.getElementById('recent-leads-table');
+        if (leads.length > 0) {
+          tbody.innerHTML = leads.slice(0, 5).map(lead => `
+            <tr>
+              <td><strong>${lead.fields['Company Name'] || 'N/A'}</strong></td>
+              <td>${lead.fields['Phone'] || 'N/A'}</td>
+              <td>${lead.fields['Neighborhood'] || 'N/A'}</td>
+              <td>${lead.fields['Rating'] ? '⭐ ' + lead.fields['Rating'] : 'N/A'}</td>
+              <td><span class="badge badge-${getStatusBadge(lead.fields['Status'])}">${lead.fields['Status'] || 'New'}</span></td>
+            </tr>
+          `).join('');
+        }
+      } catch (e) {
+        console.error('Dashboard load error:', e);
+      }
+    }
+
+    function getStatusBadge(status) {
+      const map = {
+        'New': 'info',
+        'Contacted': 'warning',
+        'Qualified': 'success',
+        'Not Interested': 'danger',
+      };
+      return map[status] || 'info';
+    }
+
+    // Neighborhoods
+    async function loadNeighborhoods() {
+      try {
+        const data = await api('/neighborhoods');
+        neighborhoods = data.neighborhoods || [];
+        renderNeighborhoods();
+      } catch (e) {
+        console.error('Load neighborhoods error:', e);
+      }
+    }
+
+    function renderNeighborhoods() {
+      const container = document.getElementById('neighborhoods-list');
+      document.getElementById('neighborhoods-count').textContent = neighborhoods.length;
+
+      if (neighborhoods.length === 0) {
+        container.innerHTML = `
+          <p style="color: var(--text-light); text-align: center; padding: 2rem;">
+            No neighborhoods configured yet. Add your first neighborhood to start scraping leads.
+          </p>
+        `;
+        return;
+      }
+
+      container.innerHTML = neighborhoods.map(n => `
+        <div class="neighborhood-item">
+          <div class="neighborhood-info">
+            <h4>${n.name}</h4>
+            <p>${n.location} ${n.zipCodes?.length ? '• ' + n.zipCodes.join(', ') : ''}</p>
+            ${n.description ? `<p>${n.description}</p>` : ''}
+          </div>
+          <div class="neighborhood-actions">
+            <button class="btn btn-danger btn-sm" onclick="deleteNeighborhood('${n.id}')">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openAddNeighborhoodModal() {
+      document.getElementById('add-neighborhood-modal').classList.add('active');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    async function addNeighborhood() {
+      const name = document.getElementById('neighborhood-name').value;
+      const location = document.getElementById('neighborhood-location').value;
+      const zipCodes = document.getElementById('neighborhood-zip').value.split(',').map(z => z.trim()).filter(z => z);
+      const description = document.getElementById('neighborhood-description').value;
+
+      if (!name || !location) {
+        alert('Name and location are required');
+        return;
+      }
+
+      try {
+        await api('/neighborhoods/add', {
+          method: 'POST',
+          body: JSON.stringify({ name, location, zipCodes, description }),
+        });
+        
+        closeModal('add-neighborhood-modal');
+        document.getElementById('add-neighborhood-form').reset();
+        loadNeighborhoods();
+      } catch (e) {
+        alert('Error adding neighborhood');
+      }
+    }
+
+    async function deleteNeighborhood(id) {
+      if (!confirm('Delete this neighborhood?')) return;
+      
+      try {
+        await api(`/neighborhoods/${id}`, { method: 'DELETE' });
+        loadNeighborhoods();
+      } catch (e) {
+        alert('Error deleting neighborhood');
+      }
+    }
+
+    // ============== LOCATION-BASED SCRAPING ==============
+    
+    let selectedCity = null;
+    let selectedPostalCodes = [];
+    let citiesData = [];
+    let postalCodesData = [];
+
+    // Load scrape page with location data
+    async function loadScrapeForm() {
+      await Promise.all([
+        loadOverallProgress(),
+        loadCities()
+      ]);
+    }
+
+    // Load overall progress stats
+    async function loadOverallProgress() {
+      try {
+        const progress = await api('/locations/progress');
+        document.getElementById('total-postal-codes').textContent = progress.totalPostalCodes;
+        document.getElementById('scraped-postal-codes').textContent = progress.scrapedPostalCodes;
+        document.getElementById('pending-postal-codes').textContent = progress.notStarted;
+        document.getElementById('total-leads-collected').textContent = progress.totalLeads;
+        document.getElementById('progress-badge').textContent = `${progress.progressPercent}% Complete`;
+      } catch (e) {
+        console.error('Load progress error:', e);
+      }
+    }
+
+    // Load cities
+    async function loadCities() {
+      try {
+        const data = await api('/locations/cities');
+        citiesData = data.cities;
+        renderCities();
+      } catch (e) {
+        console.error('Load cities error:', e);
+      }
+    }
+
+    function renderCities() {
+      const container = document.getElementById('cities-grid');
+      container.innerHTML = citiesData.map(city => `
+        <div class="city-card" onclick="selectCity('${city.id}')">
+          <div class="city-name">${city.name}</div>
+          <div class="city-stats">
+            <span>${city.postalCodeCount} postal codes</span>
+            <span>${city.totalLeads} leads</span>
+          </div>
+          <div class="city-progress">
+            <div class="progress-bar-small">
+              <div class="fill" style="width: ${city.progressPercent}%"></div>
+            </div>
+            <div style="font-size: 0.7rem; color: var(--text-light); margin-top: 0.25rem;">
+              ${city.scrapedCount}/${city.postalCodeCount} scraped (${city.progressPercent}%)
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Select a city and load its postal codes
+    async function selectCity(cityId) {
+      selectedCity = citiesData.find(c => c.id === cityId);
+      selectedPostalCodes = [];
+      
+      // Update step indicators
+      document.getElementById('step-1').classList.add('completed');
+      document.getElementById('step-2').classList.add('active');
+      
+      // Show step 2
+      document.getElementById('scrape-step-1').classList.add('hidden');
+      document.getElementById('scrape-step-2').classList.remove('hidden');
+      document.getElementById('selected-city-name').textContent = selectedCity.name;
+      
+      // Load postal codes
+      try {
+        const data = await api(`/locations/cities/${cityId}/postal-codes`);
+        postalCodesData = data.postalCodes;
+        renderPostalCodes();
+      } catch (e) {
+        console.error('Load postal codes error:', e);
+      }
+    }
+
+    function renderPostalCodes() {
+      const container = document.getElementById('postal-codes-grid');
+      container.innerHTML = postalCodesData.map(pc => {
+        const isSelected = selectedPostalCodes.includes(pc.code);
+        const statusClass = pc.status === 'complete' ? 'complete' : pc.status === 'partial' ? 'partial' : 'not-started';
+        const statusLabel = pc.status === 'complete' ? 'Scraped' : pc.status === 'partial' ? 'Partial' : 'New';
+        
+        return `
+          <div class="postal-code-item ${isSelected ? 'selected' : ''} ${pc.status === 'complete' ? 'scraped' : ''}" 
+               onclick="togglePostalCode('${pc.code}')" data-code="${pc.code}">
+            <span class="pc-status ${statusClass}">${statusLabel}</span>
+            <div class="pc-code">${pc.code}</div>
+            <div class="pc-area">${pc.area}</div>
+            ${pc.leadsCount > 0 ? `<div class="pc-leads">${pc.leadsCount} leads</div>` : ''}
+          </div>
+        `;
+      }).join('');
+      
+      updateSelectedCount();
+    }
+
+    function togglePostalCode(code) {
+      const index = selectedPostalCodes.indexOf(code);
+      if (index === -1) {
+        selectedPostalCodes.push(code);
+      } else {
+        selectedPostalCodes.splice(index, 1);
+      }
+      
+      // Update UI
+      const item = document.querySelector(`.postal-code-item[data-code="${code}"]`);
+      if (item) {
+        item.classList.toggle('selected', selectedPostalCodes.includes(code));
+      }
+      
+      updateSelectedCount();
+    }
+
+    function updateSelectedCount() {
+      document.getElementById('selected-postal-count').textContent = selectedPostalCodes.length;
+      document.getElementById('proceed-step-3-btn').disabled = selectedPostalCodes.length === 0;
+    }
+
+    function selectAllPostalCodes() {
+      selectedPostalCodes = postalCodesData.map(pc => pc.code);
+      renderPostalCodes();
+    }
+
+    function selectUnscrapedPostalCodes() {
+      selectedPostalCodes = postalCodesData.filter(pc => pc.status !== 'complete').map(pc => pc.code);
+      renderPostalCodes();
+    }
+
+    function goBackToStep1() {
+      selectedCity = null;
+      selectedPostalCodes = [];
+      
+      document.getElementById('step-1').classList.remove('completed');
+      document.getElementById('step-2').classList.remove('active');
+      
+      document.getElementById('scrape-step-1').classList.remove('hidden');
+      document.getElementById('scrape-step-2').classList.add('hidden');
+    }
+
+    function goToStep3() {
+      if (selectedPostalCodes.length === 0) {
+        alert('Please select at least one postal code');
+        return;
+      }
+      
+      document.getElementById('step-2').classList.add('completed');
+      document.getElementById('step-3').classList.add('active');
+      
+      document.getElementById('scrape-step-2').classList.add('hidden');
+      document.getElementById('scrape-step-3').classList.remove('hidden');
+      
+      // Show summary
+      const summary = `
+        <strong>${selectedCity.name}</strong> - ${selectedPostalCodes.length} postal code(s) selected:
+        <br><code>${selectedPostalCodes.join(', ')}</code>
+      `;
+      document.getElementById('scrape-location-summary').innerHTML = summary;
+      
+      // Auto-generate campaign name
+      document.getElementById('scrape-campaign').value = 
+        `${selectedCity.name} ${new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}`;
+    }
+
+    function goBackToStep2() {
+      document.getElementById('step-2').classList.remove('completed');
+      document.getElementById('step-3').classList.remove('active');
+      
+      document.getElementById('scrape-step-2').classList.remove('hidden');
+      document.getElementById('scrape-step-3').classList.add('hidden');
+    }
+
+    // Scrape Mode toggle
+    document.getElementById('scrape-mode').addEventListener('change', (e) => {
+      const categoryGroup = document.getElementById('category-select-group');
+      if (e.target.value === 'all_businesses') {
+        categoryGroup.style.display = 'none';
+      } else {
+        categoryGroup.style.display = 'block';
+      }
+    });
+
+    // Scraping - New postal code based system
+    document.getElementById('scrape-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const scrapeMode = document.getElementById('scrape-mode').value;
+      const category = document.getElementById('scrape-category').value;
+      const campaignName = document.getElementById('scrape-campaign').value;
+
+      if (!selectedCity || selectedPostalCodes.length === 0) {
+        alert('Please select a city and postal codes first');
+        return;
+      }
+
+      // Update step indicator
+      document.getElementById('step-3').classList.add('completed');
+      document.getElementById('step-4').classList.add('active');
+
+      try {
+        const result = await api('/scrape/start', {
+          method: 'POST',
+          body: JSON.stringify({ 
+            category: scrapeMode === 'all_businesses' ? 'All Businesses' : category, 
+            campaignName, 
+            postalCodes: selectedPostalCodes,
+            cityId: selectedCity.id,
+            scrapeMode 
+          }),
+        });
+
+        if (result.jobId) {
+          currentScrapingJob = result.jobId;
+          document.getElementById('scrape-step-3').classList.add('hidden');
+          document.getElementById('scraping-progress').classList.remove('hidden');
+          pollScrapingStatus();
+        } else {
+          alert(result.error || 'Failed to start scraping');
+        }
+      } catch (e) {
+        alert('Error starting scraping: ' + e.message);
+      }
+    });
+
+    async function pollScrapingStatus() {
+      if (!currentScrapingJob) return;
+
+      try {
+        const status = await api(`/scrape/status/${currentScrapingJob}`);
+        
+        document.getElementById('scrape-progress-bar').style.width = status.progress + '%';
+        document.getElementById('scrape-status-text').textContent = 
+          status.status === 'completed' 
+            ? `Completed! Found ${status.leadsCount} leads`
+            : `Scraping ${status.currentNeighborhood}... (${status.progress}%)`;
+
+        if (status.status === 'completed') {
+          document.getElementById('scraping-progress').classList.add('hidden');
+          
+          // Mark step 4 as completed
+          document.getElementById('step-4').classList.add('completed');
+          
+          await loadScrapingResults();
+          
+          // Reload progress stats and postal codes to show updated status
+          await loadOverallProgress();
+          if (selectedCity) {
+            const data = await api(`/locations/cities/${selectedCity.id}/postal-codes`);
+            postalCodesData = data.postalCodes;
+          }
+          await loadCities();
+          
+        } else {
+          setTimeout(pollScrapingStatus, 2000);
+        }
+      } catch (e) {
+        console.error('Poll error:', e);
+        setTimeout(pollScrapingStatus, 3000);
+      }
+    }
+
+    async function loadScrapingResults() {
+      try {
+        const results = await api(`/scrape/results/${currentScrapingJob}`);
+        scrapedLeads = results.leads || [];
+        
+        const resultsCard = document.getElementById('scrape-results');
+        resultsCard.classList.remove('hidden');
+        
+        const withPhone = scrapedLeads.filter(l => l.phone).length;
+        document.getElementById('scrape-summary').innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong>${scrapedLeads.length}</strong> leads found | 
+              <strong>${withPhone}</strong> with phone numbers | 
+              ${results.errors?.length || 0} errors
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="resetScrapeFlow()">
+              <i class="fas fa-redo"></i> Scrape More
+            </button>
+          </div>
+        `;
+
+        const tbody = document.getElementById('scrape-results-table');
+        tbody.innerHTML = scrapedLeads.slice(0, 100).map(lead => `
+          <tr>
+            <td><strong>${lead.name || 'N/A'}</strong></td>
+            <td>${lead.phone ? `<a href="tel:${lead.phone}">${lead.phone}</a>` : '<span style="color:var(--text-light)">No phone</span>'}</td>
+            <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">${lead.address || 'N/A'}</td>
+            <td>${lead.rating ? '⭐ ' + lead.rating.toFixed(1) : 'N/A'}</td>
+            <td><span class="badge badge-info">${lead.searchCategory || lead.category || 'N/A'}</span></td>
+            <td>${lead.neighborhood || lead.postalCode || 'N/A'}</td>
+          </tr>
+        `).join('');
+        
+        if (scrapedLeads.length > 100) {
+          tbody.innerHTML += `<tr><td colspan="6" style="text-align: center; color: var(--text-light);">Showing 100 of ${scrapedLeads.length} leads. Export CSV for full list.</td></tr>`;
+        }
+      } catch (e) {
+        console.error('Load results error:', e);
+      }
+    }
+
+    // Reset scrape flow to start over
+    function resetScrapeFlow() {
+      selectedCity = null;
+      selectedPostalCodes = [];
+      currentScrapingJob = null;
+      scrapedLeads = [];
+      
+      // Reset steps
+      document.querySelectorAll('.step-item').forEach(el => {
+        el.classList.remove('active', 'completed');
+      });
+      document.getElementById('step-1').classList.add('active');
+      
+      // Show/hide cards
+      document.getElementById('scrape-step-1').classList.remove('hidden');
+      document.getElementById('scrape-step-2').classList.add('hidden');
+      document.getElementById('scrape-step-3').classList.add('hidden');
+      document.getElementById('scrape-results').classList.add('hidden');
+      document.getElementById('scraping-progress').classList.add('hidden');
+      
+      // Reload data
+      loadCities();
+      loadOverallProgress();
+    }
+
+    // Export CSV from scraping results
+    document.getElementById('export-csv-btn').addEventListener('click', () => {
+      if (!currentScrapingJob) {
+        alert('No scraping job to export');
+        return;
+      }
+      window.location.href = `/api/export/scrape/${currentScrapingJob}/csv`;
+    });
+
+    // Export all leads from Airtable
+    function exportAllLeadsCSV() {
+      window.location.href = '/api/export/leads/csv';
+    }
+
+    // Import to Airtable
+    document.getElementById('import-to-airtable-btn').addEventListener('click', async () => {
+      if (scrapedLeads.length === 0) {
+        alert('No leads to import');
+        return;
+      }
+
+      const campaignName = document.getElementById('scrape-campaign').value;
+      
+      try {
+        const result = await api('/airtable/import', {
+          method: 'POST',
+          body: JSON.stringify({ leads: scrapedLeads, campaignName }),
+        });
+
+        if (result.success) {
+          alert(`Successfully imported ${result.imported} leads to Airtable!`);
+        } else {
+          alert('Import failed: ' + result.error);
+        }
+      } catch (e) {
+        alert('Import error: ' + e.message);
+      }
+    });
+
+    // Leads - Using LOCAL storage (never lose data!)
+    let allLeads = [];
+    let allCampaigns = [];
+    let currentCampaignFilter = '';
+    
+    async function loadLeads() {
+      try {
+        // Load stats
+        const stats = await api('/local/stats');
+        document.getElementById('leads-total-count').textContent = stats.totalLeads || 0;
+        document.getElementById('leads-with-phone').textContent = stats.withPhone || 0;
+        document.getElementById('leads-campaigns-count').textContent = stats.totalCampaigns || 0;
+        document.getElementById('leads-new-count').textContent = stats.byStatus?.New || 0;
+        
+        // Load campaigns
+        allCampaigns = await api('/local/campaigns');
+        renderCampaignChips();
+        
+        // Load leads
+        await loadLeadsData();
+      } catch (e) {
+        console.error('Load leads error:', e);
+        document.getElementById('leads-table').innerHTML = 
+          '<tr><td colspan="6" style="text-align: center; color: var(--danger)">Error loading leads. Try refreshing.</td></tr>';
+      }
+    }
+
+    async function loadLeadsData() {
+      const search = document.getElementById('leads-search').value;
+      const status = document.getElementById('leads-filter').value;
+      
+      let url = '/local/leads?limit=500';
+      if (currentCampaignFilter) url += `&campaign=${encodeURIComponent(currentCampaignFilter)}`;
+      if (status) url += `&status=${encodeURIComponent(status)}`;
+      if (search) url += `&search=${encodeURIComponent(search)}`;
+      
+      const result = await api(url);
+      allLeads = result.leads || [];
+      
+      document.getElementById('leads-showing').textContent = 
+        `Showing ${allLeads.length}${result.hasMore ? '+' : ''} leads`;
+      
+      renderLeadsTable(allLeads);
+    }
+
+    function renderCampaignChips() {
+      const container = document.getElementById('campaigns-list');
+      container.innerHTML = `
+        <div class="campaign-chip ${!currentCampaignFilter ? 'active' : ''}" data-campaign="" onclick="filterByCampaign('')">
+          All <span class="chip-count">${allLeads.length || '...'}</span>
+        </div>
+        ${allCampaigns.map(c => `
+          <div class="campaign-chip ${currentCampaignFilter === c.id ? 'active' : ''}" 
+               data-campaign="${c.id}" onclick="filterByCampaign('${c.id}')">
+            ${c.name} <span class="chip-count">${c.leadsCount}</span>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    function filterByCampaign(campaignId) {
+      currentCampaignFilter = campaignId;
+      renderCampaignChips();
+      loadLeadsData();
+    }
+
+    function renderLeadsTable(leads) {
+      const tbody = document.getElementById('leads-table');
+      
+      if (leads.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--text-light)">No leads found. Start scraping to collect leads!</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = leads.map(lead => `
+        <tr>
+          <td><strong>${lead.name || 'N/A'}</strong></td>
+          <td>${lead.phone ? `<a href="tel:${lead.phone}" class="lead-phone-link">${lead.phone}</a>` : '<span style="color:var(--text-light)">No phone</span>'}</td>
+          <td><span class="badge badge-info">${lead.category || lead.searchCategory || 'N/A'}</span></td>
+          <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;" title="${lead.address || ''}">${lead.address || 'N/A'}</td>
+          <td style="font-size: 0.8rem;">${lead.campaignName || 'N/A'}</td>
+          <td>
+            <select class="lead-status-select" onchange="updateLeadStatus('${lead.id}', this.value)">
+              <option value="New" ${lead.status === 'New' ? 'selected' : ''}>New</option>
+              <option value="Contacted" ${lead.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
+              <option value="Qualified" ${lead.status === 'Qualified' ? 'selected' : ''}>Qualified</option>
+              <option value="Not Interested" ${lead.status === 'Not Interested' ? 'selected' : ''}>Not Interested</option>
+              <option value="Callback" ${lead.status === 'Callback' ? 'selected' : ''}>Callback</option>
+            </select>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function updateLeadStatus(leadId, newStatus) {
+      try {
+        await api(`/local/leads/${leadId}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ status: newStatus })
+        });
+      } catch (e) {
+        console.error('Update lead status error:', e);
+        alert('Error updating status');
+      }
+    }
+
+    // Lead search/filter with debounce
+    let searchTimeout;
+    document.getElementById('leads-search').addEventListener('input', () => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(loadLeadsData, 300);
+    });
+    document.getElementById('leads-filter').addEventListener('change', loadLeadsData);
+
+    // Export local leads
+    function exportLocalLeadsCSV() {
+      let url = '/api/local/export/csv';
+      if (currentCampaignFilter) url += `?campaign=${encodeURIComponent(currentCampaignFilter)}`;
+      window.location.href = url;
+    }
+    
+    // Keep old function for compatibility
+    function exportAllLeadsCSV() {
+      exportLocalLeadsCSV();
+    }
+
+    // Settings
+    async function loadSettings() {
+      try {
+        const config = await api('/config');
+        document.getElementById('dataforseo-login').value = config.dataforseo?.login || '';
+        document.getElementById('default-location-code').value = config.defaults?.locationCode || '2124';
+        document.getElementById('default-language').value = config.defaults?.languageCode || 'en';
+        document.getElementById('default-min-rating').value = config.defaults?.minRating || 3.5;
+        document.getElementById('default-limit').value = config.defaults?.limitPerNeighborhood || 50;
+      } catch (e) {
+        console.error('Load settings error:', e);
+      }
+    }
+
+    document.getElementById('dataforseo-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const login = document.getElementById('dataforseo-login').value;
+      const password = document.getElementById('dataforseo-password').value;
+
+      try {
+        await api('/config/dataforseo', {
+          method: 'POST',
+          body: JSON.stringify({ login, password }),
+        });
+        alert('DataForSEO credentials saved!');
+        document.getElementById('dataforseo-password').value = '';
+      } catch (e) {
+        alert('Error saving credentials');
+      }
+    });
+
+    document.getElementById('defaults-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const locationCode = document.getElementById('default-location-code').value;
+      const languageCode = document.getElementById('default-language').value;
+      const minRating = parseFloat(document.getElementById('default-min-rating').value);
+      const limitPerNeighborhood = parseInt(document.getElementById('default-limit').value);
+
+      try {
+        await api('/config/defaults', {
+          method: 'POST',
+          body: JSON.stringify({ locationCode, languageCode, minRating, limitPerNeighborhood }),
+        });
+        alert('Defaults saved!');
+      } catch (e) {
+        alert('Error saving defaults');
+      }
+    });
+
+    // ============== PIPELINE PAGE ==============
+
+    async function loadPipeline() {
+      await Promise.all([
+        loadPipelineHealth(),
+        loadDNCList(),
+        loadPoolStats()
+      ]);
+    }
+
+    function refreshPipeline() {
+      loadPipeline();
+    }
+
+    async function loadPipelineHealth() {
+      try {
+        const health = await api('/leads/health');
+        
+        document.getElementById('pipeline-available').textContent = health.availableLeads || 0;
+        document.getElementById('pipeline-callbacks').textContent = health.pendingCallbacks || 0;
+        document.getElementById('pipeline-days').textContent = health.daysRemaining || 0;
+        document.getElementById('pipeline-dnc').textContent = health.dncListSize || 0;
+
+        // Render alerts
+        const alertsContainer = document.getElementById('pipeline-alerts');
+        if (health.alerts && health.alerts.length > 0) {
+          alertsContainer.innerHTML = health.alerts.map(alert => `
+            <div class="alert alert-${alert.level === 'critical' ? 'error' : 'warning'}">
+              <i class="fas fa-${alert.level === 'critical' ? 'exclamation-circle' : 'exclamation-triangle'}"></i>
+              ${alert.message}
+            </div>
+          `).join('');
+        } else {
+          alertsContainer.innerHTML = `
+            <div class="alert alert-success">
+              <i class="fas fa-check-circle"></i> Pipeline is healthy! All systems go.
+            </div>
+          `;
+        }
+      } catch (e) {
+        console.error('Load pipeline health error:', e);
+      }
+    }
+
+    async function loadDNCList() {
+      try {
+        const dnc = await api('/dnc');
+        const container = document.getElementById('dnc-list');
+        
+        if (!dnc.phones || dnc.phones.length === 0) {
+          container.innerHTML = `
+            <p style="text-align: center; color: var(--text-light); padding: 1rem;">
+              DNC list is empty.
+            </p>
+          `;
+          return;
+        }
+
+        container.innerHTML = dnc.phones.map(item => `
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem; border-bottom: 1px solid var(--border);">
+            <div>
+              <strong>${item.phone}</strong>
+              <br><small style="color: var(--text-light)">${item.reason} - ${new Date(item.addedAt).toLocaleDateString()}</small>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="removeDNC('${item.phone}')">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        `).join('');
+      } catch (e) {
+        console.error('Load DNC list error:', e);
+      }
+    }
+
+    async function loadPoolStats() {
+      try {
+        const stats = await api('/leads/pool-stats');
+        
+        document.getElementById('pool-unique').textContent = stats.uniquePhones || 0;
+        document.getElementById('pool-scraped').textContent = stats.totalScraped || 0;
+        document.getElementById('pool-imported').textContent = stats.totalImported || 0;
+        document.getElementById('pool-duplicates').textContent = stats.totalDuplicates || 0;
+        document.getElementById('pool-last-scrape').textContent = 
+          stats.lastScrape ? new Date(stats.lastScrape).toLocaleString() : 'Never';
+      } catch (e) {
+        console.error('Load pool stats error:', e);
+      }
+    }
+
+    // DNC Add Form
+    document.getElementById('dnc-add-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = document.getElementById('dnc-phone').value;
+      const reason = document.getElementById('dnc-reason').value || 'Manual add';
+
+      if (!phone) {
+        alert('Please enter a phone number');
+        return;
+      }
+
+      try {
+        await api('/dnc/add', {
+          method: 'POST',
+          body: JSON.stringify({ phone, reason })
+        });
+        document.getElementById('dnc-phone').value = '';
+        document.getElementById('dnc-reason').value = '';
+        loadDNCList();
+        loadPipelineHealth();
+      } catch (e) {
+        alert('Error adding to DNC: ' + e.message);
+      }
+    });
+
+    async function removeDNC(phone) {
+      if (!confirm(`Remove ${phone} from DNC list?`)) return;
+      
+      try {
+        await api(`/dnc/${encodeURIComponent(phone)}`, { method: 'DELETE' });
+        loadDNCList();
+        loadPipelineHealth();
+      } catch (e) {
+        alert('Error removing from DNC: ' + e.message);
+      }
+    }
+
+    // Export DNC list to CSV
+    function exportDNCCSV() {
+      window.location.href = '/api/export/dnc/csv';
+    }
+
+    // Phone Check Form
+    document.getElementById('phone-check-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = document.getElementById('check-phone').value;
+
+      if (!phone) {
+        alert('Please enter a phone number');
+        return;
+      }
+
+      try {
+        const result = await api('/dnc/check', {
+          method: 'POST',
+          body: JSON.stringify({ phone })
+        });
+
+        const resultDiv = document.getElementById('phone-check-result');
+        if (result.blocked) {
+          resultDiv.innerHTML = `
+            <div class="alert alert-error">
+              <i class="fas fa-ban"></i> <strong>${phone}</strong> is BLOCKED
+              <br><small>Reason: ${result.info?.reason || 'Unknown'}</small>
+              <br><small>Added: ${result.info?.addedAt ? new Date(result.info.addedAt).toLocaleString() : 'Unknown'}</small>
+            </div>
+          `;
+        } else {
+          resultDiv.innerHTML = `
+            <div class="alert alert-success">
+              <i class="fas fa-check-circle"></i> <strong>${phone}</strong> is NOT blocked. OK to call.
+            </div>
+          `;
+        }
+      } catch (e) {
+        alert('Error checking phone: ' + e.message);
+      }
+    });
+
+    // Outcome Form
+    document.getElementById('outcome-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = document.getElementById('outcome-phone').value;
+      const outcome = document.getElementById('outcome-result').value;
+
+      if (!phone) {
+        alert('Please enter a phone number');
+        return;
+      }
+
+      try {
+        const result = await api('/leads/outcome', {
+          method: 'POST',
+          body: JSON.stringify({ phone, outcome })
+        });
+
+        alert(`Outcome saved! Status: ${result.status}${result.addedToDnc ? ' (Added to DNC)' : ''}`);
+        document.getElementById('outcome-phone').value = '';
+        
+        if (result.addedToDnc) {
+          loadDNCList();
+          loadPipelineHealth();
+        }
+      } catch (e) {
+        alert('Error saving outcome: ' + e.message);
+      }
+    });
+
+    // ============== AUTOMATION PAGE ==============
+
+    let automationRefreshInterval = null;
+
+    async function loadAutomation() {
+      await Promise.all([
+        loadAutomationStatus(),
+        loadWorkflow(),
+        loadLogs(),
+        loadErrors(),
+        loadJobHistory()
+      ]);
+
+      // Start auto-refresh
+      if (automationRefreshInterval) clearInterval(automationRefreshInterval);
+      automationRefreshInterval = setInterval(() => {
+        loadAutomationStatus();
+        loadLogs();
+      }, 5000);
+    }
+
+    function refreshAutomation() {
+      loadAutomation();
+    }
+
+    async function loadAutomationStatus() {
+      try {
+        const status = await api('/automation/status');
+        
+        // Update status indicators
+        updateStatusDot('server', status.systemStatus.server.status);
+        updateStatusDot('dataforseo', status.systemStatus.dataforseo.status);
+        updateStatusDot('airtable', status.systemStatus.airtable.status);
+
+        document.getElementById('status-server').textContent = 'Running';
+        document.getElementById('status-dataforseo').textContent = 
+          status.systemStatus.dataforseo.status === 'connected' ? 'Connected' :
+          status.systemStatus.dataforseo.status === 'error' ? 'Error' : 'Unknown';
+        document.getElementById('status-airtable').textContent = 
+          status.systemStatus.airtable.status === 'connected' ? 'Connected' :
+          status.systemStatus.airtable.status === 'error' ? 'Error' : 'Unknown';
+
+        document.getElementById('stat-errors-24h').textContent = status.stats.recentErrors || 0;
+        document.getElementById('jobs-today-count').textContent = `${status.stats.jobsToday || 0} jobs today`;
+
+        // Active jobs indicator
+        const activeJobsEl = document.getElementById('active-jobs-indicator');
+        if (status.activeJobs && status.activeJobs.length > 0) {
+          activeJobsEl.innerHTML = status.activeJobs.map(j => `
+            <span class="badge badge-info">
+              <i class="fas fa-spinner fa-spin"></i> ${j.campaign} (${j.progress}%)
+            </span>
+          `).join(' ');
+        } else {
+          activeJobsEl.innerHTML = '<span class="badge badge-success">Idle</span>';
+        }
+      } catch (e) {
+        console.error('Load automation status error:', e);
+      }
+    }
+
+    function updateStatusDot(service, status) {
+      const dot = document.getElementById(`status-dot-${service}`);
+      dot.className = 'status-dot';
+      if (status === 'connected' || status === 'running') {
+        dot.classList.add('connected');
+      } else if (status === 'error') {
+        dot.classList.add('error');
+      } else {
+        dot.classList.add('unknown');
+      }
+    }
+
+    async function loadWorkflow() {
+      try {
+        const workflow = await api('/automation/workflow');
+        renderWorkflow(workflow);
+      } catch (e) {
+        console.error('Load workflow error:', e);
+      }
+    }
+
+    function renderWorkflow(workflow) {
+      const canvas = document.getElementById('workflow-canvas');
+      const svg = document.getElementById('workflow-connections');
+      
+      // Clear existing nodes (except SVG)
+      Array.from(canvas.children).forEach(child => {
+        if (child.id !== 'workflow-connections') child.remove();
+      });
+
+      // Node icons
+      const nodeIcons = {
+        trigger: 'fa-play-circle',
+        config: 'fa-cog',
+        data: 'fa-database',
+        loop: 'fa-redo',
+        api: 'fa-cloud',
+        utility: 'fa-clock',
+        transform: 'fa-random',
+        end: 'fa-flag-checkered'
+      };
+
+      // Render nodes
+      workflow.nodes.forEach(node => {
+        const el = document.createElement('div');
+        el.className = 'workflow-node';
+        el.dataset.type = node.type;
+        el.dataset.status = node.status || 'idle';
+        el.style.left = node.x + 'px';
+        el.style.top = node.y + 'px';
+        el.innerHTML = `
+          <div class="node-icon"><i class="fas ${nodeIcons[node.type] || 'fa-cube'}"></i></div>
+          <div class="node-label">${node.label}</div>
+          <div class="node-status">${node.status || 'idle'}</div>
+        `;
+        canvas.appendChild(el);
+      });
+
+      // Render connections
+      let pathsHtml = '';
+      workflow.edges.forEach(edge => {
+        const fromNode = workflow.nodes.find(n => n.id === edge.from);
+        const toNode = workflow.nodes.find(n => n.id === edge.to);
+        if (fromNode && toNode) {
+          const fromX = fromNode.x + 60;
+          const fromY = fromNode.y + 30;
+          const toX = toNode.x;
+          const toY = toNode.y + 30;
+          
+          const midX = (fromX + toX) / 2;
+          const pathClass = edge.type === 'loop-back' ? 'loop-back' : '';
+          
+          if (edge.type === 'loop-back') {
+            // Curved path for loop
+            pathsHtml += `<path class="${pathClass}" d="M${fromX},${fromY} C${fromX + 50},${fromY + 80} ${toX - 50},${toY + 80} ${toX + 60},${toY}"/>`;
+          } else {
+            pathsHtml += `<path d="M${fromX},${fromY} C${midX},${fromY} ${midX},${toY} ${toX},${toY}"/>`;
+          }
+        }
+      });
+      svg.innerHTML = pathsHtml;
+    }
+
+    async function loadLogs() {
+      try {
+        const filter = document.getElementById('log-filter').value;
+        const logs = await api(`/automation/logs?limit=100${filter ? '&type=' + filter : ''}`);
+        renderLogs(logs);
+      } catch (e) {
+        console.error('Load logs error:', e);
+      }
+    }
+
+    function renderLogs(logs) {
+      const container = document.getElementById('log-container');
+      
+      if (!logs || logs.length === 0) {
+        container.innerHTML = `
+          <div style="color: #64748b; text-align: center; padding: 2rem;">
+            No logs yet. Start a scraping job to see activity.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = logs.map(log => `
+        <div class="log-entry">
+          <div class="log-type" data-type="${log.type}"></div>
+          <span class="log-time">${formatTime(log.timestamp)}</span>
+          <span class="log-node" data-node="${log.node}">${log.node}</span>
+          <span class="log-message">${log.message}</span>
+        </div>
+      `).join('');
+    }
+
+    function formatTime(timestamp) {
+      const date = new Date(timestamp);
+      return date.toLocaleTimeString('en-US', { hour12: false });
+    }
+
+    document.getElementById('log-filter').addEventListener('change', loadLogs);
+
+    async function loadErrors() {
+      try {
+        const errors = await api('/automation/errors?limit=50');
+        renderErrors(errors);
+      } catch (e) {
+        console.error('Load errors error:', e);
+      }
+    }
+
+    function renderErrors(errors) {
+      const container = document.getElementById('error-list');
+      
+      if (!errors || errors.length === 0) {
+        container.innerHTML = `
+          <div style="color: var(--text-light); text-align: center; padding: 2rem;">
+            <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem; display: block;"></i>
+            <p>No errors! Everything is running smoothly.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = errors.map(err => `
+        <div class="error-item">
+          <div class="error-icon"><i class="fas fa-exclamation-circle"></i></div>
+          <div class="error-content">
+            <div class="error-time">${new Date(err.timestamp).toLocaleString()}</div>
+            <div class="error-message">${err.message}</div>
+            <div class="error-node">Node: ${err.node}</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="dismissError('${err.id}')">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    async function dismissError(id) {
+      try {
+        await api(`/automation/errors/${id}`, { method: 'DELETE' });
+        loadErrors();
+      } catch (e) {
+        console.error('Dismiss error failed:', e);
+      }
+    }
+
+    async function clearErrors() {
+      if (!confirm('Clear all errors from the backlog?')) return;
+      try {
+        await api('/automation/errors/clear', { method: 'POST' });
+        loadErrors();
+        loadAutomationStatus();
+      } catch (e) {
+        alert('Failed to clear errors');
+      }
+    }
+
+    async function loadJobHistory() {
+      try {
+        const jobs = await api('/automation/jobs?limit=20');
+        renderJobHistory(jobs);
+      } catch (e) {
+        console.error('Load job history error:', e);
+      }
+    }
+
+    function renderJobHistory(jobs) {
+      const container = document.getElementById('job-history');
+      
+      if (!jobs || jobs.length === 0) {
+        container.innerHTML = `
+          <div style="color: var(--text-light); text-align: center; padding: 2rem;">
+            No jobs have been run yet. Start scraping to see history.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = jobs.map(job => {
+        const iconClass = job.status === 'completed' ? 'success' : 
+                         job.status === 'running' ? 'running' : 'error';
+        const icon = job.status === 'completed' ? 'fa-check' : 
+                    job.status === 'running' ? 'fa-spinner fa-spin' : 'fa-times';
+        
+        return `
+          <div class="job-item">
+            <div class="job-icon ${iconClass}">
+              <i class="fas ${icon}"></i>
+            </div>
+            <div class="job-info">
+              <h4>${job.campaignName || 'Unnamed Job'}</h4>
+              <p>${job.category} • ${job.neighborhoodCount} neighborhoods • ${new Date(job.startTime).toLocaleString()}</p>
+            </div>
+            <div class="job-stats">
+              <div class="leads-count">${job.leadsFound} leads</div>
+              <div>${job.duration}</div>
+              ${job.errorsCount > 0 ? `<div style="color: var(--danger);">${job.errorsCount} errors</div>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function testDataForSEO() {
+      const btn = event.target.closest('button');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Testing...';
+      
+      try {
+        const result = await api('/automation/test/dataforseo', { method: 'POST' });
+        if (result.success) {
+          alert(`DataForSEO connection successful!${result.balance ? ' Balance: $' + result.balance : ''}`);
+        } else {
+          alert('DataForSEO connection failed: ' + result.error);
+        }
+      } catch (e) {
+        alert('Test failed: ' + e.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-plug"></i> Test';
+        loadAutomationStatus();
+      }
+    }
+
+    async function testAirtable() {
+      const btn = event.target.closest('button');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Testing...';
+      
+      try {
+        const result = await api('/automation/test/airtable', { method: 'POST' });
+        if (result.success) {
+          alert('Airtable connection successful!');
+        } else {
+          alert('Airtable connection failed: ' + result.error);
+        }
+      } catch (e) {
+        alert('Test failed: ' + e.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-plug"></i> Test';
+        loadAutomationStatus();
+      }
+    }
+
+    // ============== EMAIL EXTRACTION ==============
+    
+    let emailExtractionJobId = null;
+    let emailExtractionInterval = null;
+    let selectedEmailLeads = new Set();
+    let allEmailLeads = []; // Store all leads for client-side filtering
+
+    async function loadEmailPage() {
+      await loadEmailStats();
+      await loadEmailCampaigns();
+      await loadEmailAreas();
+      await loadEmailLeads();
+    }
+
+    async function loadEmailStats() {
+      try {
+        const data = await api('/local/leads/with-emails');
+        document.getElementById('email-total-leads').textContent = data.stats.totalLeads;
+        document.getElementById('email-with-email').textContent = data.stats.withEmail;
+        document.getElementById('email-with-website').textContent = data.stats.withWebsite;
+        document.getElementById('email-no-website').textContent = data.stats.noWebsite;
+      } catch (e) {
+        console.error('Failed to load email stats:', e);
+      }
+    }
+
+    async function loadEmailCampaigns() {
+      try {
+        const campaigns = await api('/local/campaigns');
+        const select = document.getElementById('email-campaign-filter');
+        select.innerHTML = '<option value="">All Campaigns</option>';
+        campaigns.forEach(c => {
+          select.innerHTML += `<option value="${c.id}">${c.name} (${c.leadsCount})</option>`;
+        });
+      } catch (e) {
+        console.error('Failed to load campaigns:', e);
+      }
+    }
+
+    async function loadEmailAreas() {
+      try {
+        const data = await api('/local/leads/with-emails?limit=5000');
+        const areas = new Set();
+        data.leads.forEach(lead => {
+          if (lead.neighborhood) areas.add(lead.neighborhood);
+        });
+        
+        const select = document.getElementById('email-area-filter');
+        select.innerHTML = '<option value="">All Areas</option>';
+        Array.from(areas).sort().forEach(area => {
+          select.innerHTML += `<option value="${area}">${area}</option>`;
+        });
+      } catch (e) {
+        console.error('Failed to load areas:', e);
+      }
+    }
+
+    async function loadEmailLeads() {
+      const emailFilter = document.getElementById('email-filter').value;
+      const industryFilter = document.getElementById('email-industry-filter').value;
+      const areaFilter = document.getElementById('email-area-filter').value;
+      const campaignFilter = document.getElementById('email-campaign-filter').value;
+      const searchText = document.getElementById('email-search')?.value?.toLowerCase() || '';
+      
+      // Build endpoint
+      let endpoint = '/local/leads/with-emails?limit=2000';
+      if (emailFilter === 'with-email') endpoint += '&hasEmail=true';
+      else if (emailFilter === 'no-email') endpoint += '&hasEmail=false';
+      if (campaignFilter) endpoint += `&campaign=${campaignFilter}`;
+      
+      try {
+        const data = await api(endpoint);
+        let leads = data.leads;
+        
+        // Client-side filtering for industry and area
+        if (industryFilter) {
+          leads = leads.filter(lead => {
+            const category = (lead.category || lead.searchCategory || '').toLowerCase();
+            return category.includes(industryFilter.toLowerCase());
+          });
+        }
+        
+        if (areaFilter) {
+          leads = leads.filter(lead => lead.neighborhood === areaFilter);
+        }
+        
+        if (searchText) {
+          leads = leads.filter(lead => 
+            (lead.name || '').toLowerCase().includes(searchText) ||
+            (lead.email || '').toLowerCase().includes(searchText) ||
+            (lead.category || '').toLowerCase().includes(searchText)
+          );
+        }
+        
+        allEmailLeads = leads; // Store for extraction
+        
+        // Update active filters display
+        updateActiveFiltersDisplay();
+        
+        const tbody = document.getElementById('email-leads-table');
+        document.getElementById('filtered-count-badge').textContent = leads.length;
+        
+        if (leads.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-light)">No leads found matching filters</td></tr>';
+        } else {
+          tbody.innerHTML = leads.slice(0, 500).map(lead => `
+            <tr>
+              <td><input type="checkbox" class="email-lead-checkbox" data-id="${lead.id}" ${selectedEmailLeads.has(lead.id) ? 'checked' : ''} onchange="toggleEmailLeadSelection('${lead.id}', this.checked)"></td>
+              <td>
+                <strong>${escapeHtml(lead.name || 'Unknown')}</strong>
+              </td>
+              <td>
+                <span class="badge" style="background: #f3f4f6; color: #374151; font-size: 0.7rem;">${escapeHtml(lead.category || lead.searchCategory || '-')}</span>
+              </td>
+              <td>
+                ${lead.email ? 
+                  `<span style="color: var(--secondary);"><i class="fas fa-check-circle"></i> ${escapeHtml(lead.email)}</span>` : 
+                  (lead.website ? '<span style="color: var(--warning);"><i class="fas fa-clock"></i> Pending</span>' : '<span style="color: var(--text-light);"><i class="fas fa-times"></i> No site</span>')
+                }
+              </td>
+              <td><span style="font-size: 0.8rem; color: var(--text-light);">${escapeHtml(lead.neighborhood || '-')}</span></td>
+              <td>${escapeHtml(lead.phone || '-')}</td>
+              <td>
+                ${lead.website && !lead.email ? 
+                  `<button class="btn btn-sm btn-primary" onclick="extractSingleEmail('${lead.id}', '${escapeHtml(lead.website)}', this)">
+                    <i class="fas fa-search"></i>
+                  </button>` : ''
+                }
+              </td>
+            </tr>
+          `).join('');
+        }
+        
+        document.getElementById('email-leads-count').textContent = `Showing ${Math.min(leads.length, 500)} of ${leads.length} leads`;
+      } catch (e) {
+        console.error('Failed to load email leads:', e);
+      }
+    }
+
+    function updateActiveFiltersDisplay() {
+      const filters = [];
+      const emailFilter = document.getElementById('email-filter').value;
+      const industryFilter = document.getElementById('email-industry-filter').value;
+      const areaFilter = document.getElementById('email-area-filter').value;
+      const campaignFilter = document.getElementById('email-campaign-filter');
+      
+      if (emailFilter !== 'all') filters.push(emailFilter === 'with-email' ? 'Has Email' : 'No Email');
+      if (industryFilter) filters.push(`Industry: ${industryFilter}`);
+      if (areaFilter) filters.push(`Area: ${areaFilter}`);
+      if (campaignFilter.value) filters.push(`Campaign: ${campaignFilter.options[campaignFilter.selectedIndex].text}`);
+      
+      const container = document.getElementById('active-filters');
+      const text = document.getElementById('active-filters-text');
+      
+      if (filters.length > 0) {
+        container.style.display = 'block';
+        text.textContent = filters.join(' | ');
+      } else {
+        container.style.display = 'none';
+      }
+    }
+
+    function clearEmailFilters() {
+      document.getElementById('email-filter').value = 'all';
+      document.getElementById('email-industry-filter').value = '';
+      document.getElementById('email-area-filter').value = '';
+      document.getElementById('email-campaign-filter').value = '';
+      document.getElementById('email-search').value = '';
+      loadEmailLeads();
+    }
+
+    function truncateUrl(url) {
+      if (!url) return '';
+      try {
+        const parsed = new URL(url.startsWith('http') ? url : 'https://' + url);
+        return parsed.hostname.replace('www.', '');
+      } catch {
+        return url.substring(0, 30);
+      }
+    }
+
+    function toggleEmailLeadSelection(id, checked) {
+      if (checked) {
+        selectedEmailLeads.add(id);
+      } else {
+        selectedEmailLeads.delete(id);
+      }
+    }
+
+    function toggleSelectAllEmails(checkbox) {
+      const checkboxes = document.querySelectorAll('.email-lead-checkbox');
+      checkboxes.forEach(cb => {
+        cb.checked = checkbox.checked;
+        toggleEmailLeadSelection(cb.dataset.id, checkbox.checked);
+      });
+    }
+
+    async function extractSingleEmail(leadId, website, btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      
+      try {
+        const result = await api('/emails/extract/single', {
+          method: 'POST',
+          body: JSON.stringify({ url: website, leadId })
+        });
+        
+        if (result.bestEmail) {
+          btn.closest('tr').querySelector('td:nth-child(4)').innerHTML = 
+            `<span style="color: var(--secondary);"><i class="fas fa-check-circle"></i> ${escapeHtml(result.bestEmail)}</span>`;
+          btn.remove();
+          await loadEmailStats();
+        } else {
+          btn.innerHTML = '<i class="fas fa-times"></i>';
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-secondary');
+          btn.disabled = true;
+        }
+      } catch (e) {
+        console.error('Failed to extract email:', e);
+        btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+        btn.classList.add('btn-danger');
+      }
+    }
+
+    async function extractSelectedEmails() {
+      if (selectedEmailLeads.size === 0) {
+        alert('Please select leads to extract emails from');
+        return;
+      }
+      
+      const leadIds = Array.from(selectedEmailLeads);
+      await startEmailExtraction(leadIds);
+    }
+
+    async function startFilteredEmailExtraction() {
+      // Use currently filtered leads (from allEmailLeads)
+      const leadsToExtract = allEmailLeads.filter(l => l.website && !l.email);
+      const leadIds = leadsToExtract.map(l => l.id);
+      
+      if (leadIds.length === 0) {
+        alert('No leads with websites found in current filter that need email extraction');
+        return;
+      }
+      
+      const filters = [];
+      if (document.getElementById('email-industry-filter').value) filters.push(document.getElementById('email-industry-filter').value);
+      if (document.getElementById('email-area-filter').value) filters.push(document.getElementById('email-area-filter').value);
+      
+      const filterText = filters.length > 0 ? ` (${filters.join(', ')})` : '';
+      
+      if (!confirm(`Extract emails from ${leadIds.length} leads${filterText}? This may take several minutes.`)) {
+        return;
+      }
+      
+      await startEmailExtraction(leadIds);
+    }
+
+    function exportFilteredToInstantly() {
+      // Build export URL with current filters
+      const industryFilter = document.getElementById('email-industry-filter').value;
+      const areaFilter = document.getElementById('email-area-filter').value;
+      const campaignFilter = document.getElementById('email-campaign-filter').value;
+      
+      let url = '/api/export/instantly/csv?onlyWithEmail=true';
+      if (industryFilter) url += `&industry=${encodeURIComponent(industryFilter)}`;
+      if (areaFilter) url += `&area=${encodeURIComponent(areaFilter)}`;
+      if (campaignFilter) url += `&campaign=${encodeURIComponent(campaignFilter)}`;
+      
+      window.location.href = url;
+    }
+
+    async function startEmailExtraction(leadIds) {
+      try {
+        const result = await api('/emails/extract', {
+          method: 'POST',
+          body: JSON.stringify({ leadIds })
+        });
+        
+        emailExtractionJobId = result.jobId;
+        document.getElementById('email-extraction-progress').style.display = 'block';
+        
+        // Poll for progress
+        emailExtractionInterval = setInterval(checkExtractionProgress, 2000);
+        
+      } catch (e) {
+        alert('Failed to start extraction: ' + e.message);
+      }
+    }
+
+    async function checkExtractionProgress() {
+      if (!emailExtractionJobId) return;
+      
+      try {
+        const status = await api(`/emails/extract/status/${emailExtractionJobId}`);
+        
+        document.getElementById('extraction-progress-bar').style.width = status.progress + '%';
+        document.getElementById('extraction-progress-text').textContent = status.progress + '%';
+        document.getElementById('extraction-processed').textContent = status.processed;
+        document.getElementById('extraction-found').textContent = status.extracted;
+        document.getElementById('extraction-failed').textContent = status.failed;
+        
+        if (status.status === 'completed') {
+          clearInterval(emailExtractionInterval);
+          emailExtractionInterval = null;
+          
+          document.querySelector('#email-extraction-progress .card-header h3').innerHTML = 
+            '<i class="fas fa-check-circle" style="color: var(--secondary);"></i> Extraction Complete';
+          
+          // Refresh data
+          await loadEmailStats();
+          await loadEmailLeads();
+          selectedEmailLeads.clear();
+          
+          // Hide progress after 5 seconds
+          setTimeout(() => {
+            document.getElementById('email-extraction-progress').style.display = 'none';
+            document.querySelector('#email-extraction-progress .card-header h3').innerHTML = 
+              '<i class="fas fa-cog fa-spin"></i> Extracting Emails...';
+          }, 5000);
+        }
+      } catch (e) {
+        console.error('Failed to check progress:', e);
+      }
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Init
+    checkAuth();
+  </script>
+</body>
+</html>

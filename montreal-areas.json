@@ -1,0 +1,339 @@
+{
+  "region": "Greater Montreal Area",
+  "province": "QC",
+  "country": "Canada",
+  "cities": [
+    {
+      "id": "montreal",
+      "name": "Montreal",
+      "postalCodes": [
+        { "code": "H1A", "area": "Pointe-aux-Trembles" },
+        { "code": "H1B", "area": "Pointe-aux-Trembles" },
+        { "code": "H1C", "area": "Pointe-aux-Trembles" },
+        { "code": "H1E", "area": "Rivière-des-Prairies" },
+        { "code": "H1G", "area": "Montréal-Nord" },
+        { "code": "H1H", "area": "Montréal-Nord" },
+        { "code": "H1J", "area": "Anjou" },
+        { "code": "H1K", "area": "Anjou" },
+        { "code": "H1L", "area": "Mercier" },
+        { "code": "H1M", "area": "Mercier" },
+        { "code": "H1N", "area": "Mercier" },
+        { "code": "H1P", "area": "Saint-Léonard" },
+        { "code": "H1R", "area": "Saint-Léonard" },
+        { "code": "H1S", "area": "Saint-Léonard" },
+        { "code": "H1T", "area": "Rosemont" },
+        { "code": "H1V", "area": "Hochelaga-Maisonneuve" },
+        { "code": "H1W", "area": "Hochelaga-Maisonneuve" },
+        { "code": "H1X", "area": "Rosemont" },
+        { "code": "H1Y", "area": "Plateau Mont-Royal" },
+        { "code": "H1Z", "area": "Villeray" },
+        { "code": "H2A", "area": "Villeray" },
+        { "code": "H2B", "area": "Ahuntsic" },
+        { "code": "H2C", "area": "Ahuntsic" },
+        { "code": "H2E", "area": "Villeray" },
+        { "code": "H2G", "area": "Rosemont" },
+        { "code": "H2H", "area": "Plateau Mont-Royal" },
+        { "code": "H2J", "area": "Plateau Mont-Royal" },
+        { "code": "H2K", "area": "Centre-Sud" },
+        { "code": "H2L", "area": "Centre-Sud" },
+        { "code": "H2M", "area": "Ahuntsic" },
+        { "code": "H2N", "area": "Ahuntsic" },
+        { "code": "H2P", "area": "Parc-Extension" },
+        { "code": "H2R", "area": "Villeray" },
+        { "code": "H2S", "area": "Rosemont" },
+        { "code": "H2T", "area": "Mile End" },
+        { "code": "H2V", "area": "Outremont" },
+        { "code": "H2W", "area": "Plateau Mont-Royal" },
+        { "code": "H2X", "area": "Quartier Latin" },
+        { "code": "H2Y", "area": "Vieux-Montréal" },
+        { "code": "H2Z", "area": "Downtown" },
+        { "code": "H3A", "area": "Downtown" },
+        { "code": "H3B", "area": "Downtown" },
+        { "code": "H3C", "area": "Griffintown" },
+        { "code": "H3E", "area": "Île-des-Soeurs" },
+        { "code": "H3G", "area": "Downtown" },
+        { "code": "H3H", "area": "Westmount Adjacent" },
+        { "code": "H3J", "area": "Little Burgundy" },
+        { "code": "H3K", "area": "Pointe-Saint-Charles" },
+        { "code": "H3L", "area": "Cartierville" },
+        { "code": "H3M", "area": "Bordeaux-Cartierville" },
+        { "code": "H3N", "area": "Parc-Extension" },
+        { "code": "H3P", "area": "Mont-Royal" },
+        { "code": "H3R", "area": "Côte-des-Neiges" },
+        { "code": "H3S", "area": "Côte-des-Neiges" },
+        { "code": "H3T", "area": "Côte-des-Neiges" },
+        { "code": "H3V", "area": "Côte-des-Neiges" },
+        { "code": "H3W", "area": "Côte-des-Neiges" },
+        { "code": "H3X", "area": "Hampstead" },
+        { "code": "H3Y", "area": "Westmount" },
+        { "code": "H3Z", "area": "Westmount" },
+        { "code": "H4A", "area": "Notre-Dame-de-Grâce" },
+        { "code": "H4B", "area": "Notre-Dame-de-Grâce" },
+        { "code": "H4C", "area": "Saint-Henri" },
+        { "code": "H4E", "area": "Verdun" },
+        { "code": "H4G", "area": "Verdun" },
+        { "code": "H4H", "area": "Verdun" },
+        { "code": "H4J", "area": "Saint-Laurent" },
+        { "code": "H4K", "area": "Saint-Laurent" },
+        { "code": "H4L", "area": "Saint-Laurent" },
+        { "code": "H4M", "area": "Saint-Laurent" },
+        { "code": "H4N", "area": "Saint-Laurent" },
+        { "code": "H4P", "area": "Côte-Saint-Luc" },
+        { "code": "H4R", "area": "Saint-Laurent" },
+        { "code": "H4S", "area": "Saint-Laurent" },
+        { "code": "H4T", "area": "Mont-Royal" },
+        { "code": "H4V", "area": "Côte-Saint-Luc" },
+        { "code": "H4W", "area": "Côte-Saint-Luc" },
+        { "code": "H4X", "area": "Notre-Dame-de-Grâce" },
+        { "code": "H8N", "area": "LaSalle" },
+        { "code": "H8P", "area": "LaSalle" },
+        { "code": "H8R", "area": "LaSalle" },
+        { "code": "H8S", "area": "Lachine" },
+        { "code": "H8T", "area": "Lachine" },
+        { "code": "H8Y", "area": "Dorval" },
+        { "code": "H8Z", "area": "Dorval" },
+        { "code": "H9A", "area": "Dorval" },
+        { "code": "H9B", "area": "Dorval" },
+        { "code": "H9C", "area": "Pointe-Claire" },
+        { "code": "H9G", "area": "Pierrefonds" },
+        { "code": "H9H", "area": "Pierrefonds" },
+        { "code": "H9J", "area": "Pierrefonds" },
+        { "code": "H9K", "area": "Pierrefonds" },
+        { "code": "H9P", "area": "Dollard-des-Ormeaux" },
+        { "code": "H9R", "area": "Pointe-Claire" },
+        { "code": "H9S", "area": "Pointe-Claire" },
+        { "code": "H9W", "area": "Sainte-Anne-de-Bellevue" },
+        { "code": "H9X", "area": "Sainte-Anne-de-Bellevue" }
+      ]
+    },
+    {
+      "id": "laval",
+      "name": "Laval",
+      "postalCodes": [
+        { "code": "H7A", "area": "Chomedey" },
+        { "code": "H7B", "area": "Chomedey" },
+        { "code": "H7C", "area": "Chomedey" },
+        { "code": "H7E", "area": "Duvernay" },
+        { "code": "H7G", "area": "Duvernay" },
+        { "code": "H7H", "area": "Pont-Viau" },
+        { "code": "H7J", "area": "Pont-Viau" },
+        { "code": "H7K", "area": "Laval-des-Rapides" },
+        { "code": "H7L", "area": "Laval-des-Rapides" },
+        { "code": "H7M", "area": "Chomedey" },
+        { "code": "H7N", "area": "Chomedey" },
+        { "code": "H7P", "area": "Chomedey" },
+        { "code": "H7R", "area": "Chomedey" },
+        { "code": "H7S", "area": "Vimont" },
+        { "code": "H7T", "area": "Chomedey" },
+        { "code": "H7V", "area": "Chomedey" },
+        { "code": "H7W", "area": "Chomedey" },
+        { "code": "H7X", "area": "Sainte-Dorothée" },
+        { "code": "H7Y", "area": "Île-Bigras" }
+      ]
+    },
+    {
+      "id": "longueuil",
+      "name": "Longueuil",
+      "postalCodes": [
+        { "code": "J4G", "area": "Vieux-Longueuil" },
+        { "code": "J4H", "area": "Vieux-Longueuil" },
+        { "code": "J4J", "area": "LeMoyne" },
+        { "code": "J4K", "area": "Vieux-Longueuil" },
+        { "code": "J4L", "area": "Saint-Hubert" },
+        { "code": "J4M", "area": "Greenfield Park" },
+        { "code": "J4N", "area": "Saint-Hubert" },
+        { "code": "J4P", "area": "Saint-Hubert" },
+        { "code": "J4R", "area": "Saint-Hubert" },
+        { "code": "J4S", "area": "Saint-Hubert" },
+        { "code": "J4T", "area": "Saint-Hubert" },
+        { "code": "J4V", "area": "Vieux-Longueuil" },
+        { "code": "J4Y", "area": "Saint-Hubert" }
+      ]
+    },
+    {
+      "id": "brossard",
+      "name": "Brossard",
+      "postalCodes": [
+        { "code": "J4W", "area": "Brossard Nord" },
+        { "code": "J4X", "area": "Brossard Centre" },
+        { "code": "J4Y", "area": "Brossard Sud" },
+        { "code": "J4Z", "area": "Brossard Est" }
+      ]
+    },
+    {
+      "id": "terrebonne",
+      "name": "Terrebonne",
+      "postalCodes": [
+        { "code": "J6V", "area": "Lachenaie" },
+        { "code": "J6W", "area": "Terrebonne" },
+        { "code": "J6X", "area": "Terrebonne" },
+        { "code": "J6Y", "area": "La Plaine" },
+        { "code": "J6Z", "area": "Mascouche" }
+      ]
+    },
+    {
+      "id": "blainville",
+      "name": "Blainville",
+      "postalCodes": [
+        { "code": "J7B", "area": "Blainville Centre" },
+        { "code": "J7C", "area": "Blainville Nord" }
+      ]
+    },
+    {
+      "id": "repentigny",
+      "name": "Repentigny",
+      "postalCodes": [
+        { "code": "J5Y", "area": "Repentigny Centre" },
+        { "code": "J5Z", "area": "Repentigny Est" },
+        { "code": "J6A", "area": "Le Gardeur" }
+      ]
+    },
+    {
+      "id": "saint-jerome",
+      "name": "Saint-Jérôme",
+      "postalCodes": [
+        { "code": "J7Y", "area": "Saint-Jérôme Centre" },
+        { "code": "J7Z", "area": "Saint-Jérôme Nord" }
+      ]
+    },
+    {
+      "id": "boucherville",
+      "name": "Boucherville",
+      "postalCodes": [
+        { "code": "J4B", "area": "Boucherville Centre" },
+        { "code": "J4C", "area": "Boucherville Nord" }
+      ]
+    },
+    {
+      "id": "saint-jean-sur-richelieu",
+      "name": "Saint-Jean-sur-Richelieu",
+      "postalCodes": [
+        { "code": "J2W", "area": "Saint-Jean Centre" },
+        { "code": "J2X", "area": "Saint-Jean Nord" },
+        { "code": "J2Y", "area": "Iberville" },
+        { "code": "J3A", "area": "Saint-Luc" },
+        { "code": "J3B", "area": "Saint-Jean Sud" }
+      ]
+    },
+    {
+      "id": "chateauguay",
+      "name": "Châteauguay",
+      "postalCodes": [
+        { "code": "J6J", "area": "Châteauguay Centre" },
+        { "code": "J6K", "area": "Châteauguay Nord" }
+      ]
+    },
+    {
+      "id": "saint-hyacinthe",
+      "name": "Saint-Hyacinthe",
+      "postalCodes": [
+        { "code": "J2R", "area": "Saint-Hyacinthe Centre" },
+        { "code": "J2S", "area": "Saint-Hyacinthe Nord" },
+        { "code": "J2T", "area": "Saint-Hyacinthe Sud" }
+      ]
+    },
+    {
+      "id": "granby",
+      "name": "Granby",
+      "postalCodes": [
+        { "code": "J2G", "area": "Granby Centre" },
+        { "code": "J2H", "area": "Granby Nord" },
+        { "code": "J2J", "area": "Granby Sud" }
+      ]
+    },
+    {
+      "id": "saint-eustache",
+      "name": "Saint-Eustache",
+      "postalCodes": [
+        { "code": "J7P", "area": "Saint-Eustache Centre" },
+        { "code": "J7R", "area": "Saint-Eustache Nord" }
+      ]
+    },
+    {
+      "id": "mirabel",
+      "name": "Mirabel",
+      "postalCodes": [
+        { "code": "J7J", "area": "Mirabel Centre" },
+        { "code": "J7N", "area": "Saint-Janvier" }
+      ]
+    },
+    {
+      "id": "varennes",
+      "name": "Varennes",
+      "postalCodes": [
+        { "code": "J3X", "area": "Varennes Centre" }
+      ]
+    },
+    {
+      "id": "sainte-julie",
+      "name": "Sainte-Julie",
+      "postalCodes": [
+        { "code": "J3E", "area": "Sainte-Julie Centre" }
+      ]
+    },
+    {
+      "id": "chambly",
+      "name": "Chambly",
+      "postalCodes": [
+        { "code": "J3L", "area": "Chambly Centre" }
+      ]
+    },
+    {
+      "id": "saint-bruno",
+      "name": "Saint-Bruno-de-Montarville",
+      "postalCodes": [
+        { "code": "J3V", "area": "Saint-Bruno Centre" }
+      ]
+    },
+    {
+      "id": "saint-constant",
+      "name": "Saint-Constant",
+      "postalCodes": [
+        { "code": "J5A", "area": "Saint-Constant Centre" }
+      ]
+    },
+    {
+      "id": "candiac",
+      "name": "Candiac",
+      "postalCodes": [
+        { "code": "J5R", "area": "Candiac Centre" }
+      ]
+    },
+    {
+      "id": "la-prairie",
+      "name": "La Prairie",
+      "postalCodes": [
+        { "code": "J5R", "area": "La Prairie Centre" }
+      ]
+    },
+    {
+      "id": "deux-montagnes",
+      "name": "Deux-Montagnes",
+      "postalCodes": [
+        { "code": "J7R", "area": "Deux-Montagnes Centre" }
+      ]
+    },
+    {
+      "id": "boisbriand",
+      "name": "Boisbriand",
+      "postalCodes": [
+        { "code": "J7G", "area": "Boisbriand Centre" },
+        { "code": "J7H", "area": "Boisbriand Nord" }
+      ]
+    },
+    {
+      "id": "sainte-therese",
+      "name": "Sainte-Thérèse",
+      "postalCodes": [
+        { "code": "J7E", "area": "Sainte-Thérèse Centre" }
+      ]
+    },
+    {
+      "id": "rosemere",
+      "name": "Rosemère",
+      "postalCodes": [
+        { "code": "J7A", "area": "Rosemère Centre" }
+      ]
+    }
+  ]
+}

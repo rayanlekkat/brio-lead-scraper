@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "brio2026"
+    }
+  ],
+  "dataforseo": {
+    "login": "rayan@accelerateurlocal.ca",
+    "password": "fee263980a3055a0"
+  },
+  "airtable": {
+    "apiKey": "pathvOBSacinIf2h1.46af676019bad0eeb7b7d0423dc760a77c7545911ee6a346a1ceabd9627a2178",
+    "baseId": "appGCsPFDcd7JXcll"
+  },
+  "defaults": {
+    "locationCode": "2124",
+    "languageCode": "en",
+    "minRating": 3.5,
+    "limitPerNeighborhood": 50
+  }
+}

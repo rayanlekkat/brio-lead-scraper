@@ -1,0 +1,4381 @@
+{
+  "events": [
+    {
+      "id": "1769597078067fhke7fctv",
+      "timestamp": "2026-01-28T10:44:38.067Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://innca.cyou/condominium-pyramide-79t6w0 (76/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597074762uoebzcvd4",
+      "timestamp": "2026-01-28T10:44:34.762Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://lesjardinsdelarchipel.com/ (74/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597073742azvansmrt",
+      "timestamp": "2026-01-28T10:44:33.742Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for PH 1 - 3 Garden: gdarville@bwalk.com",
+      "data": {}
+    },
+    {
+      "id": "1769597063456u63qk175y",
+      "timestamp": "2026-01-28T10:44:23.456Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.bwalk.com/fr-ca/appartements-a-louer-a-montreal-nuns-island-verdun/ile-des-surs/ph-1-3-garden (73/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597062438kejkhr3i2",
+      "timestamp": "2026-01-28T10:44:22.438Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Les Verrières 5 sur le Fleuve - Condos à vendre à l'Île-des-Soeurs: autogestion@verrieres.org",
+      "data": {}
+    },
+    {
+      "id": "1769597060459kf0lkcdw2",
+      "timestamp": "2026-01-28T10:44:20.459Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.verrieres.org/ (69/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597059451y7dw9owk5",
+      "timestamp": "2026-01-28T10:44:19.451Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Vistal Condominiums: alexis@imtl.org",
+      "data": {}
+    },
+    {
+      "id": "1769597056940pwftstg5j",
+      "timestamp": "2026-01-28T10:44:16.940Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://imtl.org/edifices/vistal_condo.php (68/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597055931v3xbdqcti",
+      "timestamp": "2026-01-28T10:44:15.931Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Symphonia Viu: reception@symphoniaviu.com",
+      "data": {}
+    },
+    {
+      "id": "1769597054079a2bclgse4",
+      "timestamp": "2026-01-28T10:44:14.079Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.symphoniaviu.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp (67/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597053060de7i6yrhn",
+      "timestamp": "2026-01-28T10:44:13.060Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Les Condominiums Mille Levert: info@millelevert.ca",
+      "data": {}
+    },
+    {
+      "id": "1769597051210wxo3oedwj",
+      "timestamp": "2026-01-28T10:44:11.210Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.millelevert.ca/ (65/500)",
+      "data": {}
+    },
+    {
+      "id": "17695970481623hm78205h",
+      "timestamp": "2026-01-28T10:44:08.162Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://unionparc.prevel.ca/ (64/500)",
+      "data": {}
+    },
+    {
+      "id": "176959704714579h2yip60",
+      "timestamp": "2026-01-28T10:44:07.145Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Cartier: info@lecartier.ca",
+      "data": {}
+    },
+    {
+      "id": "17695970433794zk9tibrb",
+      "timestamp": "2026-01-28T10:44:03.380Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://lecartier.ca/ (63/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597040163u11j2fd58",
+      "timestamp": "2026-01-28T10:44:00.163Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.residences.ritzmontreal.com/ (62/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597039145ai28yfdwo",
+      "timestamp": "2026-01-28T10:43:59.145Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for ONE Condominiums: vente@oneviger.com",
+      "data": {}
+    },
+    {
+      "id": "1769597032242zmjgn99lc",
+      "timestamp": "2026-01-28T10:43:52.242Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://oneviger.com/ (61/500)",
+      "data": {}
+    },
+    {
+      "id": "17695970312284f6sw4d3x",
+      "timestamp": "2026-01-28T10:43:51.228Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le 2100: info@rakotta.com",
+      "data": {}
+    },
+    {
+      "id": "1769597029312he6vy2zki",
+      "timestamp": "2026-01-28T10:43:49.312Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.le2100.com/ (60/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597028304e8zpo0b7y",
+      "timestamp": "2026-01-28T10:43:48.304Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Appartements Dorchester: info@rakotta.com",
+      "data": {}
+    },
+    {
+      "id": "17695970179488tpqss0sh",
+      "timestamp": "2026-01-28T10:43:37.948Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.appartementsdorchester.com/ (59/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597016945bwpsjyiqo",
+      "timestamp": "2026-01-28T10:43:36.945Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for 1212 BISHOP: info@1212bishop.ca",
+      "data": {}
+    },
+    {
+      "id": "1769597015074ilgpuvzdu",
+      "timestamp": "2026-01-28T10:43:35.074Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.1212bishop.com/ (58/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597012306qwbpr8w0r",
+      "timestamp": "2026-01-28T10:43:32.306Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.liveatfinale.com/ (56/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597009507bfztjy7jz",
+      "timestamp": "2026-01-28T10:43:29.507Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://stedouardcondos.ca/ (55/500)",
+      "data": {}
+    },
+    {
+      "id": "1769597008497ay1djnjmq",
+      "timestamp": "2026-01-28T10:43:28.497Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for 1 Square Phillips: sales@1squarephillips.ca",
+      "data": {}
+    },
+    {
+      "id": "1769597006709q1qonnmt0",
+      "timestamp": "2026-01-28T10:43:26.709Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.1squarephillips.ca/locatif (54/500)",
+      "data": {}
+    },
+    {
+      "id": "176959698670769dfh0fpc",
+      "timestamp": "2026-01-28T10:43:06.707Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://tourca.cfd/nordelec-condos-3xph98 (53/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969856938qb0wpxaz",
+      "timestamp": "2026-01-28T10:43:05.693Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Haleco: eugenia.olshevskaya@cbre.com",
+      "data": {}
+    },
+    {
+      "id": "17695969829414zyscssp7",
+      "timestamp": "2026-01-28T10:43:02.941Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.haleco.ca/ (52/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596978575h553w46e0",
+      "timestamp": "2026-01-28T10:42:58.575Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://leshabitationsducentreville.com/fr (51/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969756096emgglheg",
+      "timestamp": "2026-01-28T10:42:55.609Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://loftsduvieuxport.com/ (50/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596972718nut08e8hh",
+      "timestamp": "2026-01-28T10:42:52.718Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://canderelresidential.com/projects/tour-des-canadiens/ (49/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969717089vcfzw0wc",
+      "timestamp": "2026-01-28T10:42:51.708Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Kai Apartments: rentals@kaiapartments.com",
+      "data": {}
+    },
+    {
+      "id": "1769596968519gsh0lh0n7",
+      "timestamp": "2026-01-28T10:42:48.519Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.kaiapartments.com/ (48/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969675107ehrid79q",
+      "timestamp": "2026-01-28T10:42:47.510Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Europa Lancashire: info@projeteuropa.com",
+      "data": {}
+    },
+    {
+      "id": "1769596963999cfcnxq4or",
+      "timestamp": "2026-01-28T10:42:43.999Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.projeteuropa.com/ (47/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596958567pdmxnj56d",
+      "timestamp": "2026-01-28T10:42:38.567Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://appartementsgareviger.com/ (46/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596954850sfxcxg28y",
+      "timestamp": "2026-01-28T10:42:34.850Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.arboragriffintown.com/ (41/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596953837o8hhb6n4b",
+      "timestamp": "2026-01-28T10:42:33.837Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le George: louer@legeorge.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596944207a3q05hcm1",
+      "timestamp": "2026-01-28T10:42:24.207Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.legeorge.ca/ (40/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969432057l184g6ex",
+      "timestamp": "2026-01-28T10:42:23.205Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Saint M2: saintm2@cogir.net",
+      "data": {}
+    },
+    {
+      "id": "17695969377760jj0bli3x",
+      "timestamp": "2026-01-28T10:42:17.776Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.saintm2.com/fr/ (39/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969367665x15nye3c",
+      "timestamp": "2026-01-28T10:42:16.766Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Maestria Appartements: info@maestriaappartements.com",
+      "data": {}
+    },
+    {
+      "id": "1769596932767sj4unc5s1",
+      "timestamp": "2026-01-28T10:42:12.767Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://maestriaappartements.com/?utm_source=gmb&utm_medium=organic&utm_campaign=Maestria (38/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596931750q0oj1w6mm",
+      "timestamp": "2026-01-28T10:42:11.750Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le petit Laurent: info@lepetitlaurent.com",
+      "data": {}
+    },
+    {
+      "id": "17695969292707bs1hsclw",
+      "timestamp": "2026-01-28T10:42:09.270Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.lepetitlaurent.com/ (35/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596928255ww8py4c56",
+      "timestamp": "2026-01-28T10:42:08.255Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for ALMA Quartier Latin - Furnished Apartments: info@thisismyalma.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596926019a0kl1xsi6",
+      "timestamp": "2026-01-28T10:42:06.019Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://thisismyalma.ca/quartier-latin-montreal/ (34/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969250055k2nesxig",
+      "timestamp": "2026-01-28T10:42:05.005Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Midtown: info@urbanprodev.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596922049lo97d3cyv",
+      "timestamp": "2026-01-28T10:42:02.049Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://lemidtown.com/ (33/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596921037gu3odjg5j",
+      "timestamp": "2026-01-28T10:42:01.037Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Hill-Park: ontact@mintoapartments.com",
+      "data": {}
+    },
+    {
+      "id": "1769596918172ue64wh9rm",
+      "timestamp": "2026-01-28T10:41:58.172Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.mintoapartments.com/montreal/apartment-rentals/Le-Hill-Park/main.html?utm_source=google-local&utm_medium=organic&utm_campaign=gmb_montreal&utm_content=website&utm_term=le_hill_park (31/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596908669ps0fc58ga",
+      "timestamp": "2026-01-28T10:41:48.669Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://residencescogir.com/residences-aines-montreal/manoir-outremont?utm_source=gmb&utm_medium=organic&utm_content=gmb-website (30/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596907654y6a19512w",
+      "timestamp": "2026-01-28T10:41:47.654Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for The Mount Royal Sanctuary - Phase V: info@condosanctuairedumontroyal.com",
+      "data": {}
+    },
+    {
+      "id": "1769596902053eyzmcgmv7",
+      "timestamp": "2026-01-28T10:41:42.053Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.condosanctuairedumontroyal.com/proprietes (29/500)",
+      "data": {}
+    },
+    {
+      "id": "17695969010510govyj47z",
+      "timestamp": "2026-01-28T10:41:41.051Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Chapelle Outremont: sabine@lachapelle-outremont.ca",
+      "data": {}
+    },
+    {
+      "id": "17695968925353o752r7q9",
+      "timestamp": "2026-01-28T10:41:32.535Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://chapelle-outremont.ca/ (28/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596891518u9ub78epe",
+      "timestamp": "2026-01-28T10:41:31.518Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Château Apartments: alexis@imtl.org",
+      "data": {}
+    },
+    {
+      "id": "1769596887150zhpbg5p34",
+      "timestamp": "2026-01-28T10:41:27.150Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://imtl.org/edifices/Le-Chateau-.php (25/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596866509l4pd507vk",
+      "timestamp": "2026-01-28T10:41:06.510Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://roomca.click/condos-crescent-a41u7d (24/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596863418m6sub1hnm",
+      "timestamp": "2026-01-28T10:41:03.418Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.royaltoncondos.com/?utm_source=google&utm_medium=organic&utm_campaign=Royalton-GMB (22/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596862400y0gs148po",
+      "timestamp": "2026-01-28T10:41:02.400Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Sherbrooke Condos: info@lesherbrooke.com",
+      "data": {}
+    },
+    {
+      "id": "17695968592281x553p8in",
+      "timestamp": "2026-01-28T10:40:59.228Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.lesherbrooke.com/fr (21/500)",
+      "data": {}
+    },
+    {
+      "id": "17695968582050ox4rwt7s",
+      "timestamp": "2026-01-28T10:40:58.205Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for The Saguenay Apartments: hello@capreit.net",
+      "data": {}
+    },
+    {
+      "id": "17695968536515b8s87z1d",
+      "timestamp": "2026-01-28T10:40:53.651Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.capreit.ca/fr/appartements-a-louer/montreal-qc/appartements-le-saguenay/ (20/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596850031mdzxqk8mc",
+      "timestamp": "2026-01-28T10:40:50.032Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://parccite.com/?utm_source=google&utm_medium=google%20my%20business&utm_campaign=website%20button (19/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596849017tm9j9vzhp",
+      "timestamp": "2026-01-28T10:40:49.017Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Dorem Leanor: info@dorem.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596845346msj4q8m53",
+      "timestamp": "2026-01-28T10:40:45.346Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://dorem.ca/ (18/500)",
+      "data": {}
+    },
+    {
+      "id": "17695968443273zemi43s6",
+      "timestamp": "2026-01-28T10:40:44.327Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Montreal Apartment Living: olonialecondo123@gmail.com",
+      "data": {}
+    },
+    {
+      "id": "17695968415142my705eh3",
+      "timestamp": "2026-01-28T10:40:41.514Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://mtlaptliving.com/ (17/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596837700el6czsetz",
+      "timestamp": "2026-01-28T10:40:37.700Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.atria.immo/ (16/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596836697e9w6v4fou",
+      "timestamp": "2026-01-28T10:40:36.697Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Terrasses Embassy: hello@capreit.net",
+      "data": {}
+    },
+    {
+      "id": "1769596824114ndzxtlici",
+      "timestamp": "2026-01-28T10:40:24.114Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.capreit.ca/fr/appartements-a-louer/montreal-qc/appartements-terrasses-embassy/ (15/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596823098pv3yel6yo",
+      "timestamp": "2026-01-28T10:40:23.098Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for 3474 Hutchison - InterRent: avalon-admin@clvgroup.com",
+      "data": {}
+    },
+    {
+      "id": "17695968190646k4qnkk8m",
+      "timestamp": "2026-01-28T10:40:19.064Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.clvgroup.com/apartments/3474-hutchison-street (14/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596818052h55qqws6n",
+      "timestamp": "2026-01-28T10:40:18.052Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Gatsby Condominiums: info@kevlarinc.com",
+      "data": {}
+    },
+    {
+      "id": "17695968157126oi66xcna",
+      "timestamp": "2026-01-28T10:40:15.712Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.gatsbycondos.com/ (13/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596814706gki18pjoo",
+      "timestamp": "2026-01-28T10:40:14.706Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Condos-Boutique Enticy: info@enticycondos.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596812899epbymz3yl",
+      "timestamp": "2026-01-28T10:40:12.899Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.enticycondos.ca/ (12/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596808215ilzupfjix",
+      "timestamp": "2026-01-28T10:40:08.215Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.griffintownhotel.com/ (11/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596804562kgkhg7atz",
+      "timestamp": "2026-01-28T10:40:04.562Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://lecanal2.ca/ (10/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596799547tcp4l4wzz",
+      "timestamp": "2026-01-28T10:39:59.547Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://quartiergeneralgriffintown-prevel.ca/ (9/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596796999op00jukhq",
+      "timestamp": "2026-01-28T10:39:56.999Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.se7t.ca/ (8/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596793362lbull747b",
+      "timestamp": "2026-01-28T10:39:53.363Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.charlottegriffintown.com/ (7/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596792349eghis0ugr",
+      "timestamp": "2026-01-28T10:39:52.349Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for L'Hexagone Appartements: info@devimco.com",
+      "data": {}
+    },
+    {
+      "id": "1769596787075xynicmwda",
+      "timestamp": "2026-01-28T10:39:47.075Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://devimco.com/appartements/montreal/griffintown/hexagone?utm_source=gmb&utm_medium=organic&utm_campaign=Hexagone%201 (6/500)",
+      "data": {}
+    },
+    {
+      "id": "176959678569090lvw4msb",
+      "timestamp": "2026-01-28T10:39:45.690Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for St Ann Appartements: info@devimco.com",
+      "data": {}
+    },
+    {
+      "id": "1769596780882e16jr2r6d",
+      "timestamp": "2026-01-28T10:39:40.882Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://devimco.com/appartements/montreal/griffintown/st-ann?utm_source=gmb&utm_medium=organic&utm_campaign=St.%20Ann (5/500)",
+      "data": {}
+    },
+    {
+      "id": "17695967798665ih3m56l2",
+      "timestamp": "2026-01-28T10:39:39.866Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Centris: xxx@xxx.xxx",
+      "data": {}
+    },
+    {
+      "id": "1769596776580u2qb0xnbx",
+      "timestamp": "2026-01-28T10:39:36.580Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.centris.ca/ (4/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596775575jsv13xe43",
+      "timestamp": "2026-01-28T10:39:35.575Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Groupe KASA - Construction et Rénovation: info@groupkasa.com",
+      "data": {}
+    },
+    {
+      "id": "1769596772842k7mwc5xbq",
+      "timestamp": "2026-01-28T10:39:32.842Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://groupkasa.com/ (3/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596771819hn0p89908",
+      "timestamp": "2026-01-28T10:39:31.819Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Edwin Condos: info@bertone.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596768859cquc8ukqm",
+      "timestamp": "2026-01-28T10:39:28.859Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://edwincondos.com/ (2/500)",
+      "data": {}
+    },
+    {
+      "id": "176959676361050a05ed55",
+      "timestamp": "2026-01-28T10:39:23.610Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.rentbolt.ca/ (1/500)",
+      "data": {}
+    },
+    {
+      "id": "1769596763383t4k60k3gk",
+      "timestamp": "2026-01-28T10:39:23.383Z",
+      "type": "start",
+      "node": "email-extract",
+      "message": "Starting bulk email extraction: 500 leads",
+      "data": {
+        "jobId": "1769596763383"
+      }
+    },
+    {
+      "id": "1769596173281rquw5eojt",
+      "timestamp": "2026-01-28T10:29:33.281Z",
+      "type": "info",
+      "node": "system",
+      "message": "Server started",
+      "data": {
+        "port": 3000
+      }
+    },
+    {
+      "id": "1769596158963itn32apnw",
+      "timestamp": "2026-01-28T10:29:18.963Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://stedouardcondos.ca/ (131/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596157940gr4v3i8oc",
+      "timestamp": "2026-01-28T10:29:17.940Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for 1 Square Phillips: sales@1squarephillips.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596157677d00xopem9",
+      "timestamp": "2026-01-28T10:29:17.677Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.millelevert.ca/ (141/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596156656a57ebkj28",
+      "timestamp": "2026-01-28T10:29:16.656Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Union on the Park: up_header@2x.jpg.webp",
+      "data": {}
+    },
+    {
+      "id": "1769596156172uf6hltc7u",
+      "timestamp": "2026-01-28T10:29:16.172Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.1squarephillips.ca/locatif (130/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596154387slybte7pc",
+      "timestamp": "2026-01-28T10:29:14.387Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://unionparc.prevel.ca/ (140/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596149138z6wip2hqs",
+      "timestamp": "2026-01-28T10:29:09.138Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://lecartier.ca/ (139/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596146029pd8248vif",
+      "timestamp": "2026-01-28T10:29:06.029Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.residences.ritzmontreal.com/ (138/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596145014ffgnulphm",
+      "timestamp": "2026-01-28T10:29:05.014Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for ONE Condominiums: vente@oneviger.com",
+      "data": {}
+    },
+    {
+      "id": "1769596137408xs6lqllza",
+      "timestamp": "2026-01-28T10:28:57.408Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://oneviger.com/ (137/576)",
+      "data": {}
+    },
+    {
+      "id": "176959613498527qlhcdss",
+      "timestamp": "2026-01-28T10:28:54.985Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://tourca.cfd/nordelec-condos-3xph98 (129/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596134517ydky8ej76",
+      "timestamp": "2026-01-28T10:28:54.517Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.le2100.com/ (136/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596133978cwvlmsac1",
+      "timestamp": "2026-01-28T10:28:53.978Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Haleco: eugenia.olshevskaya@cbre.com",
+      "data": {}
+    },
+    {
+      "id": "1769596131201or0wkoyrq",
+      "timestamp": "2026-01-28T10:28:51.201Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.haleco.ca/ (128/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596126749drhm3shex",
+      "timestamp": "2026-01-28T10:28:46.749Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://leshabitationsducentreville.com/fr (127/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596123755dp0uhloed",
+      "timestamp": "2026-01-28T10:28:43.755Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://loftsduvieuxport.com/ (126/576)",
+      "data": {}
+    },
+    {
+      "id": "176959612249569b4g4fn5",
+      "timestamp": "2026-01-28T10:28:42.495Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.appartementsdorchester.com/ (135/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596120886beqgxzf3k",
+      "timestamp": "2026-01-28T10:28:40.886Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://canderelresidential.com/projects/tour-des-canadiens/ (125/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596119878yg8hx4hkc",
+      "timestamp": "2026-01-28T10:28:39.878Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Kai Apartments: rentals@kaiapartments.com",
+      "data": {}
+    },
+    {
+      "id": "1769596119516eods4lb92",
+      "timestamp": "2026-01-28T10:28:39.516Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.1212bishop.com/ (134/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596118004pdergwu77",
+      "timestamp": "2026-01-28T10:28:38.004Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.kaiapartments.com/ (124/576)",
+      "data": {}
+    },
+    {
+      "id": "17695961165738jadwacph",
+      "timestamp": "2026-01-28T10:28:36.573Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.liveatfinale.com/ (132/576)",
+      "data": {}
+    },
+    {
+      "id": "17695961137270zxq16jez",
+      "timestamp": "2026-01-28T10:28:33.727Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://stedouardcondos.ca/ (131/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596112803n66snto75",
+      "timestamp": "2026-01-28T10:28:32.803Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.projeteuropa.com/ (123/576)",
+      "data": {}
+    },
+    {
+      "id": "17695961127184j4pleszs",
+      "timestamp": "2026-01-28T10:28:32.718Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for 1 Square Phillips: sales@1squarephillips.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596110925077r6d2nb",
+      "timestamp": "2026-01-28T10:28:30.925Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.1squarephillips.ca/locatif (130/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596106614kuedpyuz4",
+      "timestamp": "2026-01-28T10:28:26.614Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://appartementsgareviger.com/ (122/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596102144p7obeap63",
+      "timestamp": "2026-01-28T10:28:22.144Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.arboragriffintown.com/ (117/576)",
+      "data": {}
+    },
+    {
+      "id": "17695961011282sd4wofgu",
+      "timestamp": "2026-01-28T10:28:21.128Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le George: louer@legeorge.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596094714qjlaq2lam",
+      "timestamp": "2026-01-28T10:28:14.714Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.legeorge.ca/ (116/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596093701olb28iqwo",
+      "timestamp": "2026-01-28T10:28:13.701Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Saint M2: saintm2@cogir.net",
+      "data": {}
+    },
+    {
+      "id": "1769596089628lkpnjep1y",
+      "timestamp": "2026-01-28T10:28:09.628Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://tourca.cfd/nordelec-condos-3xph98 (129/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596088616zntcmfhqk",
+      "timestamp": "2026-01-28T10:28:08.616Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Haleco: eugenia.olshevskaya@cbre.com",
+      "data": {}
+    },
+    {
+      "id": "1769596087716mgxklnouk",
+      "timestamp": "2026-01-28T10:28:07.716Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.saintm2.com/fr/ (115/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596082405aa4c8n0kn",
+      "timestamp": "2026-01-28T10:28:02.405Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://maestriaappartements.com/?utm_source=gmb&utm_medium=organic&utm_campaign=Maestria (114/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960813833ljegeaaw",
+      "timestamp": "2026-01-28T10:28:01.383Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le petit Laurent: 605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com",
+      "data": {}
+    },
+    {
+      "id": "1769596079074b6lna3whg",
+      "timestamp": "2026-01-28T10:27:59.074Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.haleco.ca/ (128/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596077684t9lrprgp6",
+      "timestamp": "2026-01-28T10:27:57.684Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.lepetitlaurent.com/ (111/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596076680fvs67p2nl",
+      "timestamp": "2026-01-28T10:27:56.680Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for ALMA Quartier Latin - Furnished Apartments: aqlrentals@thisismyalma.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596074187j6yypb6fw",
+      "timestamp": "2026-01-28T10:27:54.187Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://thisismyalma.ca/quartier-latin-montreal/ (110/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596073058wbz0riwt5",
+      "timestamp": "2026-01-28T10:27:53.058Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://leshabitationsducentreville.com/fr (127/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960710893lws7dsom",
+      "timestamp": "2026-01-28T10:27:51.089Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://lemidtown.com/ (109/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960700748x5d53ab4",
+      "timestamp": "2026-01-28T10:27:50.074Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Hill-Park: infoline@minto.com",
+      "data": {}
+    },
+    {
+      "id": "1769596070026nqnj6362m",
+      "timestamp": "2026-01-28T10:27:50.026Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://loftsduvieuxport.com/ (126/576)",
+      "data": {}
+    },
+    {
+      "id": "176959606731740d6muyj1",
+      "timestamp": "2026-01-28T10:27:47.317Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.mintoapartments.com/montreal/apartment-rentals/Le-Hill-Park/main.html?utm_source=google-local&utm_medium=organic&utm_campaign=gmb_montreal&utm_content=website&utm_term=le_hill_park (107/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596066700s83rzdfpq",
+      "timestamp": "2026-01-28T10:27:46.700Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://canderelresidential.com/projects/tour-des-canadiens/ (125/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596065682unlhyl2yr",
+      "timestamp": "2026-01-28T10:27:45.682Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Kai Apartments: rentals@kaiapartments.com",
+      "data": {}
+    },
+    {
+      "id": "1769596064122i7zh9c0ec",
+      "timestamp": "2026-01-28T10:27:44.122Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://residencescogir.com/residences-aines-montreal/manoir-outremont?utm_source=gmb&utm_medium=organic&utm_content=gmb-website (106/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596062465cmoub869r",
+      "timestamp": "2026-01-28T10:27:42.465Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.kaiapartments.com/ (124/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960602897o9v0mi29",
+      "timestamp": "2026-01-28T10:27:40.289Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.condosanctuairedumontroyal.com/proprietes (105/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960592671ksorkvxu",
+      "timestamp": "2026-01-28T10:27:39.267Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Chapelle Outremont: sabine@lachapelle-outremont.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596057230ux5qm8iki",
+      "timestamp": "2026-01-28T10:27:37.230Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.projeteuropa.com/ (123/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596056066enbqj75lp",
+      "timestamp": "2026-01-28T10:27:36.066Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://chapelle-outremont.ca/ (104/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596055049tuv5cx3ez",
+      "timestamp": "2026-01-28T10:27:35.049Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Château Apartments: alexis@imtl.org",
+      "data": {}
+    },
+    {
+      "id": "176959605247144t3l8piz",
+      "timestamp": "2026-01-28T10:27:32.471Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://imtl.org/edifices/Le-Chateau-.php (101/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960507907b9cmszwr",
+      "timestamp": "2026-01-28T10:27:30.790Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://appartementsgareviger.com/ (122/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596045977gdc30ba6r",
+      "timestamp": "2026-01-28T10:27:25.977Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.arboragriffintown.com/ (117/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596044954cidemla0z",
+      "timestamp": "2026-01-28T10:27:24.954Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le George: louer@legeorge.ca",
+      "data": {}
+    },
+    {
+      "id": "1769596035608vjd0n54y5",
+      "timestamp": "2026-01-28T10:27:15.608Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.legeorge.ca/ (116/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960345888rmywudgm",
+      "timestamp": "2026-01-28T10:27:14.588Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Saint M2: saintm2@cogir.net",
+      "data": {}
+    },
+    {
+      "id": "1769596031380m4kr178rx",
+      "timestamp": "2026-01-28T10:27:11.380Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://roomca.click/condos-crescent-a41u7d (100/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960284341zbkikdk5",
+      "timestamp": "2026-01-28T10:27:08.434Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.royaltoncondos.com/?utm_source=google&utm_medium=organic&utm_campaign=Royalton-GMB (98/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596024432tz47ow3xg",
+      "timestamp": "2026-01-28T10:27:04.432Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.lesherbrooke.com/fr (97/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596023418jntbsgboe",
+      "timestamp": "2026-01-28T10:27:03.418Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for The Saguenay Apartments: hello@capreit.net",
+      "data": {}
+    },
+    {
+      "id": "1769596021731sv527ssvz",
+      "timestamp": "2026-01-28T10:27:01.731Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.saintm2.com/fr/ (115/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596021048k4sai6kgj",
+      "timestamp": "2026-01-28T10:27:01.048Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.capreit.ca/fr/appartements-a-louer/montreal-qc/appartements-le-saguenay/ (96/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960180134so3xsyfs",
+      "timestamp": "2026-01-28T10:26:58.013Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://parccite.com/?utm_source=google&utm_medium=google%20my%20business&utm_campaign=website%20button (95/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596016996zqcd9rinu",
+      "timestamp": "2026-01-28T10:26:56.996Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Dorem Leanor: michaelcourrier@hotmail.com",
+      "data": {}
+    },
+    {
+      "id": "1769596016165f0nf98ezp",
+      "timestamp": "2026-01-28T10:26:56.165Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://maestriaappartements.com/?utm_source=gmb&utm_medium=organic&utm_campaign=Maestria (114/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960151436vrlt9zfd",
+      "timestamp": "2026-01-28T10:26:55.143Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le petit Laurent: 605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com",
+      "data": {}
+    },
+    {
+      "id": "1769596013696xynfi94ow",
+      "timestamp": "2026-01-28T10:26:53.696Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://dorem.ca/ (94/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596012675zcl18lz6p",
+      "timestamp": "2026-01-28T10:26:52.675Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Montreal Apartment Living: colonialecondo123@gmail.com",
+      "data": {}
+    },
+    {
+      "id": "1769596009279ky19b8g49",
+      "timestamp": "2026-01-28T10:26:49.279Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://mtlaptliving.com/ (93/576)",
+      "data": {}
+    },
+    {
+      "id": "176959600807188l2548ze",
+      "timestamp": "2026-01-28T10:26:48.071Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.lepetitlaurent.com/ (111/576)",
+      "data": {}
+    },
+    {
+      "id": "17695960070637zwgchkor",
+      "timestamp": "2026-01-28T10:26:47.063Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for ALMA Quartier Latin - Furnished Apartments: aqlrentals@thisismyalma.ca",
+      "data": {}
+    },
+    {
+      "id": "17695960055462gqcuq4zy",
+      "timestamp": "2026-01-28T10:26:45.546Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.atria.immo/ (92/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596004530q3m4ynnc8",
+      "timestamp": "2026-01-28T10:26:44.530Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Terrasses Embassy: hello@capreit.net",
+      "data": {}
+    },
+    {
+      "id": "1769596004396eufrxytac",
+      "timestamp": "2026-01-28T10:26:44.396Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://thisismyalma.ca/quartier-latin-montreal/ (110/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596002105bemf5pvqm",
+      "timestamp": "2026-01-28T10:26:42.105Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.capreit.ca/fr/appartements-a-louer/montreal-qc/appartements-terrasses-embassy/ (91/576)",
+      "data": {}
+    },
+    {
+      "id": "1769596001095jnf06ohqf",
+      "timestamp": "2026-01-28T10:26:41.095Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for 3474 Hutchison - InterRent: avalon-admin@clvgroup.com",
+      "data": {}
+    },
+    {
+      "id": "1769595999430eoeb6mhbn",
+      "timestamp": "2026-01-28T10:26:39.430Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://lemidtown.com/ (109/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595998414a4vmq2z61",
+      "timestamp": "2026-01-28T10:26:38.414Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Hill-Park: infoline@minto.com",
+      "data": {}
+    },
+    {
+      "id": "17695959964476c2pardm2",
+      "timestamp": "2026-01-28T10:26:36.447Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.clvgroup.com/apartments/3474-hutchison-street (90/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595995689qzpbpso8z",
+      "timestamp": "2026-01-28T10:26:35.689Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.mintoapartments.com/montreal/apartment-rentals/Le-Hill-Park/main.html?utm_source=google-local&utm_medium=organic&utm_campaign=gmb_montreal&utm_content=website&utm_term=le_hill_park (107/576)",
+      "data": {}
+    },
+    {
+      "id": "176959599286308mcp4lmc",
+      "timestamp": "2026-01-28T10:26:32.863Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.gatsbycondos.com/ (89/576)",
+      "data": {}
+    },
+    {
+      "id": "176959599283108u9uwuch",
+      "timestamp": "2026-01-28T10:26:32.831Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://residencescogir.com/residences-aines-montreal/manoir-outremont?utm_source=gmb&utm_medium=organic&utm_content=gmb-website (106/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595991831hdou8j51o",
+      "timestamp": "2026-01-28T10:26:31.831Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Condos-Boutique Enticy: vianney.godbout@theagencyre.com",
+      "data": {}
+    },
+    {
+      "id": "1769595989565ubxpofdaq",
+      "timestamp": "2026-01-28T10:26:29.565Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.enticycondos.ca/ (88/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595988809kgoeryhj6",
+      "timestamp": "2026-01-28T10:26:28.809Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.condosanctuairedumontroyal.com/proprietes (105/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595987797lcmp1ntyx",
+      "timestamp": "2026-01-28T10:26:27.797Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Chapelle Outremont: sabine@lachapelle-outremont.ca",
+      "data": {}
+    },
+    {
+      "id": "1769595984641raoslx2lr",
+      "timestamp": "2026-01-28T10:26:24.641Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://chapelle-outremont.ca/ (104/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595984593rj3t44qdv",
+      "timestamp": "2026-01-28T10:26:24.593Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.griffintownhotel.com/ (87/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595983630xdalv3ncg",
+      "timestamp": "2026-01-28T10:26:23.630Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Le Château Apartments: alexis@imtl.org",
+      "data": {}
+    },
+    {
+      "id": "1769595981114r67wn6raj",
+      "timestamp": "2026-01-28T10:26:21.114Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://imtl.org/edifices/Le-Chateau-.php (101/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595981044bcwjl082x",
+      "timestamp": "2026-01-28T10:26:21.044Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://lecanal2.ca/ (86/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595976152bly4egvx9",
+      "timestamp": "2026-01-28T10:26:16.152Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://quartiergeneralgriffintown-prevel.ca/ (85/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595973529dj90l659k",
+      "timestamp": "2026-01-28T10:26:13.529Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.se7t.ca/ (84/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595969747bkrugcjrb",
+      "timestamp": "2026-01-28T10:26:09.747Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.charlottegriffintown.com/ (83/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595968741zx7uvwdy2",
+      "timestamp": "2026-01-28T10:26:08.741Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for L'Hexagone Appartements: confidentialite@devimco.com",
+      "data": {}
+    },
+    {
+      "id": "1769595964455l2ccc8dvg",
+      "timestamp": "2026-01-28T10:26:04.455Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://devimco.com/appartements/montreal/griffintown/hexagone?utm_source=gmb&utm_medium=organic&utm_campaign=Hexagone%201 (82/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595963441nofowd6jb",
+      "timestamp": "2026-01-28T10:26:03.441Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for St Ann Appartements: confidentialite@devimco.com",
+      "data": {}
+    },
+    {
+      "id": "17695959591930iohqyqd3",
+      "timestamp": "2026-01-28T10:25:59.193Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://roomca.click/condos-crescent-a41u7d (100/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595958795y8e3ijmq8",
+      "timestamp": "2026-01-28T10:25:58.795Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://devimco.com/appartements/montreal/griffintown/st-ann?utm_source=gmb&utm_medium=organic&utm_campaign=St.%20Ann (81/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595957776s115jvwgf",
+      "timestamp": "2026-01-28T10:25:57.776Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Centris: xxx@xxx.xxx",
+      "data": {}
+    },
+    {
+      "id": "17695959561539gi6hddd2",
+      "timestamp": "2026-01-28T10:25:56.153Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.royaltoncondos.com/?utm_source=google&utm_medium=organic&utm_campaign=Royalton-GMB (98/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595954460mfpp2f6kn",
+      "timestamp": "2026-01-28T10:25:54.460Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.centris.ca/ (80/576)",
+      "data": {}
+    },
+    {
+      "id": "17695959508942uzs91mw4",
+      "timestamp": "2026-01-28T10:25:50.894Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://groupkasa.com/ (79/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595950776i2d9v56ht",
+      "timestamp": "2026-01-28T10:25:50.776Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.lesherbrooke.com/fr (97/576)",
+      "data": {}
+    },
+    {
+      "id": "176959594975836pbt4554",
+      "timestamp": "2026-01-28T10:25:49.758Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for The Saguenay Apartments: hello@capreit.net",
+      "data": {}
+    },
+    {
+      "id": "1769595947031l1ua0ri3e",
+      "timestamp": "2026-01-28T10:25:47.031Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://edwincondos.com/ (78/576)",
+      "data": {}
+    },
+    {
+      "id": "17695959462247djytsog4",
+      "timestamp": "2026-01-28T10:25:46.224Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.capreit.ca/fr/appartements-a-louer/montreal-qc/appartements-le-saguenay/ (96/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595943360xvn5u6811",
+      "timestamp": "2026-01-28T10:25:43.360Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.rentbolt.ca/ (77/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595942392k8vhdy70h",
+      "timestamp": "2026-01-28T10:25:42.392Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://parccite.com/?utm_source=google&utm_medium=google%20my%20business&utm_campaign=website%20button (95/576)",
+      "data": {}
+    },
+    {
+      "id": "17695959413748zgc6t6l4",
+      "timestamp": "2026-01-28T10:25:41.374Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Dorem Leanor: michaelcourrier@hotmail.com",
+      "data": {}
+    },
+    {
+      "id": "1769595940124f0zjq9g9l",
+      "timestamp": "2026-01-28T10:25:40.124Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.411habitation.com/renovations/monteregie/brossard-5/renovations-brossard.htm (76/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595937460n8gl65z2c",
+      "timestamp": "2026-01-28T10:25:37.460Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://dorem.ca/ (94/576)",
+      "data": {}
+    },
+    {
+      "id": "17695959371771r01kok2r",
+      "timestamp": "2026-01-28T10:25:37.177Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://stores.bestbuy.ca/en-ca/qc/brossard/8480-boul-leduc-unit-100 (75/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595936447vfiwfj28d",
+      "timestamp": "2026-01-28T10:25:36.447Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Montreal Apartment Living: colonialecondo123@gmail.com",
+      "data": {}
+    },
+    {
+      "id": "1769595934314pyqiz3z7u",
+      "timestamp": "2026-01-28T10:25:34.314Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.galeriestaschereau.com/ (74/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595931825cnmcw4vd3",
+      "timestamp": "2026-01-28T10:25:31.825Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://mtlaptliving.com/ (93/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595927786ukvr1bknt",
+      "timestamp": "2026-01-28T10:25:27.786Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.atria.immo/ (92/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595926772zna2c4d1b",
+      "timestamp": "2026-01-28T10:25:26.772Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Terrasses Embassy: hello@capreit.net",
+      "data": {}
+    },
+    {
+      "id": "17695959226584dwaxf9p7",
+      "timestamp": "2026-01-28T10:25:22.658Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.capreit.ca/fr/appartements-a-louer/montreal-qc/appartements-terrasses-embassy/ (91/576)",
+      "data": {}
+    },
+    {
+      "id": "17695959216539qohfih75",
+      "timestamp": "2026-01-28T10:25:21.653Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for 3474 Hutchison - InterRent: avalon-admin@clvgroup.com",
+      "data": {}
+    },
+    {
+      "id": "1769595921253za6hzz8wx",
+      "timestamp": "2026-01-28T10:25:21.253Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.costco.ca/warehouse-locations/brossard-QC-521.html?utm_term=KW&utm_campaign=Homepage&utm_medium=GMB&utm_source=Google&utm_content=Link (73/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595918376lado6bbwo",
+      "timestamp": "2026-01-28T10:25:18.376Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.rona.ca/fr/magasin/quebec/brossard/rona-brossard-taschereau-76010?cm_mmc=organic_search-_-yext-_-gmb-_-website&utm_medium=organic_search&utm_source=yext&utm_campaign=gmb&utm_content=website_fr (71/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595916220v98zbgijl",
+      "timestamp": "2026-01-28T10:25:16.220Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.clvgroup.com/apartments/3474-hutchison-street (90/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595915619wkndnsutk",
+      "timestamp": "2026-01-28T10:25:15.619Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.rona.ca/fr/magasin/quebec/brossard/rona-brossard-dix-30-41460?cm_mmc=organic_search-_-yext-_-gmb-_-website&utm_medium=organic_search&utm_source=yext&utm_campaign=gmb&utm_content=website (68/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595912664p1ugkomo3",
+      "timestamp": "2026-01-28T10:25:12.664Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.gatsbycondos.com/ (89/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595911649i61kmld3e",
+      "timestamp": "2026-01-28T10:25:11.649Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Condos-Boutique Enticy: vianney.godbout@theagencyre.com",
+      "data": {}
+    },
+    {
+      "id": "1769595911647ns7kxn33x",
+      "timestamp": "2026-01-28T10:25:11.647Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://saaq.gouv.qc.ca/ (67/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595909573vf56c37ai",
+      "timestamp": "2026-01-28T10:25:09.573Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.enticycondos.ca/ (88/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595904765lmhf2av3c",
+      "timestamp": "2026-01-28T10:25:04.765Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.griffintownhotel.com/ (87/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595904540pxjq2hds4",
+      "timestamp": "2026-01-28T10:25:04.540Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://mailchamplain.ca/?utm_campaign=gmb_profile&utm_medium=organic&utm_source=google&utm_content=fr&utm_term=fr (63/576)",
+      "data": {}
+    },
+    {
+      "id": "17695959011850oj3iej8c",
+      "timestamp": "2026-01-28T10:25:01.185Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://lecanal2.ca/ (86/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595900466uy9j3nhfi",
+      "timestamp": "2026-01-28T10:25:00.466Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://locations.bureauengros.com/qc/brossard/fournitures-de-bureau-ca-316.html (60/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595894918m43gns3k2",
+      "timestamp": "2026-01-28T10:24:54.918Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://quartiergeneralgriffintown-prevel.ca/ (85/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595892357zy1yoc348",
+      "timestamp": "2026-01-28T10:24:52.357Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.se7t.ca/ (84/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595888349jbl121g3x",
+      "timestamp": "2026-01-28T10:24:48.349Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.charlottegriffintown.com/ (83/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595887333xpl5utid7",
+      "timestamp": "2026-01-28T10:24:47.333Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for L'Hexagone Appartements: confidentialite@devimco.com",
+      "data": {}
+    },
+    {
+      "id": "1769595883153w6lxqct21",
+      "timestamp": "2026-01-28T10:24:43.153Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://devimco.com/appartements/montreal/griffintown/hexagone?utm_source=gmb&utm_medium=organic&utm_campaign=Hexagone%201 (82/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595882149klzzej8sx",
+      "timestamp": "2026-01-28T10:24:42.149Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for St Ann Appartements: confidentialite@devimco.com",
+      "data": {}
+    },
+    {
+      "id": "1769595877717qa3djzec1",
+      "timestamp": "2026-01-28T10:24:37.717Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://devimco.com/appartements/montreal/griffintown/st-ann?utm_source=gmb&utm_medium=organic&utm_campaign=St.%20Ann (81/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958766995wvl1x2ba",
+      "timestamp": "2026-01-28T10:24:36.699Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Centris: xxx@xxx.xxx",
+      "data": {}
+    },
+    {
+      "id": "1769595873334jxduxlfj1",
+      "timestamp": "2026-01-28T10:24:33.334Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.centris.ca/ (80/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595869599sn9el2ati",
+      "timestamp": "2026-01-28T10:24:29.599Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://groupkasa.com/ (79/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595867913s69bg207t",
+      "timestamp": "2026-01-28T10:24:27.913Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html (56/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595865038swk55f4jn",
+      "timestamp": "2026-01-28T10:24:25.038Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://edwincondos.com/ (78/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595864531eb4fdz792",
+      "timestamp": "2026-01-28T10:24:24.531Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.quebec.ca/services-quebec (53/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958610320nvypvyvx",
+      "timestamp": "2026-01-28T10:24:21.032Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://centredaffairesbrossard.ca/ (52/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595859864gq550js66",
+      "timestamp": "2026-01-28T10:24:19.864Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.rentbolt.ca/ (77/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595857835g9n91nuh1",
+      "timestamp": "2026-01-28T10:24:17.835Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.canadiantire.ca/en/store-details/qc/brossard-qc-643.html?utm_source=google&utm_medium=lss&utm_content=643 (50/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958565288rr7r3n75",
+      "timestamp": "2026-01-28T10:24:16.528Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.411habitation.com/renovations/monteregie/brossard-5/renovations-brossard.htm (76/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595854615q376i3hbl",
+      "timestamp": "2026-01-28T10:24:14.615Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.altrom.com/ (47/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595853836ii78jyxeq",
+      "timestamp": "2026-01-28T10:24:13.836Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://stores.bestbuy.ca/en-ca/qc/brossard/8480-boul-leduc-unit-100 (75/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595851036134z3t4w7",
+      "timestamp": "2026-01-28T10:24:11.036Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.galeriestaschereau.com/ (74/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958484128ditdg8m6",
+      "timestamp": "2026-01-28T10:24:08.412Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.vetetnous.com/centres/centre-veterinaire-rive-sud/ (46/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595844799a16dsu7nv",
+      "timestamp": "2026-01-28T10:24:04.799Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.sqdc.ca/fr-CA/Magasins/s-brossard-boulevard-matte/77020 (45/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595838762ckynnrc5c",
+      "timestamp": "2026-01-28T10:23:58.762Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://spectrumauto.ciblelocale.ca/ (44/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595838013btbfloo9l",
+      "timestamp": "2026-01-28T10:23:58.013Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.costco.ca/warehouse-locations/brossard-QC-521.html?utm_term=KW&utm_campaign=Homepage&utm_medium=GMB&utm_source=Google&utm_content=Link (73/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595835249srcm47isc",
+      "timestamp": "2026-01-28T10:23:55.249Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.rona.ca/fr/magasin/quebec/brossard/rona-brossard-taschereau-76010?cm_mmc=organic_search-_-yext-_-gmb-_-website&utm_medium=organic_search&utm_source=yext&utm_campaign=gmb&utm_content=website_fr (71/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958323973y2sj7rfk",
+      "timestamp": "2026-01-28T10:23:52.397Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://hhautobm.ciblelocale.ca/ (43/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958323649ohf1ul18",
+      "timestamp": "2026-01-28T10:23:52.364Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.rona.ca/fr/magasin/quebec/brossard/rona-brossard-dix-30-41460?cm_mmc=organic_search-_-yext-_-gmb-_-website&utm_medium=organic_search&utm_source=yext&utm_campaign=gmb&utm_content=website (68/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958277824as054c21",
+      "timestamp": "2026-01-28T10:23:47.782Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.stjeanchrysler.com/ (42/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958272871gzcb1382",
+      "timestamp": "2026-01-28T10:23:47.287Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://saaq.gouv.qc.ca/ (67/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595822780eygy27zuo",
+      "timestamp": "2026-01-28T10:23:42.780Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.kiastconstant.com/ (41/576)",
+      "data": {}
+    },
+    {
+      "id": "17695958200496jvb6z63d",
+      "timestamp": "2026-01-28T10:23:40.049Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://mailchamplain.ca/?utm_campaign=gmb_profile&utm_medium=organic&utm_source=google&utm_content=fr&utm_term=fr (63/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595819762l0g4u9kvx",
+      "timestamp": "2026-01-28T10:23:39.762Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.auto-baine.com/ (40/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595816945omq5xoqwi",
+      "timestamp": "2026-01-28T10:23:36.945Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://autovalue.com/ (37/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595815431muecpllvk",
+      "timestamp": "2026-01-28T10:23:35.431Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://locations.bureauengros.com/qc/brossard/fournitures-de-bureau-ca-316.html (60/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595812412war8bsna3",
+      "timestamp": "2026-01-28T10:23:32.412Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://eaauto.ca/ (36/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595782879pu9ky334j",
+      "timestamp": "2026-01-28T10:23:02.879Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html (56/576)",
+      "data": {}
+    },
+    {
+      "id": "17695957798665annn3jix",
+      "timestamp": "2026-01-28T10:22:59.866Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://porscherivesud.com/ (33/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595779661bjqhso6ku",
+      "timestamp": "2026-01-28T10:22:59.661Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.quebec.ca/services-quebec (53/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595775994pfk5q97ve",
+      "timestamp": "2026-01-28T10:22:55.994Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.action-mitsubishi.com/ (32/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595775410duzutb9tv",
+      "timestamp": "2026-01-28T10:22:55.410Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://centredaffairesbrossard.ca/ (52/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595772645yaacfy9ne",
+      "timestamp": "2026-01-28T10:22:52.645Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.bouchervillenissan.com/fr (31/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595772495j3hb8gecp",
+      "timestamp": "2026-01-28T10:22:52.495Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.canadiantire.ca/en/store-details/qc/brossard-qc-643.html?utm_source=google&utm_medium=lss&utm_content=643 (50/576)",
+      "data": {}
+    },
+    {
+      "id": "17695957691827cka0besz",
+      "timestamp": "2026-01-28T10:22:49.182Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.megacreditauto.com/ (30/576)",
+      "data": {}
+    },
+    {
+      "id": "17695957691766bdkro7cw",
+      "timestamp": "2026-01-28T10:22:49.176Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.altrom.com/ (47/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595766276f0967n2td",
+      "timestamp": "2026-01-28T10:22:46.276Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.genesisrivesud.ca/ (24/576)",
+      "data": {}
+    },
+    {
+      "id": "176959576284290s5y1grk",
+      "timestamp": "2026-01-28T10:22:42.842Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.vetetnous.com/centres/centre-veterinaire-rive-sud/ (46/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595761276mwgn30lo6",
+      "timestamp": "2026-01-28T10:22:41.276Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.polestar.com/fr-ca/spaces/brossard/ (22/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595759532vkeitrt6h",
+      "timestamp": "2026-01-28T10:22:39.532Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.sqdc.ca/fr-CA/Magasins/s-brossard-boulevard-matte/77020 (45/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595758506z8i2780up",
+      "timestamp": "2026-01-28T10:22:38.506Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.autoflash.net/ (21/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595755025jki2aqfhc",
+      "timestamp": "2026-01-28T10:22:35.025Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.montmorencyford.com/ (16/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595753593jniiusvt8",
+      "timestamp": "2026-01-28T10:22:33.593Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://spectrumauto.ciblelocale.ca/ (44/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595751644jio1qpnbl",
+      "timestamp": "2026-01-28T10:22:31.644Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardcadillac.ca/fr (11/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595748113b7fxurawo",
+      "timestamp": "2026-01-28T10:22:28.113Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.subarubrossard.com/ (10/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595747577x7yz8jo8m",
+      "timestamp": "2026-01-28T10:22:27.577Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://hhautobm.ciblelocale.ca/ (43/576)",
+      "data": {}
+    },
+    {
+      "id": "17695957447290nzuxmv2t",
+      "timestamp": "2026-01-28T10:22:24.729Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardmazda.com/fr (5/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595744260o02hltaku",
+      "timestamp": "2026-01-28T10:22:24.260Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.stjeanchrysler.com/ (42/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595741392w79539s4a",
+      "timestamp": "2026-01-28T10:22:21.392Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardnissan.com/ (4/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595740827l25wbc6b5",
+      "timestamp": "2026-01-28T10:22:20.827Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.kiastconstant.com/ (41/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595738109kd838ibwn",
+      "timestamp": "2026-01-28T10:22:18.109Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.auto-baine.com/ (40/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595738026eo5w7ukfx",
+      "timestamp": "2026-01-28T10:22:18.026Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://centredejardinbrossard.com/ (1/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595737816po3taa5d0",
+      "timestamp": "2026-01-28T10:22:17.816Z",
+      "type": "start",
+      "node": "email-extract",
+      "message": "Starting bulk email extraction: 576 leads",
+      "data": {
+        "jobId": "1769595737816"
+      }
+    },
+    {
+      "id": "17695957352914h2fc9p80",
+      "timestamp": "2026-01-28T10:22:15.291Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://autovalue.com/ (37/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595730176n1jrsl53d",
+      "timestamp": "2026-01-28T10:22:10.177Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://eaauto.ca/ (36/576)",
+      "data": {}
+    },
+    {
+      "id": "176959569758881bw9ur5p",
+      "timestamp": "2026-01-28T10:21:37.588Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://porscherivesud.com/ (33/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595693624jvrln6y54",
+      "timestamp": "2026-01-28T10:21:33.624Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.action-mitsubishi.com/ (32/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595690324gk9aka6ys",
+      "timestamp": "2026-01-28T10:21:30.324Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.bouchervillenissan.com/fr (31/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595687130195cffad4",
+      "timestamp": "2026-01-28T10:21:27.130Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.megacreditauto.com/ (30/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595684210j4ga4ro08",
+      "timestamp": "2026-01-28T10:21:24.210Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.genesisrivesud.ca/ (24/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595679442n2cfqmc33",
+      "timestamp": "2026-01-28T10:21:19.442Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.polestar.com/fr-ca/spaces/brossard/ (22/576)",
+      "data": {}
+    },
+    {
+      "id": "17695956766764ns40john",
+      "timestamp": "2026-01-28T10:21:16.676Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.autoflash.net/ (21/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595673221hamzjvmub",
+      "timestamp": "2026-01-28T10:21:13.221Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.montmorencyford.com/ (16/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595670065j725ijai3",
+      "timestamp": "2026-01-28T10:21:10.065Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardcadillac.ca/fr (11/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595666606x78wlf78r",
+      "timestamp": "2026-01-28T10:21:06.606Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.subarubrossard.com/ (10/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595663499q0of23fjx",
+      "timestamp": "2026-01-28T10:21:03.499Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardmazda.com/fr (5/576)",
+      "data": {}
+    },
+    {
+      "id": "17695956598260abut2crl",
+      "timestamp": "2026-01-28T10:20:59.827Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardnissan.com/ (4/576)",
+      "data": {}
+    },
+    {
+      "id": "1769595656533sisgd5akd",
+      "timestamp": "2026-01-28T10:20:56.533Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://centredejardinbrossard.com/ (1/576)",
+      "data": {}
+    },
+    {
+      "id": "17695956561759k5jbe7yv",
+      "timestamp": "2026-01-28T10:20:56.175Z",
+      "type": "start",
+      "node": "email-extract",
+      "message": "Starting bulk email extraction: 576 leads",
+      "data": {
+        "jobId": "1769595656175"
+      }
+    },
+    {
+      "id": "1769595465930wqed2162k",
+      "timestamp": "2026-01-28T10:17:45.930Z",
+      "type": "complete",
+      "node": "email-extract",
+      "message": "Bulk extraction completed: 36 emails found from 78 leads",
+      "data": {
+        "jobId": "1769595086327",
+        "extracted": 36,
+        "failed": 5,
+        "duration": "380s"
+      }
+    },
+    {
+      "id": "1769595462550vskwhx7q8",
+      "timestamp": "2026-01-28T10:17:42.550Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.411habitation.com/renovations/monteregie/brossard-5/renovations-brossard.htm (78/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595459063ri3sjyry9",
+      "timestamp": "2026-01-28T10:17:39.063Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://stores.bestbuy.ca/en-ca/qc/brossard/8480-boul-leduc-unit-100 (77/78)",
+      "data": {}
+    },
+    {
+      "id": "17695954560631axfwgpm7",
+      "timestamp": "2026-01-28T10:17:36.063Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.galeriestaschereau.com/ (76/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595443062pxdslr6wr",
+      "timestamp": "2026-01-28T10:17:23.062Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.costco.ca/warehouse-locations/brossard-QC-521.html?utm_term=KW&utm_campaign=Homepage&utm_medium=GMB&utm_source=Google&utm_content=Link (75/78)",
+      "data": {}
+    },
+    {
+      "id": "17695954420447esxm9ukx",
+      "timestamp": "2026-01-28T10:17:22.044Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Patrick Morin Brossard: serviceclient@patrickmorin.com",
+      "data": {}
+    },
+    {
+      "id": "1769595436894t3v1yoeyd",
+      "timestamp": "2026-01-28T10:17:16.894Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.patrickmorin.com/fr/magasins/brossard (74/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595434083w5lxcnn94",
+      "timestamp": "2026-01-28T10:17:14.083Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.rona.ca/fr/magasin/quebec/brossard/rona-brossard-taschereau-76010?cm_mmc=organic_search-_-yext-_-gmb-_-website&utm_medium=organic_search&utm_source=yext&utm_campaign=gmb&utm_content=website_fr (73/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595433076grr1q3abi",
+      "timestamp": "2026-01-28T10:17:13.076Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Laser Game Evolution DIX30 - Laser Tag: communication@lasergame-evolution.ca",
+      "data": {}
+    },
+    {
+      "id": "1769595428143ng7q396ly",
+      "timestamp": "2026-01-28T10:17:08.143Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.lasergame-evolution.ca/ (72/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595427126tyar6kmpi",
+      "timestamp": "2026-01-28T10:17:07.126Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for EQ3 Brossard - Quartier DIX30: mjleclerc@eq3.com",
+      "data": {}
+    },
+    {
+      "id": "17695954239272iperw45f",
+      "timestamp": "2026-01-28T10:17:03.928Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.eq3.com/ca/en/shopwithus/eq3-locations/cjw10z96u00fa6gs0941re9ze/brossard/eq3-brossard?utm_source=google&utm_medium=gmb&utm_campaign=gmb-sitelink&utm_content=20191017--google-my-business-website-link (71/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595421129rwte8y39t",
+      "timestamp": "2026-01-28T10:17:01.129Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.rona.ca/fr/magasin/quebec/brossard/rona-brossard-dix-30-41460?cm_mmc=organic_search-_-yext-_-gmb-_-website&utm_medium=organic_search&utm_source=yext&utm_campaign=gmb&utm_content=website (70/78)",
+      "data": {}
+    },
+    {
+      "id": "17695954173597xjlpegi4",
+      "timestamp": "2026-01-28T10:16:57.359Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://saaq.gouv.qc.ca/ (69/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595416341lxdvpid8y",
+      "timestamp": "2026-01-28T10:16:56.341Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Depotium Mini Entrepôt - Brossard: reservations@depotium.com",
+      "data": {}
+    },
+    {
+      "id": "17695954141927n9cqppjf",
+      "timestamp": "2026-01-28T10:16:54.192Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.depotium.com/en/self-storage/brossard/?utm_source=Google_Maps (68/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595413174lkptyvp1f",
+      "timestamp": "2026-01-28T10:16:53.174Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Access Professional Training Center: mailtoiab@rsb.qc.ca",
+      "data": {}
+    },
+    {
+      "id": "176959540750892e8fq4s8",
+      "timestamp": "2026-01-28T10:16:47.508Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.access.rsb.qc.ca/ (67/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595401027r5nj43yxd",
+      "timestamp": "2026-01-28T10:16:41.027Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://mailchamplain.ca/?utm_campaign=gmb_profile&utm_medium=organic&utm_source=google&utm_content=fr&utm_term=fr (65/78)",
+      "data": {}
+    },
+    {
+      "id": "176959540000767tinifli",
+      "timestamp": "2026-01-28T10:16:40.007Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Place Portobello: josee.laverdiere@fcr.ca",
+      "data": {}
+    },
+    {
+      "id": "1769595396942ocvdyp54x",
+      "timestamp": "2026-01-28T10:16:36.942Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.placeportobello.com/ (64/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595395927y6qa12mva",
+      "timestamp": "2026-01-28T10:16:35.928Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Centre socioculturel Alphonse Lepage: services@brossard.ca",
+      "data": {}
+    },
+    {
+      "id": "1769595390909axf27gksw",
+      "timestamp": "2026-01-28T10:16:30.909Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.brossard.ca/ (63/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595386128kh3k177v3",
+      "timestamp": "2026-01-28T10:16:26.128Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://locations.bureauengros.com/qc/brossard/fournitures-de-bureau-ca-316.html (62/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595385123g3x0p2yk7",
+      "timestamp": "2026-01-28T10:16:25.123Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Quintcap: reception@quintcap.com",
+      "data": {}
+    },
+    {
+      "id": "17695953793413r0pscnjb",
+      "timestamp": "2026-01-28T10:16:19.341Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://quintcap.com/ (61/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595378330heb135o63",
+      "timestamp": "2026-01-28T10:16:18.331Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Groupe Devimco: confidentialite@devimco.com",
+      "data": {}
+    },
+    {
+      "id": "1769595374658963zc5qut",
+      "timestamp": "2026-01-28T10:16:14.658Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://devimco.com/?utm_source=gmb&utm_medium=organic&utm_campaign=Devimco (60/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595373638s3dbdtezs",
+      "timestamp": "2026-01-28T10:16:13.638Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for DIX30 - 7200 Boulevard du Quartier: experienceclientdix30@carbonleo.com",
+      "data": {}
+    },
+    {
+      "id": "1769595370459i8cvug6i0",
+      "timestamp": "2026-01-28T10:16:10.459Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.quartierdix30.com/ (59/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595337704f5y2suic4",
+      "timestamp": "2026-01-28T10:15:37.704Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html (58/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595336686t1uti224g",
+      "timestamp": "2026-01-28T10:15:36.686Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for DIX30 - 9150 Boulevard Leduc: enquiries@oxfordproperties.com",
+      "data": {}
+    },
+    {
+      "id": "17695953337199sbvqa7u5",
+      "timestamp": "2026-01-28T10:15:33.719Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.oxfordproperties.com/corp/leasing/en/retail/property/dix30-s4 (57/78)",
+      "data": {}
+    },
+    {
+      "id": "176959533270377u3nkbua",
+      "timestamp": "2026-01-28T10:15:32.703Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for DIX30 - 9120 Boulevard Leduc: enquiries@oxfordproperties.com",
+      "data": {}
+    },
+    {
+      "id": "1769595329203xiv6pvaeo",
+      "timestamp": "2026-01-28T10:15:29.203Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.oxfordproperties.com/corp/leasing/en/retail/property/dix30-s9 (56/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595325853w2bfzlcm6",
+      "timestamp": "2026-01-28T10:15:25.853Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.quebec.ca/services-quebec (55/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595321572023rdzr26",
+      "timestamp": "2026-01-28T10:15:21.572Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://centredaffairesbrossard.ca/ (54/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595320538l7zu16eep",
+      "timestamp": "2026-01-28T10:15:20.538Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Coworking Rive-Sud - Espace Av. Auteuil - Brossard: 605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com",
+      "data": {}
+    },
+    {
+      "id": "17695953179210x7gi0iqb",
+      "timestamp": "2026-01-28T10:15:17.922Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.coworking-rive-sud.org/espace-de-brossard (53/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595315006yielkhpqx",
+      "timestamp": "2026-01-28T10:15:15.006Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.canadiantire.ca/en/store-details/qc/brossard-qc-643.html?utm_source=google&utm_medium=lss&utm_content=643 (52/78)",
+      "data": {}
+    },
+    {
+      "id": "17695953139878sz1hggkn",
+      "timestamp": "2026-01-28T10:15:13.987Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Action Chevrolet Buick GMC: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595311888a1oo1uts2",
+      "timestamp": "2026-01-28T10:15:11.888Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.actionchevrolet.com/ (51/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595307187qs3myspm2",
+      "timestamp": "2026-01-28T10:15:07.187Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.candiactoyota.com/?utm_source=google&utm_medium=organic&utm_campaign=google_my_business (50/78)",
+      "data": {}
+    },
+    {
+      "id": "17695953061756e8caaiyv",
+      "timestamp": "2026-01-28T10:15:06.175Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Complexe aquatique de Brossard: services@brossard.ca",
+      "data": {}
+    },
+    {
+      "id": "17695952998830grni5i16",
+      "timestamp": "2026-01-28T10:14:59.883Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossard.ca/complexe-aquatique (49/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595298866khhs1xnrw",
+      "timestamp": "2026-01-28T10:14:58.866Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Quartier DIX30: experienceclientdix30@carbonleo.com",
+      "data": {}
+    },
+    {
+      "id": "1769595295667f18ik6lq0",
+      "timestamp": "2026-01-28T10:14:55.667Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.quartierdix30.com/ (48/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595292719soebktn8y",
+      "timestamp": "2026-01-28T10:14:52.719Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.altrom.com/ (47/78)",
+      "data": {}
+    },
+    {
+      "id": "176959528658446w8e07lg",
+      "timestamp": "2026-01-28T10:14:46.584Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.vetetnous.com/centres/centre-veterinaire-rive-sud/ (46/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595283381ofpl86x7r",
+      "timestamp": "2026-01-28T10:14:43.381Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.sqdc.ca/fr-CA/Magasins/s-brossard-boulevard-matte/77020 (45/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595277416o1bx49nsh",
+      "timestamp": "2026-01-28T10:14:37.416Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://spectrumauto.ciblelocale.ca/ (44/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595271364mtpvv7s7z",
+      "timestamp": "2026-01-28T10:14:31.364Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://hhautobm.ciblelocale.ca/ (43/78)",
+      "data": {}
+    },
+    {
+      "id": "176959526790086kijgbnc",
+      "timestamp": "2026-01-28T10:14:27.900Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.stjeanchrysler.com/ (42/78)",
+      "data": {}
+    },
+    {
+      "id": "17695952641487qnncref6",
+      "timestamp": "2026-01-28T10:14:24.148Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.kiastconstant.com/ (41/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595261329rz4hadr8u",
+      "timestamp": "2026-01-28T10:14:21.329Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.auto-baine.com/ (40/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595260314uroitn0h2",
+      "timestamp": "2026-01-28T10:14:20.314Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Autoriginal Inc: robert@autoriginal.com",
+      "data": {}
+    },
+    {
+      "id": "1769595258011ngu045k56",
+      "timestamp": "2026-01-28T10:14:18.011Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://autoriginal.com/ (38/78)",
+      "data": {}
+    },
+    {
+      "id": "17695952546600mv019k4f",
+      "timestamp": "2026-01-28T10:14:14.660Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://autovalue.com/ (37/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595249038dfwuv4u2g",
+      "timestamp": "2026-01-28T10:14:09.038Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://eaauto.ca/ (36/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595248031arojbgugi",
+      "timestamp": "2026-01-28T10:14:08.031Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Coussa Auto: theguy@coussaauto.com",
+      "data": {}
+    },
+    {
+      "id": "1769595245281j16upvxqb",
+      "timestamp": "2026-01-28T10:14:05.281Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.coussaauto.com/ (35/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595212712vpbbg27qc",
+      "timestamp": "2026-01-28T10:13:32.712Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://porscherivesud.com/ (33/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595209227old7zgix4",
+      "timestamp": "2026-01-28T10:13:29.227Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.action-mitsubishi.com/ (32/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595205917jgc8kzab3",
+      "timestamp": "2026-01-28T10:13:25.917Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.bouchervillenissan.com/fr (31/78)",
+      "data": {}
+    },
+    {
+      "id": "176959520246276si3pywi",
+      "timestamp": "2026-01-28T10:13:22.462Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.megacreditauto.com/ (30/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595201448udpdqey3e",
+      "timestamp": "2026-01-28T10:13:21.448Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Taschereau Motors: email@mail.com",
+      "data": {}
+    },
+    {
+      "id": "1769595196794y5dywh2bo",
+      "timestamp": "2026-01-28T10:13:16.794Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://taschereaumotors.com/ (29/78)",
+      "data": {}
+    },
+    {
+      "id": "176959519577706n379p7w",
+      "timestamp": "2026-01-28T10:13:15.777Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Park Avenue Volkswagen - Véhicules d'occasion: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595193488nwf11mtsr",
+      "timestamp": "2026-01-28T10:13:13.488Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.parkavenuevw.com/fr (27/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595192472tddco38lx",
+      "timestamp": "2026-01-28T10:13:12.472Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for BMW Brossard: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595189577s0ws6tnan",
+      "timestamp": "2026-01-28T10:13:09.577Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.bmwbrossard.com/ (25/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595185790fwlvd8mhg",
+      "timestamp": "2026-01-28T10:13:05.790Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.genesisrivesud.ca/ (24/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595184774ldnyn62s8",
+      "timestamp": "2026-01-28T10:13:04.774Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Mercedes-Benz Rive-Sud: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "17695951824797auepdjdx",
+      "timestamp": "2026-01-28T10:13:02.479Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.mercedes-benz-rivesud.ca/fr (23/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595175927nwpqfhs0h",
+      "timestamp": "2026-01-28T10:12:55.927Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.polestar.com/fr-ca/spaces/brossard/ (22/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595173162w9k7cyjwr",
+      "timestamp": "2026-01-28T10:12:53.162Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.autoflash.net/ (21/78)",
+      "data": {}
+    },
+    {
+      "id": "17695951721446zpvk5z9a",
+      "timestamp": "2026-01-28T10:12:52.144Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for MINI Brossard - Groupe Park Avenue: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595169393jcxzudcsw",
+      "timestamp": "2026-01-28T10:12:49.394Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.minibrossard.com/ (20/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595168375o7972tubx",
+      "timestamp": "2026-01-28T10:12:48.375Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Park Avenue Volkswagen Brossard: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595165742nbpxvl1j0",
+      "timestamp": "2026-01-28T10:12:45.742Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.parkavenuevw.com/fr (19/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595164731qb8arqqkm",
+      "timestamp": "2026-01-28T10:12:44.731Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Park Avenue Audi Brossard: 5c%22info@parkavenueaudi.com",
+      "data": {}
+    },
+    {
+      "id": "17695951601437jnurqeq6",
+      "timestamp": "2026-01-28T10:12:40.143Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.parkavenueaudi.com/ (18/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595159126favxs0jz5",
+      "timestamp": "2026-01-28T10:12:39.126Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Land Rover Brossard: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "17695951561460mzkd0g0g",
+      "timestamp": "2026-01-28T10:12:36.146Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.landroverbrossard.com/ (17/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595152493t556jte7h",
+      "timestamp": "2026-01-28T10:12:32.493Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.montmorencyford.com/ (16/78)",
+      "data": {}
+    },
+    {
+      "id": "176959515147401c0csjz3",
+      "timestamp": "2026-01-28T10:12:31.474Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Park Avenue/Volvo: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "17695951457154ixo7qie5",
+      "timestamp": "2026-01-28T10:12:25.715Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.parkavenuevolvo.com/fr (15/78)",
+      "data": {}
+    },
+    {
+      "id": "17695951447095l8ftdyed",
+      "timestamp": "2026-01-28T10:12:24.709Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for ACURA BROSSARD: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "17695951422258aaa86cxx",
+      "timestamp": "2026-01-28T10:12:22.225Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.acurabrossard.com/ (14/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595141209ae5cdtelk",
+      "timestamp": "2026-01-28T10:12:21.209Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Lexus Gabriel Brossard: dev@gabriel.ca",
+      "data": {}
+    },
+    {
+      "id": "1769595139244dpmtaizcr",
+      "timestamp": "2026-01-28T10:12:19.244Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.lexusgabrielbrossard.com/ (13/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595138226b1ojuryrp",
+      "timestamp": "2026-01-28T10:12:18.226Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Honda Brossard: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595135825imxjvldw4",
+      "timestamp": "2026-01-28T10:12:15.825Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.hondabrossard.com/fr (12/78)",
+      "data": {}
+    },
+    {
+      "id": "176959513247716mhiu8sz",
+      "timestamp": "2026-01-28T10:12:12.477Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardcadillac.ca/fr (11/78)",
+      "data": {}
+    },
+    {
+      "id": "17695951288929sp2w037u",
+      "timestamp": "2026-01-28T10:12:08.892Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.subarubrossard.com/ (10/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595127877cuqwdqbkt",
+      "timestamp": "2026-01-28T10:12:07.877Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Brossard Mitsubishi: nom@exemple.com",
+      "data": {}
+    },
+    {
+      "id": "1769595123492nqi3hwgfw",
+      "timestamp": "2026-01-28T10:12:03.492Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardmitsubishi.ca/ (9/78)",
+      "data": {}
+    },
+    {
+      "id": "17695951224775vuou11y5",
+      "timestamp": "2026-01-28T10:12:02.477Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Mega Kia Brossard: gcloutier@megakiabrossard.com",
+      "data": {}
+    },
+    {
+      "id": "1769595115528q7x8z5my2",
+      "timestamp": "2026-01-28T10:11:55.528Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.megakiabrossard.com/?utm_source=google_lso_trader&utm_medium=organic&utm_campaign=home (8/78)",
+      "data": {}
+    },
+    {
+      "id": "17695951145239dw2hawwc",
+      "timestamp": "2026-01-28T10:11:54.523Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Groupe Park Avenue - Regroupement Automobile: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595111442xevlc5gw5",
+      "timestamp": "2026-01-28T10:11:51.442Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://groupeparkavenue.com/en (7/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595110425b19izs54y",
+      "timestamp": "2026-01-28T10:11:50.425Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Park Avenue Toyota Brossard: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595107958wzvdwf0o0",
+      "timestamp": "2026-01-28T10:11:47.958Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardtoyota.com/fr (6/78)",
+      "data": {}
+    },
+    {
+      "id": "17695951046745c6svxaa7",
+      "timestamp": "2026-01-28T10:11:44.674Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardmazda.com/fr (5/78)",
+      "data": {}
+    },
+    {
+      "id": "17695951013411jd26x33i",
+      "timestamp": "2026-01-28T10:11:41.342Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardnissan.com/ (4/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595100324w32gk6xvf",
+      "timestamp": "2026-01-28T10:11:40.324Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Rive Sud Chrysler Dodge Inc.: 3af74c00e86c4c828216e2111e0a86d1@sentry.io",
+      "data": {}
+    },
+    {
+      "id": "1769595096390qbyvc13lf",
+      "timestamp": "2026-01-28T10:11:36.390Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from http://www.rivesudchrysler.com/ (3/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595095374jxdaoggm8",
+      "timestamp": "2026-01-28T10:11:35.374Z",
+      "type": "success",
+      "node": "email-extract",
+      "message": "Found email for Brossard Hyundai: information@brossardhyundai.com",
+      "data": {}
+    },
+    {
+      "id": "1769595090023gwi06sq9g",
+      "timestamp": "2026-01-28T10:11:30.023Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://www.brossardhyundai.com/ (2/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595086549kp2qvffoq",
+      "timestamp": "2026-01-28T10:11:26.549Z",
+      "type": "info",
+      "node": "email-extract",
+      "message": "Extracting from https://centredejardinbrossard.com/ (1/78)",
+      "data": {}
+    },
+    {
+      "id": "1769595086327abtnkier7",
+      "timestamp": "2026-01-28T10:11:26.327Z",
+      "type": "start",
+      "node": "email-extract",
+      "message": "Starting bulk email extraction: 78 leads",
+      "data": {
+        "jobId": "1769595086327"
+      }
+    },
+    {
+      "id": "17695947926290ok3fwmcp",
+      "timestamp": "2026-01-28T10:06:32.629Z",
+      "type": "info",
+      "node": "system",
+      "message": "Server started",
+      "data": {
+        "port": 3000
+      }
+    },
+    {
+      "id": "176959476266591ytwgd8s",
+      "timestamp": "2026-01-28T10:06:02.665Z",
+      "type": "info",
+      "node": "system",
+      "message": "Server started",
+      "data": {
+        "port": 3000
+      }
+    },
+    {
+      "id": "1769594754013ebjv69976",
+      "timestamp": "2026-01-28T10:05:54.013Z",
+      "type": "info",
+      "node": "system",
+      "message": "Server started",
+      "data": {
+        "port": 3000
+      }
+    },
+    {
+      "id": "1769594294777nsjuidz2x",
+      "timestamp": "2026-01-28T09:58:14.777Z",
+      "type": "info",
+      "node": "system",
+      "message": "Server started",
+      "data": {
+        "port": 3000
+      }
+    },
+    {
+      "id": "1769536239678hgkbjar5n",
+      "timestamp": "2026-01-27T17:50:39.678Z",
+      "type": "complete",
+      "node": "workflow",
+      "message": "Job completed: 244 leads found",
+      "data": {
+        "jobId": "1769536107632",
+        "leadsCount": 244,
+        "errorsCount": 0,
+        "duration": "125s"
+      }
+    },
+    {
+      "id": "17695362396684hopd1nvt",
+      "timestamp": "2026-01-27T17:50:39.668Z",
+      "type": "success",
+      "node": "storage",
+      "message": "Saved 244 leads locally for campaign: Montreal Jan 2026",
+      "data": {}
+    },
+    {
+      "id": "17695362328998iqhawmaz",
+      "timestamp": "2026-01-27T17:50:32.899Z",
+      "type": "info",
+      "node": "progress",
+      "message": "Updated progress for 25 postal codes",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536232629rsv6is3ni",
+      "timestamp": "2026-01-27T17:50:32.629Z",
+      "type": "success",
+      "node": "deduplication",
+      "message": "Removed 729 duplicates, 244 unique leads",
+      "data": {
+        "jobId": "1769536107632",
+        "original": 973,
+        "unique": 244,
+        "duplicates": 729
+      }
+    },
+    {
+      "id": "1769536232467a7nf82sf6",
+      "timestamp": "2026-01-27T17:50:32.467Z",
+      "type": "info",
+      "node": "deduplication",
+      "message": "Deduplicating 973 leads...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "17695362324586qs08hkjb",
+      "timestamp": "2026-01-27T17:50:32.458Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 50 businesses in Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 50
+      }
+    },
+    {
+      "id": "1769536232348hw2tyci65",
+      "timestamp": "2026-01-27T17:50:32.349Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 71 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "1769536229343m7li4rwra",
+      "timestamp": "2026-01-27T17:50:29.343Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Downtown, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "1769536229159jsvw61ixu",
+      "timestamp": "2026-01-27T17:50:29.159Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Downtown, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536228560mk9kyu8e2",
+      "timestamp": "2026-01-27T17:50:28.560Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 25,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536226351ov8j98610",
+      "timestamp": "2026-01-27T17:50:26.351Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536226146c3uagrxjx",
+      "timestamp": "2026-01-27T17:50:26.146Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 50 businesses in Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 50
+      }
+    },
+    {
+      "id": "1769536225879poto1kop0",
+      "timestamp": "2026-01-27T17:50:25.879Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 73 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "17695362222251lqumepyr",
+      "timestamp": "2026-01-27T17:50:22.225Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Downtown, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "1769536222062qx55gwv0q",
+      "timestamp": "2026-01-27T17:50:22.062Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Downtown, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536222046na0f201rb",
+      "timestamp": "2026-01-27T17:50:22.046Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 24,
+        "total": 25
+      }
+    },
+    {
+      "id": "17695362199834ke1zrk78",
+      "timestamp": "2026-01-27T17:50:19.983Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536219977190pix80f",
+      "timestamp": "2026-01-27T17:50:19.977Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 27 businesses in Griffintown",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 27
+      }
+    },
+    {
+      "id": "1769536219972cc41hzmxz",
+      "timestamp": "2026-01-27T17:50:19.972Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 57 total, 27 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "1769536217474s0lqv9pts",
+      "timestamp": "2026-01-27T17:50:17.474Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Griffintown, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "17695362173207eaay30jm",
+      "timestamp": "2026-01-27T17:50:17.320Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Griffintown, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "17695362173037u1upvoho",
+      "timestamp": "2026-01-27T17:50:17.303Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Griffintown",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 23,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536215178w5znasp9c",
+      "timestamp": "2026-01-27T17:50:15.178Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536215175zmxyp89rx",
+      "timestamp": "2026-01-27T17:50:15.175Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 41 businesses in Île-des-Soeurs",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 41
+      }
+    },
+    {
+      "id": "17695362151716rs4y9nbp",
+      "timestamp": "2026-01-27T17:50:15.171Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 86 total, 41 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "17695362128244ykt5zvqr",
+      "timestamp": "2026-01-27T17:50:12.824Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Île-des-Soeurs, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "17695362128204f0b1c5m1",
+      "timestamp": "2026-01-27T17:50:12.821Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Île-des-Soeurs, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536212817la8r6n485",
+      "timestamp": "2026-01-27T17:50:12.817Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Île-des-Soeurs",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 22,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536210805inalfwssa",
+      "timestamp": "2026-01-27T17:50:10.805Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536210801nyrfevcxl",
+      "timestamp": "2026-01-27T17:50:10.801Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 50 businesses in Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 50
+      }
+    },
+    {
+      "id": "1769536210798utrlomz2h",
+      "timestamp": "2026-01-27T17:50:10.798Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 71 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "17695362082400j0z5fvge",
+      "timestamp": "2026-01-27T17:50:08.240Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Downtown, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "1769536208235b9y6gs3rt",
+      "timestamp": "2026-01-27T17:50:08.235Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Downtown, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536208228vuvkbcuq2",
+      "timestamp": "2026-01-27T17:50:08.228Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 21,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536206217u60nq832x",
+      "timestamp": "2026-01-27T17:50:06.217Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "17695362062129fvqz7036",
+      "timestamp": "2026-01-27T17:50:06.214Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 50 businesses in Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 50
+      }
+    },
+    {
+      "id": "1769536206210s1e26t0lq",
+      "timestamp": "2026-01-27T17:50:06.210Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 71 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "1769536203531buy0um04i",
+      "timestamp": "2026-01-27T17:50:03.531Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Downtown, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "176953620352880cfq7c6e",
+      "timestamp": "2026-01-27T17:50:03.528Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Downtown, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536203526ote1666mz",
+      "timestamp": "2026-01-27T17:50:03.526Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Downtown",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 20,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536201518oxmxyywiw",
+      "timestamp": "2026-01-27T17:50:01.518Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536201515e85y0249j",
+      "timestamp": "2026-01-27T17:50:01.515Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 50 businesses in Vieux-Montréal",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 50
+      }
+    },
+    {
+      "id": "1769536201510jsgw1wwzi",
+      "timestamp": "2026-01-27T17:50:01.510Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 66 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "17695361994176nb79gbgr",
+      "timestamp": "2026-01-27T17:49:59.417Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Vieux-Montréal, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "1769536199414po3hxzoyj",
+      "timestamp": "2026-01-27T17:49:59.414Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Vieux-Montréal, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536199409uyuf2favp",
+      "timestamp": "2026-01-27T17:49:59.409Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Vieux-Montréal",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 19,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536197355q52nm08la",
+      "timestamp": "2026-01-27T17:49:57.355Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "17695361973246srpthm6o",
+      "timestamp": "2026-01-27T17:49:57.324Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 50 businesses in Quartier Latin",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 50
+      }
+    },
+    {
+      "id": "1769536197196m00y48toc",
+      "timestamp": "2026-01-27T17:49:57.196Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 76 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "1769536193382iolq8xloi",
+      "timestamp": "2026-01-27T17:49:53.382Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Quartier Latin, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "1769536193371x34egbvsb",
+      "timestamp": "2026-01-27T17:49:53.371Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Quartier Latin, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "17695361933640i1ikai33",
+      "timestamp": "2026-01-27T17:49:53.364Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Quartier Latin",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 18,
+        "total": 25
+      }
+    },
+    {
+      "id": "17695361912614msxgnx04",
+      "timestamp": "2026-01-27T17:49:51.261Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536191250u92impig3",
+      "timestamp": "2026-01-27T17:49:51.250Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 42 businesses in Plateau Mont-Royal",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 42
+      }
+    },
+    {
+      "id": "1769536191240rfb7fswyl",
+      "timestamp": "2026-01-27T17:49:51.240Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 42 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "1769536188643lyxcye7hx",
+      "timestamp": "2026-01-27T17:49:48.643Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Plateau Mont-Royal, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "176953618863730pnb0lne",
+      "timestamp": "2026-01-27T17:49:48.637Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Plateau Mont-Royal, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536188633n2t6gzxal",
+      "timestamp": "2026-01-27T17:49:48.633Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Plateau Mont-Royal",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 17,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536186614aozqurajf",
+      "timestamp": "2026-01-27T17:49:46.614Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536186606o4a9u2op2",
+      "timestamp": "2026-01-27T17:49:46.606Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 22 businesses in Outremont",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 22
+      }
+    },
+    {
+      "id": "1769536186600lgm66ljla",
+      "timestamp": "2026-01-27T17:49:46.600Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 43 total, 22 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "17695361844140iqcgjxnl",
+      "timestamp": "2026-01-27T17:49:44.414Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Outremont, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "1769536184409qznyx47c2",
+      "timestamp": "2026-01-27T17:49:44.409Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Outremont, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536184405uk01029jn",
+      "timestamp": "2026-01-27T17:49:44.405Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Outremont",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 16,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536182396f7315jwah",
+      "timestamp": "2026-01-27T17:49:42.397Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536182391sgsstr4wl",
+      "timestamp": "2026-01-27T17:49:42.391Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 32 businesses in Ahuntsic",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 32
+      }
+    },
+    {
+      "id": "1769536182387y38ctk74w",
+      "timestamp": "2026-01-27T17:49:42.387Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 68 total, 32 with phone numbers",
+      "data": {}
+    },
+    {
+      "id": "17695361784890md87oipz",
+      "timestamp": "2026-01-27T17:49:38.489Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "Searching: \"condo building Ahuntsic, Montreal, QC, Canada\" (depth: 100)",
+      "data": {}
+    },
+    {
+      "id": "17695361784859d9el6l3l",
+      "timestamp": "2026-01-27T17:49:38.485Z",
+      "type": "info",
+      "node": "dataforseo",
+      "message": "API call for: Ahuntsic, Montreal, QC, Canada",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536178372th8nfamxu",
+      "timestamp": "2026-01-27T17:49:38.372Z",
+      "type": "info",
+      "node": "scraper",
+      "message": "Scraping neighborhood: Ahuntsic",
+      "data": {
+        "jobId": "1769536107632",
+        "index": 15,
+        "total": 25
+      }
+    },
+    {
+      "id": "1769536176220l3mc520gq",
+      "timestamp": "2026-01-27T17:49:36.220Z",
+      "type": "info",
+      "node": "rate-limiter",
+      "message": "Waiting 2s before next request...",
+      "data": {
+        "jobId": "1769536107632"
+      }
+    },
+    {
+      "id": "1769536176215mprh5f36o",
+      "timestamp": "2026-01-27T17:49:36.215Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 50 businesses in Plateau Mont-Royal",
+      "data": {
+        "jobId": "1769536107632",
+        "count": 50
+      }
+    },
+    {
+      "id": "1769536176083vhx8miicv",
+      "timestamp": "2026-01-27T17:49:36.083Z",
+      "type": "success",
+      "node": "dataforseo",
+      "message": "Found 100 total, 54 with phone numbers",
+      "data": {}
+    }
+  ],
+  "errors": [
+    {
+      "id": "1768828519379bhl6sseh3",
+      "timestamp": "2026-01-19T13:15:19.379Z",
+      "type": "error",
+      "node": "dataforseo",
+      "message": "Error: dry cleaner in LeMoyne: DataForSEO Error: Internal Server Error.",
+      "data": {
+        "jobId": "1768814802619",
+        "category": "dry cleaner",
+        "neighborhood": "LeMoyne",
+        "error": "DataForSEO Error: Internal Server Error."
+      }
+    },
+    {
+      "id": "1768828214743gst6p6ilw",
+      "timestamp": "2026-01-19T13:10:14.743Z",
+      "type": "error",
+      "node": "dataforseo",
+      "message": "Error: real estate in LeMoyne: DataForSEO Error: Internal Server Error.",
+      "data": {
+        "jobId": "1768814802619",
+        "category": "real estate",
+        "neighborhood": "LeMoyne",
+        "error": "DataForSEO Error: Internal Server Error."
+      }
+    },
+    {
+      "id": "1768815879043sdtf4bmtq",
+      "timestamp": "2026-01-19T09:44:39.043Z",
+      "type": "error",
+      "node": "dataforseo",
+      "message": "Error: barber in Vieux-Longueuil: DataForSEO Error: Internal Server Error.",
+      "data": {
+        "jobId": "1768814802619",
+        "category": "barber",
+        "neighborhood": "Vieux-Longueuil",
+        "error": "DataForSEO Error: Internal Server Error."
+      }
+    },
+    {
+      "id": "1768815245206li4axmm7d",
+      "timestamp": "2026-01-19T09:34:05.206Z",
+      "type": "error",
+      "node": "dataforseo",
+      "message": "Error: physiotherapy in Vieux-Longueuil: request to https://api.dataforseo.com/v3/serp/google/maps/live/advanced failed, reason: read ECONNRESET",
+      "data": {
+        "jobId": "1768814802619",
+        "category": "physiotherapy",
+        "neighborhood": "Vieux-Longueuil",
+        "error": "request to https://api.dataforseo.com/v3/serp/google/maps/live/advanced failed, reason: read ECONNRESET"
+      }
+    },
+    {
+      "id": "1768809913917v2zg3z45i",
+      "timestamp": "2026-01-19T08:05:13.917Z",
+      "type": "error",
+      "node": "qa-test",
+      "message": "Airtable connection failed: Airtable Error: 403 - {\"error\":{\"type\":\"INVALID_PERMISSIONS_OR_MODEL_NOT_FOUND\",\"message\":\"Invalid permissions, or the requested model was not found. Check that both your user and your token have the required permissions, and that the model names and/or ids are correct.\"}}",
+      "data": {}
+    },
+    {
+      "id": "1768809910324zaerf6x7e",
+      "timestamp": "2026-01-19T08:05:10.324Z",
+      "type": "error",
+      "node": "qa-test",
+      "message": "DataForSEO credentials not configured",
+      "data": {}
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1769536107632",
+      "status": "completed",
+      "category": "condo building",
+      "campaignName": "Montreal Jan 2026",
+      "neighborhoodCount": 25,
+      "leadsFound": 244,
+      "errorsCount": 0,
+      "startTime": "2026-01-27T17:48:27.632Z",
+      "endTime": "2026-01-27T17:50:32.656Z",
+      "duration": "125s"
+    },
+    {
+      "id": "1769535973809",
+      "status": "completed",
+      "category": "office buildings",
+      "campaignName": "Longueuil Jan 2026",
+      "neighborhoodCount": 13,
+      "leadsFound": 109,
+      "errorsCount": 0,
+      "startTime": "2026-01-27T17:46:13.810Z",
+      "endTime": "2026-01-27T17:47:13.545Z",
+      "duration": "60s"
+    },
+    {
+      "id": "1769532668264",
+      "status": "completed",
+      "category": "real estate agencies",
+      "campaignName": "Longueuil Jan 2026",
+      "neighborhoodCount": 13,
+      "leadsFound": 166,
+      "errorsCount": 0,
+      "startTime": "2026-01-27T16:51:08.264Z",
+      "endTime": "2026-01-27T16:52:21.179Z",
+      "duration": "73s"
+    },
+    {
+      "id": "1769517949324",
+      "status": "completed",
+      "category": "car dealership",
+      "campaignName": "Montreal Jan 2026",
+      "neighborhoodCount": 20,
+      "leadsFound": 279,
+      "errorsCount": 0,
+      "startTime": "2026-01-27T12:45:49.324Z",
+      "endTime": "2026-01-27T12:47:55.773Z",
+      "duration": "126s"
+    },
+    {
+      "id": "1769455285090",
+      "status": "completed",
+      "category": "car dealership",
+      "campaignName": "Montreal Jan 2026",
+      "neighborhoodCount": 20,
+      "leadsFound": 241,
+      "errorsCount": 0,
+      "startTime": "2026-01-26T19:21:25.092Z",
+      "endTime": "2026-01-26T19:23:17.672Z",
+      "duration": "113s"
+    },
+    {
+      "id": "1769437690972",
+      "status": "completed",
+      "category": "car dealership",
+      "campaignName": "Saint-Bruno-de-Montarville Jan 2026",
+      "neighborhoodCount": 1,
+      "leadsFound": 5,
+      "errorsCount": 0,
+      "startTime": "2026-01-26T14:28:10.973Z",
+      "endTime": "2026-01-26T14:28:13.608Z",
+      "duration": "3s"
+    },
+    {
+      "id": "1769437355577",
+      "status": "completed",
+      "category": "car dealership",
+      "campaignName": "Chambly Jan 2026",
+      "neighborhoodCount": 1,
+      "leadsFound": 5,
+      "errorsCount": 0,
+      "startTime": "2026-01-26T14:22:35.577Z",
+      "endTime": "2026-01-26T14:22:39.846Z",
+      "duration": "4s"
+    },
+    {
+      "id": "1769437103833",
+      "status": "completed",
+      "category": "car dealership",
+      "campaignName": "Boucherville Jan 2026",
+      "neighborhoodCount": 2,
+      "leadsFound": 17,
+      "errorsCount": 0,
+      "startTime": "2026-01-26T14:18:23.836Z",
+      "endTime": "2026-01-26T14:18:32.542Z",
+      "duration": "9s"
+    },
+    {
+      "id": "1769436822568",
+      "status": "completed",
+      "category": "car dealership",
+      "campaignName": "Brossard Jan 2026",
+      "neighborhoodCount": 4,
+      "leadsFound": 52,
+      "errorsCount": 0,
+      "startTime": "2026-01-26T14:13:42.568Z",
+      "endTime": "2026-01-26T14:14:04.054Z",
+      "duration": "21s"
+    },
+    {
+      "id": "1769436570044",
+      "status": "completed",
+      "category": "office buildings",
+      "campaignName": "Brossard Jan 2026",
+      "neighborhoodCount": 4,
+      "leadsFound": 27,
+      "errorsCount": 0,
+      "startTime": "2026-01-26T14:09:30.044Z",
+      "endTime": "2026-01-26T14:09:46.403Z",
+      "duration": "16s"
+    },
+    {
+      "id": "1768814802619",
+      "status": "completed",
+      "category": "All Businesses",
+      "campaignName": "Longueuil Jan 2026",
+      "neighborhoodCount": 4,
+      "leadsFound": 3736,
+      "errorsCount": 4,
+      "startTime": "2026-01-19T09:26:42.619Z",
+      "endTime": "2026-01-19T13:23:22.080Z",
+      "duration": "14199s"
+    },
+    {
+      "id": "1768813855402",
+      "status": "completed",
+      "category": "All Businesses",
+      "campaignName": "Longueuil Jan 2026",
+      "neighborhoodCount": 4,
+      "leadsFound": 93,
+      "errorsCount": 0,
+      "startTime": "2026-01-19T09:10:55.402Z",
+      "endTime": "2026-01-19T09:16:55.567Z",
+      "duration": "360s"
+    }
+  ]
+}

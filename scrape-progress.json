@@ -1,0 +1,486 @@
+{
+  "postalCodes": {
+    "J4G": {
+      "status": "complete",
+      "leadsCount": 980,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4H": {
+      "status": "complete",
+      "leadsCount": 980,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4J": {
+      "status": "complete",
+      "leadsCount": 980,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4K": {
+      "status": "complete",
+      "leadsCount": 980,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4Z": {
+      "status": "complete",
+      "leadsCount": 20,
+      "campaigns": [
+        "Brossard Jan 2026"
+      ],
+      "lastScraped": "2026-01-26T14:14:04.055Z"
+    },
+    "J4Y": {
+      "status": "complete",
+      "leadsCount": 42,
+      "campaigns": [
+        "Brossard Jan 2026",
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4X": {
+      "status": "complete",
+      "leadsCount": 20,
+      "campaigns": [
+        "Brossard Jan 2026"
+      ],
+      "lastScraped": "2026-01-26T14:14:04.055Z"
+    },
+    "J4W": {
+      "status": "complete",
+      "leadsCount": 20,
+      "campaigns": [
+        "Brossard Jan 2026"
+      ],
+      "lastScraped": "2026-01-26T14:14:04.055Z"
+    },
+    "J4B": {
+      "status": "complete",
+      "leadsCount": 9,
+      "campaigns": [
+        "Boucherville Jan 2026"
+      ],
+      "lastScraped": "2026-01-26T14:18:32.546Z"
+    },
+    "J4C": {
+      "status": "complete",
+      "leadsCount": 9,
+      "campaigns": [
+        "Boucherville Jan 2026"
+      ],
+      "lastScraped": "2026-01-26T14:18:32.546Z"
+    },
+    "J3L": {
+      "status": "complete",
+      "leadsCount": 5,
+      "campaigns": [
+        "Chambly Jan 2026"
+      ],
+      "lastScraped": "2026-01-26T14:22:39.848Z"
+    },
+    "J3V": {
+      "status": "complete",
+      "leadsCount": 5,
+      "campaigns": [
+        "Saint-Bruno-de-Montarville Jan 2026"
+      ],
+      "lastScraped": "2026-01-26T14:28:13.610Z"
+    },
+    "H2H": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2B": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2A": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2C": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2E": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2G": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2M": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2L": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2K": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2J": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2N": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2P": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2R": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2S": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2T": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2V": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2W": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2X": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2Y": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H2Z": {
+      "status": "complete",
+      "leadsCount": 23,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H3A": {
+      "status": "complete",
+      "leadsCount": 24,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.898Z"
+    },
+    "H3B": {
+      "status": "complete",
+      "leadsCount": 24,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.898Z"
+    },
+    "H3C": {
+      "status": "complete",
+      "leadsCount": 24,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H3E": {
+      "status": "complete",
+      "leadsCount": 24,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H3G": {
+      "status": "complete",
+      "leadsCount": 24,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:50:32.663Z"
+    },
+    "H3M": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.785Z"
+    },
+    "H3L": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.785Z"
+    },
+    "H3K": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.785Z"
+    },
+    "H3J": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.785Z"
+    },
+    "H3H": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.786Z"
+    },
+    "H3N": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.786Z"
+    },
+    "H3P": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.786Z"
+    },
+    "H3R": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.786Z"
+    },
+    "H3S": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.791Z"
+    },
+    "H3T": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.791Z"
+    },
+    "H3Z": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.791Z"
+    },
+    "H3Y": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.791Z"
+    },
+    "H3X": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.792Z"
+    },
+    "H3W": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.792Z"
+    },
+    "H3V": {
+      "status": "complete",
+      "leadsCount": 14,
+      "campaigns": [
+        "Montreal Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T12:47:55.792Z"
+    },
+    "J4L": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4M": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4V": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4T": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4S": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4R": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4P": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    },
+    "J4N": {
+      "status": "complete",
+      "leadsCount": 22,
+      "campaigns": [
+        "Longueuil Jan 2026"
+      ],
+      "lastScraped": "2026-01-27T17:47:13.546Z"
+    }
+  },
+  "savedSelections": []
+}

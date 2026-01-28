@@ -1,0 +1,18 @@
+{
+  "name": "brio-lead-scraper",
+  "version": "1.0.0",
+  "description": "B2B Lead Scraper for Brio Nettoyage - Neighborhood domination cold calling",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "node-fetch": "^3.3.2"
+  },
+  "author": "Brio Nettoyage",
+  "license": "MIT"
+}
