@@ -2156,22 +2156,23 @@
 
     // Dashboard
     async function loadDashboard() {
+      console.log('Loading dashboard...');
       try {
-        // Load from LOCAL storage (where your real data is!)
-        const [localStats, campaigns, progress] = await Promise.all([
-          api('/local/stats'),
-          api('/local/campaigns'),
-          api('/locations/progress'),
-        ]);
+        // Load stats
+        const localStats = await api('/local/stats').catch(() => ({ totalLeads: 0 }));
+        const campaigns = await api('/local/campaigns').catch(() => []);
+        const progress = await api('/locations/progress').catch(() => ({ scrapedPostalCodes: 0 }));
         
-        // Update stats with REAL data
+        console.log('Dashboard data:', { localStats, campaigns: campaigns.length, progress });
+        
+        // Update stats
         document.getElementById('stat-neighborhoods').textContent = progress.scrapedPostalCodes || 0;
         document.getElementById('stat-leads').textContent = localStats.totalLeads || 0;
         document.getElementById('stat-campaigns').textContent = campaigns.length || 0;
         document.getElementById('stat-calls').textContent = '0';
 
-        // Load recent leads from local storage
-        const recentLeadsData = await api('/local/leads?limit=5');
+        // Load recent leads
+        const recentLeadsData = await api('/local/leads?limit=5').catch(() => ({ leads: [] }));
         const recentLeads = recentLeadsData.leads || [];
         
         const tbody = document.getElementById('recent-leads-table');
@@ -2188,8 +2189,15 @@
         } else {
           tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">No leads yet. Start scraping!</td></tr>';
         }
+        
+        console.log('✅ Dashboard loaded');
       } catch (e) {
-        console.error('Dashboard load error:', e);
+        console.error('❌ Dashboard error:', e);
+        // Set defaults on error
+        document.getElementById('stat-neighborhoods').textContent = '0';
+        document.getElementById('stat-leads').textContent = '0';
+        document.getElementById('stat-campaigns').textContent = '0';
+        document.getElementById('stat-calls').textContent = '0';
       }
     }
 
@@ -3655,24 +3663,32 @@ i
     }
 
     // Initialize app immediately
-    console.log('🚀 Initializing Brio Lead Scraper...');
+    console.log('🚀 Starting app...');
     
-    // Set up user
-    currentUser = { username: 'admin' };
-    
-    // Show app and set user info
-    document.getElementById('login-page').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    document.getElementById('user-name').textContent = 'Admin';
-    document.getElementById('user-avatar').textContent = 'A';
-    
-    // Setup all navigation and button event listeners
-    setupAppEventListeners();
-    
-    // Load dashboard data
-    loadDashboard();
-    
-    console.log('✅ App ready! Navigation and buttons active.');
+    try {
+      // Set up user
+      currentUser = { username: 'admin' };
+      
+      // Show app
+      document.getElementById('login-page').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      document.getElementById('user-name').textContent = 'Admin';
+      document.getElementById('user-avatar').textContent = 'A';
+      
+      console.log('✅ App visible');
+      
+      // Setup navigation
+      setupAppEventListeners();
+      console.log('✅ Navigation ready');
+      
+      // Load dashboard (don't wait)
+      loadDashboard().catch(e => console.warn('Dashboard load failed:', e));
+      
+      console.log('✅ App ready!');
+    } catch (e) {
+      console.error('❌ Initialization failed:', e);
+      alert('App failed to start: ' + e.message);
+    }
   </script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Status Check</title></head>
+<body>
+<h1>App Status Check</h1>
+<div id="results"></div>
+<script>
+const tests = [];
+
+// Test 1: Load API
+fetch('/api/local/stats').then(r => r.json()).then(data => {
+  tests.push('✅ API works: ' + JSON.stringify(data));
+}).catch(e => tests.push('❌ API failed: ' + e.message));
+
+// Test 2: Load campaigns
+fetch('/api/local/campaigns').then(r => r.json()).then(data => {
+  tests.push('✅ Campaigns: ' + data.length + ' found');
+}).catch(e => tests.push('❌ Campaigns failed: ' + e.message));
+
+setTimeout(() => {
+  document.getElementById('results').innerHTML = tests.join('<br>');
+}, 2000);
+</script>
+</body>
+</html>
