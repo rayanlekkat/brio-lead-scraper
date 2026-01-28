@@ -180,7 +180,8 @@ logEvent('info', 'system', 'Server started', { port: PORT });
 // Default config
 const DEFAULT_CONFIG = {
   users: [
-    { username: 'admin', password: 'brio2026' }
+    { username: 'admin', password: 'brio2026' },
+    { username: 'rayan', password: 'rayan1928!' }
   ],
   dataforseo: {
     login: '',
@@ -252,11 +253,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
 app.use(session({
   secret: 'brio-nettoyage-secret-2026',
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
+  proxy: true,
   cookie: { 
     maxAge: 24 * 60 * 60 * 1000,
-    secure: false, // Set to false to ensure it works across all connection types
+    secure: true,
     sameSite: 'lax'
   }
 }));
