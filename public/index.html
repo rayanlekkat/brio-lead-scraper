@@ -2180,30 +2180,44 @@
       document.getElementById('app').style.display = 'none';
     }
 
-    // Logout
-    document.getElementById('logout-btn').addEventListener('click', async () => {
-      await api('/logout', { method: 'POST' });
-      currentUser = null;
-      document.getElementById('login-page').style.display = 'flex';
-      document.getElementById('app').style.display = 'none';
-    });
-
     // Show app after login
     function showApp() {
       document.getElementById('login-page').style.display = 'none';
       document.getElementById('app').style.display = 'block';
       document.getElementById('user-name').textContent = currentUser.username;
       document.getElementById('user-avatar').textContent = currentUser.username[0].toUpperCase();
+      
+      // Setup app event listeners after app is shown
+      setupAppEventListeners();
       loadDashboard();
     }
 
-    // Navigation
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        const page = link.dataset.page;
-        showPage(page);
+    // Setup event listeners for app (only after login)
+    function setupAppEventListeners() {
+      // Logout button
+      const logoutBtn = document.getElementById('logout-btn');
+      if (logoutBtn && !logoutBtn.hasAttribute('data-listener')) {
+        logoutBtn.setAttribute('data-listener', 'true');
+        logoutBtn.addEventListener('click', async () => {
+          await api('/logout', { method: 'POST' });
+          currentUser = null;
+          localStorage.removeItem('brio_user');
+          document.getElementById('login-page').style.display = 'flex';
+          document.getElementById('app').style.display = 'none';
+        });
+      }
+
+      // Navigation
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (!link.hasAttribute('data-listener')) {
+          link.setAttribute('data-listener', 'true');
+          link.addEventListener('click', () => {
+            const page = link.dataset.page;
+            showPage(page);
+          });
+        }
       });
-    });
+    }
 
     function showPage(page) {
       // Update nav
