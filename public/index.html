@@ -2085,8 +2085,6 @@
   </div>
 
   <script>
-    console.log('🔥 SCRIPT LOADING...');
-    
     // Global state
     let currentUser = null;
     let neighborhoods = [];
@@ -2105,76 +2103,9 @@
       return response.json();
     }
 
-    // Login function - ATTACH TO WINDOW TO GUARANTEE ACCESS
-    async function handleLogin() {
-      console.log('handleLogin called!');
-      
-      const usernameInput = document.getElementById('username');
-      const passwordInput = document.getElementById('password');
-      const errorEl = document.getElementById('login-error');
-      const btn = document.getElementById('login-btn');
+    // Login disabled - authentication removed
 
-      const username = usernameInput.value.trim();
-      const password = passwordInput.value.trim();
-
-      console.log('Login attempt:', { username, hasPassword: !!password });
-
-      if (!username || !password) {
-        errorEl.textContent = 'Please enter both username and password';
-        errorEl.classList.remove('hidden');
-        return;
-      }
-
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
-      errorEl.classList.add('hidden');
-
-      try {
-        console.log('Calling /api/login...');
-        const result = await api('/login', {
-          method: 'POST',
-          body: JSON.stringify({ username, password }),
-        });
-
-        console.log('Login result:', result);
-
-        if (result.success) {
-          currentUser = { username: result.username };
-          localStorage.setItem('brio_user', JSON.stringify(currentUser));
-          showApp();
-        } else {
-          errorEl.textContent = result.error || 'Invalid credentials';
-          errorEl.classList.remove('hidden');
-          btn.disabled = false;
-          btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
-        }
-      } catch (e) {
-        console.error('Login error:', e);
-        errorEl.textContent = 'Connection error: ' + e.message;
-        errorEl.classList.remove('hidden');
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
-      }
-    }
-
-    // Check auth on load - AUTHENTICATION DISABLED, GO STRAIGHT TO APP
-    async function checkAuth() {
-      // Skip authentication - go directly to app
-      currentUser = { username: 'admin' };
-      showApp();
-    }
-
-    // Show app after login
-    function showApp() {
-      document.getElementById('login-page').style.display = 'none';
-      document.getElementById('app').style.display = 'block';
-      document.getElementById('user-name').textContent = currentUser.username;
-      document.getElementById('user-avatar').textContent = currentUser.username[0].toUpperCase();
-      
-      // Setup app event listeners after app is shown
-      setupAppEventListeners();
-      loadDashboard();
-    }
+    // (Removed unused checkAuth and showApp - app initializes directly at end of script)
 
     // Setup event listeners for app (only after login)
     function setupAppEventListeners() {
@@ -3718,34 +3649,25 @@ i
       window.location.href = `/api/export/instantly/csv?onlyWithEmail=true${campaign ? '&campaign=' + campaign : ''}`;
     }
 
-    // FORCE handleLogin to be globally accessible
-    window.handleLogin = handleLogin;
-    console.log('✅ handleLogin defined:', typeof window.handleLogin);
+    // Initialize app immediately
+    console.log('🚀 Initializing Brio Lead Scraper...');
     
-    // Verify button exists
-    const loginButton = document.getElementById('login-btn');
-    console.log('🔘 Login button found:', !!loginButton);
-    console.log('🔘 Button onclick:', loginButton?.getAttribute('onclick'));
-
-    // Setup Enter key support for login
-    document.getElementById('username')?.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        document.getElementById('password').focus();
-      }
-    });
-
-    document.getElementById('password')?.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        handleLogin();
-      }
-    });
-
-    // Init - check if already logged in
-    checkAuth();
+    // Set up user
+    currentUser = { username: 'admin' };
     
-    console.log('🎯 SCRIPT FULLY LOADED. Login button should work now.');
+    // Show app and set user info
+    document.getElementById('login-page').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    document.getElementById('user-name').textContent = 'Admin';
+    document.getElementById('user-avatar').textContent = 'A';
+    
+    // Setup all navigation and button event listeners
+    setupAppEventListeners();
+    
+    // Load dashboard data
+    loadDashboard();
+    
+    console.log('✅ App ready! Navigation and buttons active.');
   </script>
 </body>
 </html>
