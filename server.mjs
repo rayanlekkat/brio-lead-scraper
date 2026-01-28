@@ -2539,14 +2539,28 @@ app.get('/api/local/leads/with-emails', requireAuth, (req, res) => {
 
 // Export leads with emails for Instantly
 app.get('/api/export/instantly/csv', requireAuth, (req, res) => {
-  const { campaign, onlyWithEmail = 'true' } = req.query;
+  const { campaign, onlyWithEmail = 'true', ids, industry, area } = req.query;
   const data = loadLocalLeads();
   
   let leads = data.leads || [];
   
-  // Filter by campaign
-  if (campaign) {
-    leads = leads.filter(l => l.campaignId === campaign || l.campaignName === campaign);
+  // Filter by specific IDs if provided
+  if (ids) {
+    const idList = ids.split(',');
+    leads = leads.filter(l => idList.includes(l.id));
+  } else {
+    // Filter by campaign
+    if (campaign) {
+      leads = leads.filter(l => l.campaignId === campaign || l.campaignName === campaign);
+    }
+    // Filter by industry
+    if (industry) {
+      leads = leads.filter(l => (l.category || l.searchCategory || '').toLowerCase().includes(industry.toLowerCase()));
+    }
+    // Filter by area
+    if (area) {
+      leads = leads.filter(l => l.neighborhood === area);
+    }
   }
   
   // Filter by email presence

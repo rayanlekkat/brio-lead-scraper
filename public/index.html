@@ -1672,10 +1672,13 @@
           <div class="progress-bar" style="height: 8px; background: var(--bg); border-radius: 4px; overflow: hidden;">
             <div id="extraction-progress-bar" style="height: 100%; width: 0%; background: var(--primary); transition: width 0.3s;"></div>
           </div>
-          <div style="margin-top: 1rem; display: flex; gap: 2rem;">
+          <div style="margin-top: 1rem; display: flex; gap: 2rem; align-items: center;">
             <div><strong>Processed:</strong> <span id="extraction-processed">0</span></div>
             <div><strong>Emails Found:</strong> <span id="extraction-found">0</span></div>
             <div><strong>Failed:</strong> <span id="extraction-failed">0</span></div>
+            <button id="show-extracted-btn" class="btn btn-sm btn-success" style="display: none;" onclick="showExtractedResults()">
+              <i class="fas fa-eye"></i> View Results
+            </button>
           </div>
         </div>
 
@@ -3421,17 +3424,21 @@ i
     }
 
     function exportFilteredToInstantly() {
-      // Build export URL with current filters
-      const industryFilter = document.getElementById('email-industry-filter').value;
-      const areaFilter = document.getElementById('email-area-filter').value;
-      const campaignFilter = document.getElementById('email-campaign-filter').value;
-      
-      let url = '/api/export/instantly/csv?onlyWithEmail=true';
-      if (industryFilter) url += `&industry=${encodeURIComponent(industryFilter)}`;
-      if (areaFilter) url += `&area=${encodeURIComponent(areaFilter)}`;
-      if (campaignFilter) url += `&campaign=${encodeURIComponent(campaignFilter)}`;
-      
-      window.location.href = url;
+      if (selectedEmailLeads.size > 0) {
+        const ids = Array.from(selectedEmailLeads).join(',');
+        window.location.href = `/api/export/instantly/csv?ids=${ids}&onlyWithEmail=true`;
+      } else {
+        const campaign = document.getElementById('email-campaign-filter')?.value || '';
+        const industry = document.getElementById('email-industry-filter')?.value || '';
+        const area = document.getElementById('email-area-filter')?.value || '';
+        
+        let url = '/api/export/instantly/csv?onlyWithEmail=true';
+        if (industry) url += `&industry=${encodeURIComponent(industry)}`;
+        if (area) url += `&area=${encodeURIComponent(area)}`;
+        if (campaign) url += `&campaign=${encodeURIComponent(campaign)}`;
+        
+        window.location.href = url;
+      }
     }
 
     async function startEmailExtraction(leadIds) {
@@ -3471,21 +3478,26 @@ i
           document.querySelector('#email-extraction-progress .card-header h3').innerHTML = 
             '<i class="fas fa-check-circle" style="color: var(--secondary);"></i> Extraction Complete';
           
+          // Show view results button
+          const viewBtn = document.getElementById('show-extracted-btn');
+          if (viewBtn) viewBtn.style.display = 'block';
+          
           // Refresh data
           await loadEmailStats();
           await loadEmailLeads();
           selectedEmailLeads.clear();
-          
-          // Hide progress after 5 seconds
-          setTimeout(() => {
-            document.getElementById('email-extraction-progress').style.display = 'none';
-            document.querySelector('#email-extraction-progress .card-header h3').innerHTML = 
-              '<i class="fas fa-cog fa-spin"></i> Extracting Emails...';
-          }, 5000);
         }
       } catch (e) {
         console.error('Failed to check progress:', e);
       }
+    }
+
+    function showExtractedResults() {
+      document.getElementById('email-filter').value = 'with-email';
+      loadEmailLeads();
+      // Hide progress
+      document.getElementById('email-extraction-progress').style.display = 'none';
+      document.getElementById('show-extracted-btn').style.display = 'none';
     }
 
     function escapeHtml(text) {

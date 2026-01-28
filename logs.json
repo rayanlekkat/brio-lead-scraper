@@ -1,6 +1,19 @@
 {
   "events": [
     {
+      "id": "1769598898970lej10hhfn",
+      "timestamp": "2026-01-28T11:14:58.970Z",
+      "type": "complete",
+      "node": "email-extract",
+      "message": "Bulk extraction completed: 193 emails found from 500 leads",
+      "data": {
+        "jobId": "1769596763383",
+        "extracted": 193,
+        "failed": 85,
+        "duration": "2136s"
+      }
+    },
+    {
       "id": "17695988950888tnx1n34n",
       "timestamp": "2026-01-28T11:14:55.088Z",
       "type": "info",
@@ -3990,14 +4003,6 @@
       "type": "info",
       "node": "email-extract",
       "message": "Extracting from https://labomtl.com/en/ (88/500)",
-      "data": {}
-    },
-    {
-      "id": "1769597143649vps2bww79",
-      "timestamp": "2026-01-28T10:45:43.649Z",
-      "type": "info",
-      "node": "email-extract",
-      "message": "Extracting from http://districtatwater.com/ (87/500)",
       "data": {}
     }
   ],
