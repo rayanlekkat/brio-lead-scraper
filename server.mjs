@@ -8,7 +8,6 @@
  */
 
 import express from 'express';
-import session from 'express-session';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
@@ -265,12 +264,7 @@ let config = loadConfig();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
-app.use(session({
-  secret: 'brio-nettoyage-secret-2026',
-  resave: false,
-  saveUninitialized: false,
-  cookie: { maxAge: 24 * 60 * 60 * 1000 } // 24 hours
-}));
+// Session disabled (auth removed - not needed)
 
 // Auth middleware - DISABLED
 function requireAuth(req, res, next) {
@@ -280,30 +274,7 @@ function requireAuth(req, res, next) {
 
 // ============== AUTH ROUTES ==============
 
-app.post('/api/login', (req, res) => {
-  const { username, password } = req.body;
-  const user = config.users.find(u => u.username === username && u.password === password);
-  
-  if (user) {
-    req.session.user = { username: user.username };
-    res.json({ success: true, username: user.username });
-  } else {
-    res.status(401).json({ error: 'Invalid credentials' });
-  }
-});
-
-app.post('/api/logout', (req, res) => {
-  req.session.destroy();
-  res.json({ success: true });
-});
-
-app.get('/api/me', (req, res) => {
-  if (req.session.user) {
-    res.json({ user: req.session.user });
-  } else {
-    res.status(401).json({ error: 'Not logged in' });
-  }
-});
+// Auth endpoints removed (authentication disabled)
 
 // ============== CONFIG ROUTES ==============
 
