@@ -272,13 +272,10 @@ app.use(session({
   cookie: { maxAge: 24 * 60 * 60 * 1000 } // 24 hours
 }));
 
-// Auth middleware
+// Auth middleware - DISABLED
 function requireAuth(req, res, next) {
-  if (req.session.user) {
-    next();
-  } else {
-    res.status(401).json({ error: 'Unauthorized' });
-  }
+  // Authentication disabled - allow all requests
+  next();
 }
 
 // ============== AUTH ROUTES ==============

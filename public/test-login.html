@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Test</title>
+  <style>
+    body { 
+      font-family: Arial; 
+      padding: 50px;
+      background: #f0f0f0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 300px;
+      display: block;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login Test</h1>
+  <input type="text" id="username" placeholder="Username" value="admin">
+  <input type="password" id="password" placeholder="Password" value="brio2026">
+  <button onclick="testLogin()">Test Login</button>
+  <div id="result"></div>
+
+  <script>
+    async function testLogin() {
+      console.log('testLogin called!');
+      document.getElementById('result').innerHTML = '⏳ Testing...';
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        
+        const result = await response.json();
+        console.log('Result:', result);
+        
+        if (result.success) {
+          document.getElementById('result').innerHTML = 
+            '✅ SUCCESS! Logged in as: ' + result.username;
+        } else {
+          document.getElementById('result').innerHTML = 
+            '❌ FAILED: ' + (result.error || 'Unknown error');
+        }
+      } catch (e) {
+        console.error(e);
+        document.getElementById('result').innerHTML = 
+          '❌ ERROR: ' + e.message;
+      }
+    }
+    
+    console.log('Test page loaded. Click the button to test login.');
+  </script>
+</body>
+</html>

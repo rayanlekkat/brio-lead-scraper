@@ -36,13 +36,9 @@
       min-height: 100vh;
     }
 
-    /* Login Page */
+    /* Login Page - HIDDEN */
     .login-container {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      display: none !important;
     }
 
     .login-card {
@@ -161,7 +157,7 @@
 
     /* App Layout */
     .app-container {
-      display: none;
+      display: block;
       min-height: 100vh;
     }
 
@@ -2161,25 +2157,11 @@
       }
     }
 
-    // Check auth on load
+    // Check auth on load - AUTHENTICATION DISABLED, GO STRAIGHT TO APP
     async function checkAuth() {
-      // 1. Try API
-      try {
-        const result = await api('/me');
-        if (result.user) {
-          currentUser = result.user;
-          localStorage.setItem('brio_user', JSON.stringify(result.user));
-          showApp();
-          return;
-        }
-      } catch (e) {
-        // If API fails, clear localStorage to force fresh login
-        localStorage.removeItem('brio_user');
-      }
-
-      // 2. Show login page (don't use localStorage fallback, it causes issues)
-      document.getElementById('login-page').style.display = 'flex';
-      document.getElementById('app').style.display = 'none';
+      // Skip authentication - go directly to app
+      currentUser = { username: 'admin' };
+      showApp();
     }
 
     // Show app after login
