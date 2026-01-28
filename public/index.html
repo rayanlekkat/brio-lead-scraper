@@ -1079,14 +1079,14 @@
         <h1><i class="fas fa-broom"></i> Brio Nettoyage</h1>
         <p>B2B Lead Scraper</p>
       </div>
-      <form id="login-form">
+      <form id="login-form" onsubmit="handleLogin(event); return false;">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter username" required>
+          <input type="text" id="username" placeholder="Enter username" required autocomplete="username">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter password" required>
+          <input type="password" id="password" placeholder="Enter password" required autocomplete="current-password">
         </div>
         <div id="login-error" class="alert alert-error hidden"></div>
         <button type="submit" class="btn btn-primary btn-block">
@@ -2101,10 +2101,45 @@
         ...options,
         headers: {
           'Content-Type': 'application/json',
-          ...options.headers,
+          ...(options.headers || {}),
         },
       });
       return response.json();
+    }
+
+    // Login function
+    async function handleLogin(e) {
+      if (e) e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorEl = document.getElementById('login-error');
+      const btn = document.querySelector('#login-form button');
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+
+      try {
+        const result = await api('/login', {
+          method: 'POST',
+          body: JSON.stringify({ username, password }),
+        });
+
+        if (result.success) {
+          currentUser = { username: result.username };
+          showApp();
+        } else {
+          errorEl.textContent = result.error || 'Login failed';
+          errorEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+        }
+      } catch (e) {
+        errorEl.textContent = 'Login failed: ' + e.message;
+        errorEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+      }
+      return false;
     }
 
     // Check auth on load
@@ -2119,32 +2154,6 @@
         // Not logged in
       }
     }
-
-    // Login
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const errorEl = document.getElementById('login-error');
-
-      try {
-        const result = await api('/login', {
-          method: 'POST',
-          body: JSON.stringify({ username, password }),
-        });
-
-        if (result.success) {
-          currentUser = { username: result.username };
-          showApp();
-        } else {
-          errorEl.textContent = result.error || 'Login failed';
-          errorEl.classList.remove('hidden');
-        }
-      } catch (e) {
-        errorEl.textContent = 'Login failed';
-        errorEl.classList.remove('hidden');
-      }
-    });
 
     // Logout
     document.getElementById('logout-btn').addEventListener('click', async () => {

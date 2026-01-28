@@ -253,12 +253,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
 app.use(session({
   secret: 'brio-nettoyage-secret-2026',
-  resave: false,
-  saveUninitialized: false,
-  proxy: true,
+  resave: true,
+  saveUninitialized: true,
   cookie: { 
     maxAge: 24 * 60 * 60 * 1000,
-    secure: true,
+    secure: false, // Force false to work on all Railway domains
     sameSite: 'lax'
   }
 }));
