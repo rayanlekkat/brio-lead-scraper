@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TEST - Brio App</title>
+  <style>
+    body { 
+      font-family: Arial; 
+      margin: 20px;
+      background: #f5f5f5;
+    }
+    .nav { 
+      background: white; 
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .page {
+      background: white;
+      padding: 20px;
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 BRIO NETTOYAGE - SIMPLE VERSION</h1>
+  
+  <div class="nav">
+    <button onclick="showPage('dashboard')">Dashboard</button>
+    <button onclick="showPage('leads')">Leads</button>
+    <button onclick="showPage('scrape')">Scrape</button>
+    <button onclick="showPage('settings')">Settings</button>
+  </div>
+
+  <div id="page-dashboard" class="page active">
+    <h2>📊 Dashboard</h2>
+    <p>Total Leads: <span id="lead-count">Loading...</span></p>
+    <p>Neighborhoods: <span id="neighborhood-count">0</span></p>
+  </div>
+
+  <div id="page-leads" class="page">
+    <h2>👥 Leads</h2>
+    <div id="leads-list">Loading leads...</div>
+  </div>
+
+  <div id="page-scrape" class="page">
+    <h2>🔍 Scrape Leads</h2>
+    <button onclick="startScrape()">Start Scraping</button>
+    <div id="scrape-status"></div>
+  </div>
+
+  <div id="page-settings" class="page">
+    <h2>⚙️ Settings</h2>
+    <p>Settings page</p>
+  </div>
+
+  <script>
+    console.log('✅ Script loaded!');
+    alert('✅ JavaScript is WORKING!');
+
+    // Navigation
+    function showPage(pageName) {
+      console.log('Showing page:', pageName);
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + pageName).classList.add('active');
+      
+      if (pageName === 'dashboard') loadDashboard();
+      if (pageName === 'leads') loadLeads();
+    }
+
+    // Load data
+    async function loadDashboard() {
+      try {
+        const res = await fetch('/api/local/stats');
+        const data = await res.json();
+        document.getElementById('lead-count').textContent = data.totalLeads || 0;
+      } catch (e) {
+        document.getElementById('lead-count').textContent = 'Error';
+      }
+    }
+
+    async function loadLeads() {
+      try {
+        const res = await fetch('/api/local/leads?limit=10');
+        const data = await res.json();
+        const html = data.leads.map(lead => `
+          <div style="border: 1px solid #ddd; padding: 10px; margin: 10px 0;">
+            <strong>${lead.name}</strong><br>
+            ${lead.phone}<br>
+            ${lead.neighborhood}
+          </div>
+        `).join('');
+        document.getElementById('leads-list').innerHTML = html || 'No leads';
+      } catch (e) {
+        document.getElementById('leads-list').innerHTML = 'Error loading leads';
+      }
+    }
+
+    function startScrape() {
+      alert('Scraping feature - coming soon!');
+    }
+
+    // Load dashboard on start
+    loadDashboard();
+  </script>
+</body>
+</html>
