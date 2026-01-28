@@ -399,7 +399,7 @@
 
     /* Modal */
     .modal-overlay {
-      display: none;
+      display: none !important; /* Force hide all modals by default */
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.5);
@@ -1093,7 +1093,7 @@
   </div>
 
   <!-- Main App -->
-  <div id="app" class="app-container">
+  <div id="app" class="app-container" style="display: block !important; opacity: 1 !important; visibility: visible !important;">
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-logo">
