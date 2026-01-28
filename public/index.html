@@ -1079,20 +1079,20 @@
         <h1><i class="fas fa-broom"></i> Brio Nettoyage</h1>
         <p>B2B Lead Scraper</p>
       </div>
-      <form id="login-form" onsubmit="handleLogin(event); return false;">
+      <div id="login-form-container">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter username" required autocomplete="username">
+          <input type="text" id="username" placeholder="Enter username" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter password" required autocomplete="current-password">
+          <input type="password" id="password" placeholder="Enter password" required>
         </div>
         <div id="login-error" class="alert alert-error hidden"></div>
-        <button type="submit" class="btn btn-primary btn-block">
+        <button type="button" onclick="handleLogin()" class="btn btn-primary btn-block">
           <i class="fas fa-sign-in-alt"></i> Sign In
         </button>
-      </form>
+      </div>
     </div>
   </div>
 
@@ -2108,16 +2108,11 @@
     }
 
     // Login function
-    async function handleLogin(e) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      
+    async function handleLogin() {
       const usernameInput = document.getElementById('username');
       const passwordInput = document.getElementById('password');
       const errorEl = document.getElementById('login-error');
-      const btn = document.querySelector('#login-form button');
+      const btn = document.querySelector('#login-page button');
 
       const username = usernameInput.value.trim();
       const password = passwordInput.value.trim();
@@ -2125,7 +2120,7 @@
       if (!username || !password) {
         errorEl.textContent = 'Please enter both username and password';
         errorEl.classList.remove('hidden');
-        return false;
+        return;
       }
 
       btn.disabled = true;
@@ -2133,54 +2128,49 @@
       errorEl.classList.add('hidden');
 
       try {
-        console.log('Attempting login for:', username);
         const result = await api('/login', {
           method: 'POST',
           body: JSON.stringify({ username, password }),
         });
 
-        console.log('Login result:', result);
-
         if (result.success) {
           currentUser = { username: result.username };
-          localStorage.setItem('brio_user', result.username); // Backup for session
+          localStorage.setItem('brio_user', JSON.stringify(currentUser));
           showApp();
         } else {
-          errorEl.textContent = result.error || 'Login failed - check credentials';
+          errorEl.textContent = result.error || 'Invalid credentials';
           errorEl.classList.remove('hidden');
           btn.disabled = false;
           btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
         }
       } catch (e) {
-        console.error('Login error:', e);
         errorEl.textContent = 'Connection error. Please try again.';
         errorEl.classList.remove('hidden');
         btn.disabled = false;
         btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
       }
-      return false;
     }
 
     // Check auth on load
     async function checkAuth() {
+      // 1. Try API
       try {
         const result = await api('/me');
         if (result.user) {
           currentUser = result.user;
           showApp();
-        } else {
-          // Fallback check
-          const savedUser = localStorage.getItem('brio_user');
-          if (savedUser) {
-            currentUser = { username: savedUser };
-            showApp();
-          }
+          return;
         }
-      } catch (e) {
-        const savedUser = localStorage.getItem('brio_user');
-        if (savedUser) {
-          currentUser = { username: savedUser };
+      } catch (e) {}
+
+      // 2. Try LocalStorage Fallback (Bypass session issues)
+      const savedUser = localStorage.getItem('brio_user');
+      if (savedUser) {
+        try {
+          currentUser = JSON.parse(savedUser);
           showApp();
+        } catch(e) {
+          localStorage.removeItem('brio_user');
         }
       }
     }

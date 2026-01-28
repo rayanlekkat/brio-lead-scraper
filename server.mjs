@@ -262,7 +262,7 @@ function saveNeighborhoods(data) {
 let config = loadConfig();
 
 // Middleware
-app.set('trust proxy', 1); // Trust first proxy (Railway)
+app.set('trust proxy', 1); // Required for Railway HTTPS
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
@@ -270,10 +270,11 @@ app.use(session({
   secret: 'brio-nettoyage-secret-2026',
   resave: true,
   saveUninitialized: true,
+  proxy: true,
   cookie: { 
     maxAge: 24 * 60 * 60 * 1000,
-    secure: false, // Force false to work on all Railway domains
-    sameSite: 'lax'
+    secure: true, // REQUIRED for HTTPS
+    sameSite: 'none' // REQUIRED for Railway
   }
 }));
 
