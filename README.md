@@ -1,18 +1,44 @@
-# Brio Nettoyage - B2B Lead Scraper
+# NO WEBSITE Lead Scraper 🔍
 
-A powerful web application for scraping B2B leads from Google Maps using DataForSEO API.
+A powerful web application for finding B2B leads **without websites** from Google Maps using DataForSEO API. Perfect for agencies offering web development and digital marketing services.
+
+## ✨ Key Features
+
+- 🚫 **NO WEBSITE Filter** - Automatically finds businesses without websites (your perfect prospects!)
+- 📍 **Postal Code Based** - Target specific neighborhoods and areas
+- 📞 **Phone Number Focus** - Get businesses ready for cold calling
+- 📧 **Email Extraction** - Automatically extract contact emails from websites
+- 💾 **Never Lose Data** - All leads saved locally in JSON files
+- 📊 **Campaign Tracking** - Manage multiple scraping campaigns
+- 🚫 **DNC List** - Built-in Do Not Call list management
+- 📤 **CSV Export** - Export for Instantly.ai, cold calling, etc.
 
 ## 🚀 Quick Start
 
-### Local Development
+### 1. Install Dependencies
 ```bash
 npm install
-node server.mjs
 ```
-Then open: http://localhost:3000
 
-### Production (Railway)
-See [RAILWAY_SETUP.md](./RAILWAY_SETUP.md) for complete Railway configuration.
+### 2. Configure API Credentials
+Copy the example config and add your credentials:
+```bash
+cp data/config.example.json data/config.json
+```
+
+Edit `data/config.json` with:
+- Your DataForSEO API credentials ([Get them here](https://dataforseo.com))
+- Your admin password
+- (Optional) Airtable credentials
+
+### 3. Run the Server
+```bash
+npm start
+```
+Then open: http://localhost:3001
+
+### Production Deployment
+See [RAILWAY_SETUP.md](./RAILWAY_SETUP.md) for Railway deployment instructions.
 
 ## 📊 Features
 

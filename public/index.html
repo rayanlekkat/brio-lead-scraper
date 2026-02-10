@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brio Nettoyage - Lead Scraper</title>
+  <title>Lead Finder Pro - No Website Businesses</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -14,10 +14,10 @@
     }
 
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-light: #3b82f6;
-      --secondary: #10b981;
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-light: #818cf8;
+      --secondary: #8b5cf6;
       --danger: #ef4444;
       --warning: #f59e0b;
       --bg: #f8fafc;
@@ -333,16 +333,16 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-logo">
-        <i class="fas fa-broom"></i>
-        <h2>Brio Nettoyage</h2>
+        <i class="fas fa-rocket"></i>
+        <h2>Lead Finder Pro</h2>
       </div>
       <nav>
         <ul class="nav-menu">
-          <li><a class="nav-link active" onclick="showPage('dashboard')"><i class="fas fa-home"></i> Dashboard</a></li>
-          <li><a class="nav-link" onclick="showPage('neighborhoods')"><i class="fas fa-map-marker-alt"></i> Neighborhoods</a></li>
-          <li><a class="nav-link" onclick="showPage('scrape')"><i class="fas fa-search"></i> Scrape Leads</a></li>
-          <li><a class="nav-link" onclick="showPage('leads')"><i class="fas fa-users"></i> Leads</a></li>
-          <li><a class="nav-link" onclick="showPage('emails')"><i class="fas fa-envelope"></i> Emails</a></li>
+          <li><a class="nav-link active" onclick="showPage('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+          <li><a class="nav-link" onclick="showPage('neighborhoods')"><i class="fas fa-map-marker-alt"></i> Target Areas</a></li>
+          <li><a class="nav-link" onclick="showPage('scrape')"><i class="fas fa-search-plus"></i> Find Prospects</a></li>
+          <li><a class="nav-link" onclick="showPage('leads')"><i class="fas fa-users"></i> Prospects</a></li>
+          <li><a class="nav-link" onclick="showPage('emails')"><i class="fas fa-envelope-open-text"></i> No Website List</a></li>
           <li><a class="nav-link" onclick="showPage('settings')"><i class="fas fa-cog"></i> Settings</a></li>
         </ul>
       </nav>
@@ -365,15 +365,15 @@
         <div id="page-dashboard" class="page active">
           <div class="page-header">
             <h1>Dashboard</h1>
-            <p>Overview of your lead generation activities</p>
+            <p>Track your business prospecting performance</p>
           </div>
 
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-card-header">
-                <span class="stat-card-title">Total Neighborhoods</span>
+                <span class="stat-card-title">Target Areas</span>
                 <div class="stat-card-icon" style="background: #dbeafe; color: #2563eb;">
-                  <i class="fas fa-map-marker-alt"></i>
+                  <i class="fas fa-map-marked-alt"></i>
                 </div>
               </div>
               <div class="stat-card-value" id="stat-neighborhoods">0</div>
@@ -381,9 +381,9 @@
 
             <div class="stat-card">
               <div class="stat-card-header">
-                <span class="stat-card-title">Total Leads</span>
+                <span class="stat-card-title">No Website Prospects</span>
                 <div class="stat-card-icon" style="background: #d1fae5; color: #10b981;">
-                  <i class="fas fa-users"></i>
+                  <i class="fas fa-globe-americas"></i>
                 </div>
               </div>
               <div class="stat-card-value" id="stat-leads">0</div>
@@ -391,9 +391,9 @@
 
             <div class="stat-card">
               <div class="stat-card-header">
-                <span class="stat-card-title">Email Campaigns</span>
+                <span class="stat-card-title">Active Campaigns</span>
                 <div class="stat-card-icon" style="background: #fef3c7; color: #f59e0b;">
-                  <i class="fas fa-envelope"></i>
+                  <i class="fas fa-bullhorn"></i>
                 </div>
               </div>
               <div class="stat-card-value" id="stat-campaigns">0</div>
@@ -401,9 +401,9 @@
 
             <div class="stat-card">
               <div class="stat-card-header">
-                <span class="stat-card-title">Total Calls</span>
+                <span class="stat-card-title">Outreach Opportunities</span>
                 <div class="stat-card-icon" style="background: #fce7f3; color: #ec4899;">
-                  <i class="fas fa-phone"></i>
+                  <i class="fas fa-rocket"></i>
                 </div>
               </div>
               <div class="stat-card-value" id="stat-calls">0</div>
@@ -412,8 +412,8 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Recent Leads</h3>
-              <button class="btn btn-primary" onclick="showPage('leads')">View All</button>
+              <h3 class="card-title">Recent Prospects</h3>
+              <button class="btn btn-primary" onclick="showPage('leads')">View All Prospects</button>
             </div>
             <table>
               <thead>
@@ -432,63 +432,261 @@
           </div>
         </div>
 
-        <!-- Neighborhoods Page -->
+        <!-- Target Areas Page -->
         <div id="page-neighborhoods" class="page">
           <div class="page-header">
-            <h1>Neighborhoods</h1>
-            <p>Manage your target neighborhoods</p>
+            <h1>Target Areas</h1>
+            <p>Select Montreal neighborhoods by city and postal code</p>
           </div>
-          <div class="card">
-            <div id="neighborhoods-list" class="loading">Loading neighborhoods...</div>
+          
+          <!-- City Selection -->
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <h3 style="margin-bottom: 1rem;">Select City</h3>
+            <div id="cities-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+              <div class="loading">Loading cities...</div>
+            </div>
+          </div>
+          
+          <!-- Postal Code Selection -->
+          <div id="postal-code-section" class="card" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3 id="selected-city-name">Select Postal Codes</h3>
+              <button onclick="clearCitySelection()" class="btn" style="background: var(--text-light);">
+                <i class="fas fa-arrow-left"></i> Back to Cities
+              </button>
+            </div>
+            <div style="margin-bottom: 1rem;">
+              <button onclick="selectAllPostalCodes()" class="btn btn-primary">
+                <i class="fas fa-check-square"></i> Select All
+              </button>
+              <button onclick="deselectAllPostalCodes()" class="btn" style="background: var(--text-light); margin-left: 0.5rem;">
+                <i class="fas fa-square"></i> Deselect All
+              </button>
+            </div>
+            <div id="postal-codes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; max-height: 500px; overflow-y: auto; padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+              <div class="loading">Loading postal codes...</div>
+            </div>
           </div>
         </div>
 
         <!-- Scrape Page -->
         <div id="page-scrape" class="page">
           <div class="page-header">
-            <h1>Scrape Leads</h1>
-            <p>Start collecting leads from Google Maps</p>
+            <h1>Find Prospects</h1>
+            <p>Discover businesses without websites in your target areas</p>
           </div>
+          
+          <!-- Scrape Form -->
           <div class="card">
-            <div id="scrape-form">
-              <p>Scraping functionality coming soon...</p>
+            <h3 style="margin-bottom: 1.5rem;">Start New Search</h3>
+            <div style="display: grid; gap: 1.5rem;">
+              <div class="form-group">
+                <label>Campaign Name *</label>
+                <input type="text" id="scrape-campaign-name" placeholder="e.g., Montreal Restaurants - March 2026" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+              </div>
+              
+              <div class="form-group">
+                <label style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>Business Categories *</span>
+                  <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; font-size: 0.875rem;">
+                    <input type="checkbox" id="scrape-all-categories" onchange="toggleAllCategories()">
+                    <span>Scrape ALL Categories (Comprehensive)</span>
+                  </label>
+                </label>
+                <select id="scrape-category" multiple style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem; min-height: 200px;">
+                  <optgroup label="Cleaning Services">
+                    <option value="cleaning services">Cleaning Services</option>
+                    <option value="house cleaning">House Cleaning</option>
+                    <option value="commercial cleaning">Commercial Cleaning</option>
+                    <option value="office cleaning">Office Cleaning</option>
+                    <option value="carpet cleaning">Carpet Cleaning</option>
+                    <option value="window cleaning">Window Cleaning</option>
+                  </optgroup>
+                  <optgroup label="Home Renovation">
+                    <option value="general contractor">General Contractor</option>
+                    <option value="home renovation">Home Renovation</option>
+                    <option value="kitchen renovation">Kitchen Renovation</option>
+                    <option value="bathroom renovation">Bathroom Renovation</option>
+                    <option value="basement finishing">Basement Finishing</option>
+                  </optgroup>
+                  <optgroup label="Plumbing & HVAC">
+                    <option value="plumber">Plumber</option>
+                    <option value="plumbing services">Plumbing Services</option>
+                    <option value="hvac">HVAC Services</option>
+                    <option value="heating and cooling">Heating & Cooling</option>
+                    <option value="air conditioning">Air Conditioning</option>
+                  </optgroup>
+                  <optgroup label="Electrical">
+                    <option value="electrician">Electrician</option>
+                    <option value="electrical services">Electrical Services</option>
+                  </optgroup>
+                  <optgroup label="Painting & Flooring">
+                    <option value="painter">Painter</option>
+                    <option value="painting contractor">Painting Contractor</option>
+                    <option value="flooring">Flooring Installation</option>
+                    <option value="hardwood flooring">Hardwood Flooring</option>
+                    <option value="tile installation">Tile Installation</option>
+                  </optgroup>
+                  <optgroup label="Roofing & Exterior">
+                    <option value="roofing">Roofing Contractor</option>
+                    <option value="roofer">Roofer</option>
+                    <option value="siding">Siding Contractor</option>
+                    <option value="gutter cleaning">Gutter Cleaning</option>
+                    <option value="deck builder">Deck Builder</option>
+                  </optgroup>
+                  <optgroup label="Landscaping">
+                    <option value="landscaping">Landscaping</option>
+                    <option value="lawn care">Lawn Care</option>
+                    <option value="tree service">Tree Service</option>
+                    <option value="snow removal">Snow Removal</option>
+                  </optgroup>
+                  <optgroup label="Specialty Services">
+                    <option value="handyman">Handyman</option>
+                    <option value="masonry">Masonry</option>
+                    <option value="drywall">Drywall Installation</option>
+                    <option value="insulation">Insulation Services</option>
+                    <option value="garage door">Garage Door Services</option>
+                    <option value="fence installation">Fence Installation</option>
+                  </optgroup>
+                </select>
+                <small style="color: var(--text-light); margin-top: 0.5rem; display: block;">Hold Ctrl/Cmd to select multiple categories - searches will run for each one</small>
+              </div>
+              
+              <div class="form-group">
+                <label>Target City *</label>
+                <select id="scrape-city" onchange="loadCityPostalCodes()" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+                  <option value="">Loading cities...</option>
+                </select>
+              </div>
+              
+              <div class="form-group" id="postal-codes-form-group" style="display: none;">
+                <label>Select Postal Codes (Areas) *</label>
+                <div style="margin-bottom: 0.5rem;">
+                  <button type="button" onclick="selectAllScrapePostalCodes()" class="btn" style="background: var(--secondary); color: white; padding: 0.5rem 1rem; font-size: 0.875rem;">Select All</button>
+                  <button type="button" onclick="deselectAllScrapePostalCodes()" class="btn" style="background: var(--text-light); color: white; padding: 0.5rem 1rem; font-size: 0.875rem; margin-left: 0.5rem;">Deselect All</button>
+                </div>
+                <div id="scrape-postal-codes" style="max-height: 300px; overflow-y: auto; padding: 1rem; background: var(--bg); border-radius: 0.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.5rem;">
+                  <p style="color: var(--text-light);">Select a city first</p>
+                </div>
+                <small style="color: var(--text-light); margin-top: 0.5rem; display: block;"><span id="selected-pc-count">0</span> postal codes selected</small>
+              </div>
+              
+              <div class="form-group">
+                <label>Results Per Area & Category</label>
+                <input type="number" id="scrape-limit" value="100" min="10" max="200" style="width: 200px; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+                <small style="color: var(--text-light); margin-top: 0.5rem; display: block;">Default: 100 results per area per category</small>
+              </div>
+              
+              <div style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #fef3c7; border-radius: 0.5rem; border: 1px solid #fbbf24;">
+                <i class="fas fa-info-circle" style="color: #f59e0b; font-size: 1.25rem;"></i>
+                <div style="flex: 1;">
+                  <strong style="color: #92400e;">Note:</strong>
+                  <p style="margin: 0; color: #92400e; font-size: 0.9rem;">Only businesses <strong>WITHOUT websites</strong> will be saved. Perfect for web design outreach!</p>
+                </div>
+              </div>
+              
+              <button id="start-scrape-btn" onclick="startScraping()" class="btn btn-primary" style="padding: 1rem; font-size: 1rem;">
+                <i class="fas fa-search-plus"></i> Start Finding Prospects
+              </button>
             </div>
+          </div>
+          
+          <!-- Progress -->
+          <div id="scrape-progress" class="card" style="display: none; margin-top: 1.5rem;">
+            <h3 style="margin-bottom: 1rem;">Search in Progress...</h3>
+            <div id="scrape-status"></div>
           </div>
         </div>
 
         <!-- Leads Page -->
         <div id="page-leads" class="page">
           <div class="page-header">
-            <h1>All Leads</h1>
-            <p>Manage your collected leads</p>
+            <div style="flex: 1;">
+              <h1>Business Prospects</h1>
+              <p>Businesses without websites - ready for your outreach</p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <button onclick="exportAllLeadsToCSV()" class="btn btn-primary">
+                <i class="fas fa-file-excel"></i> Export All to CSV
+              </button>
+              <select id="export-campaign-filter" onchange="exportCampaignToCSV()" style="padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+                <option value="">Export by Campaign...</option>
+              </select>
+            </div>
           </div>
           <div class="card">
+            <div style="margin-bottom: 1rem; padding: 1rem; background: #d1fae5; border-radius: 0.5rem; border: 1px solid #10b981;">
+              <p style="margin: 0; color: #065f46;"><i class="fas fa-info-circle"></i> <strong>All businesses listed here have NO website</strong> - Perfect for web design outreach!</p>
+            </div>
             <table>
               <thead>
                 <tr>
                   <th>Name</th>
                   <th>Phone</th>
-                  <th>Email</th>
+                  <th>Address</th>
                   <th>Neighborhood</th>
+                  <th>Category</th>
                   <th>Rating</th>
-                  <th>Status</th>
+                  <th>Campaign</th>
                 </tr>
               </thead>
               <tbody id="leads-table">
-                <tr><td colspan="6" class="loading">Loading...</td></tr>
+                <tr><td colspan="7" class="loading">Loading...</td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Emails Page -->
+        <!-- No Website List Page -->
         <div id="page-emails" class="page">
           <div class="page-header">
-            <h1>Email Campaigns</h1>
-            <p>Manage your email outreach</p>
+            <h1>No Website List - Export Center</h1>
+            <p>Export businesses without websites for marketing campaigns</p>
           </div>
+          
+          <!-- Export by Campaign -->
           <div class="card">
-            <div id="emails-content">Email management coming soon...</div>
+            <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-file-export"></i> Export by Campaign</h3>
+            <div id="export-campaigns-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+              <div class="loading">Loading campaigns...</div>
+            </div>
+          </div>
+          
+          <!-- Quick Export Options -->
+          <div class="card" style="margin-top: 1.5rem;">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-bolt"></i> Quick Export Options</h3>
+            <div style="display: grid; gap: 1rem;">
+              <button onclick="exportAllLeadsToCSV()" class="btn btn-primary" style="padding: 1rem; font-size: 1rem;">
+                <i class="fas fa-file-excel"></i> Export ALL Businesses (No Website)
+              </button>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <button onclick="exportTodayLeadsToCSV()" class="btn" style="background: var(--secondary); color: white; padding: 1rem;">
+                  <i class="fas fa-calendar-day"></i> Export Today's Finds
+                </button>
+                <button onclick="exportLastWeekLeadsToCSV()" class="btn" style="background: var(--warning); color: white; padding: 1rem;">
+                  <i class="fas fa-calendar-week"></i> Export Last 7 Days
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Stats -->
+          <div class="card" style="margin-top: 1.5rem;">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-chart-bar"></i> Export Statistics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+              <div style="padding: 1.5rem; background: var(--bg); border-radius: 0.5rem; text-align: center;">
+                <div style="font-size: 2rem; font-weight: bold; color: var(--primary);" id="total-no-website">0</div>
+                <div style="color: var(--text-light); margin-top: 0.5rem;">Total Businesses (No Website)</div>
+              </div>
+              <div style="padding: 1.5rem; background: var(--bg); border-radius: 0.5rem; text-align: center;">
+                <div style="font-size: 2rem; font-weight: bold; color: var(--secondary);" id="total-campaigns">0</div>
+                <div style="color: var(--text-light); margin-top: 0.5rem;">Total Campaigns</div>
+              </div>
+              <div style="padding: 1.5rem; background: var(--bg); border-radius: 0.5rem; text-align: center;">
+                <div style="font-size: 2rem; font-weight: bold; color: var(--warning);" id="avg-per-campaign">0</div>
+                <div style="color: var(--text-light); margin-top: 0.5rem;">Avg. Per Campaign</div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -507,7 +705,7 @@
   </div>
 
   <script>
-    console.log('✅ Brio Lead Scraper loaded');
+    console.log('✅ Lead Finder Pro loaded');
 
     // Navigation
     function showPage(pageName) {
@@ -526,7 +724,9 @@
       // Load data
       if (pageName === 'dashboard') loadDashboard();
       if (pageName === 'neighborhoods') loadNeighborhoods();
+      if (pageName === 'scrape') loadScrapeForm();
       if (pageName === 'leads') loadLeads();
+      if (pageName === 'emails') loadEmailPage();
     }
 
     // Load Dashboard
@@ -564,50 +764,499 @@
     }
 
     // Load Neighborhoods
+    // Global variables for area selection
+    let selectedCity = null;
+    let selectedPostalCodes = [];
+
+    // Load Cities
     async function loadNeighborhoods() {
       try {
-        const res = await fetch('/api/neighborhoods');
+        const res = await fetch('/api/locations/cities');
         const data = await res.json();
-        const list = document.getElementById('neighborhoods-list');
+        const grid = document.getElementById('cities-grid');
         
-        if (data.length > 0) {
-          list.innerHTML = data.map(n => `
-            <div style="padding: 1rem; border-bottom: 1px solid var(--border);">
-              <strong>${n.name}</strong>
-              <p style="color: var(--text-light); font-size: 0.875rem;">${n.postalCode || ''}</p>
+        if (data.cities && data.cities.length > 0) {
+          grid.innerHTML = data.cities.map(city => `
+            <div onclick="selectCity('${city.id}', '${city.name}')" style="padding: 1.5rem; background: white; border: 2px solid var(--border); border-radius: 0.75rem; cursor: pointer; transition: all 0.2s;" 
+                 onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='translateY(-2px)'" 
+                 onmouseout="this.style.borderColor='var(--border)'; this.style.transform='translateY(0)'">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                <i class="fas fa-city" style="color: var(--primary); font-size: 1.5rem;"></i>
+                <h4 style="margin: 0;">${city.name}</h4>
+              </div>
+              <div style="font-size: 0.875rem; color: var(--text-light);">
+                <p style="margin: 0.25rem 0;"><strong>${city.postalCodeCount}</strong> postal codes</p>
+                <p style="margin: 0.25rem 0;">${city.scrapedCount} scraped (${city.progressPercent}%)</p>
+                <p style="margin: 0.25rem 0;"><strong>${city.totalLeads}</strong> leads found</p>
+              </div>
             </div>
           `).join('');
         } else {
-          list.innerHTML = '<div class="empty-state"><i class="fas fa-map-marker-alt"></i><p>No neighborhoods yet</p></div>';
+          grid.innerHTML = '<p>No cities available</p>';
         }
       } catch (e) {
-        document.getElementById('neighborhoods-list').innerHTML = '<p>Error loading neighborhoods</p>';
+        document.getElementById('cities-grid').innerHTML = '<p>Error loading cities</p>';
       }
+    }
+
+    // Select City and Load Postal Codes
+    async function selectCity(cityId, cityName) {
+      selectedCity = cityId;
+      selectedPostalCodes = [];
+      
+      document.getElementById('selected-city-name').textContent = `${cityName} - Select Postal Codes`;
+      document.getElementById('cities-grid').parentElement.style.display = 'none';
+      document.getElementById('postal-code-section').style.display = 'block';
+      
+      try {
+        const res = await fetch(`/api/locations/cities/${cityId}/postal-codes`);
+        const data = await res.json();
+        const grid = document.getElementById('postal-codes-grid');
+        
+        if (data.postalCodes && data.postalCodes.length > 0) {
+          grid.innerHTML = data.postalCodes.map(pc => `
+            <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; background: white; border: 1px solid var(--border); border-radius: 0.5rem; cursor: pointer;">
+              <input type="checkbox" value="${pc.code}" onchange="togglePostalCode('${pc.code}')" style="width: 18px; height: 18px;">
+              <div style="flex: 1;">
+                <strong>${pc.code}</strong>
+                <div style="font-size: 0.75rem; color: var(--text-light);">${pc.area}</div>
+                ${pc.leadsCount > 0 ? `<div style="font-size: 0.75rem; color: var(--secondary);">${pc.leadsCount} leads</div>` : ''}
+              </div>
+            </label>
+          `).join('');
+        } else {
+          grid.innerHTML = '<p>No postal codes available</p>';
+        }
+      } catch (e) {
+        document.getElementById('postal-codes-grid').innerHTML = '<p>Error loading postal codes</p>';
+      }
+    }
+
+    // Clear City Selection
+    function clearCitySelection() {
+      selectedCity = null;
+      selectedPostalCodes = [];
+      document.getElementById('cities-grid').parentElement.style.display = 'block';
+      document.getElementById('postal-code-section').style.display = 'none';
+    }
+
+    // Toggle Postal Code
+    function togglePostalCode(code) {
+      if (selectedPostalCodes.includes(code)) {
+        selectedPostalCodes = selectedPostalCodes.filter(c => c !== code);
+      } else {
+        selectedPostalCodes.push(code);
+      }
+    }
+
+    // Select All Postal Codes
+    function selectAllPostalCodes() {
+      const checkboxes = document.querySelectorAll('#postal-codes-grid input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        cb.checked = true;
+        if (!selectedPostalCodes.includes(cb.value)) {
+          selectedPostalCodes.push(cb.value);
+        }
+      });
+    }
+
+    // Deselect All Postal Codes
+    function deselectAllPostalCodes() {
+      const checkboxes = document.querySelectorAll('#postal-codes-grid input[type="checkbox"]');
+      checkboxes.forEach(cb => cb.checked = false);
+      selectedPostalCodes = [];
     }
 
     // Load All Leads
     async function loadLeads() {
       try {
-        const res = await fetch('/api/local/leads?limit=50');
-        const data = await res.json();
+        const [leadsRes, campaignsRes] = await Promise.all([
+          fetch('/api/local/leads?limit=100'),
+          fetch('/api/local/campaigns')
+        ]);
+        
+        const data = await leadsRes.json();
+        const campaigns = await campaignsRes.json();
+        
         const tbody = document.getElementById('leads-table');
+        const campaignSelect = document.getElementById('export-campaign-filter');
+        
+        // Populate campaign filter
+        if (campaigns && campaigns.length > 0) {
+          campaignSelect.innerHTML = '<option value="">Export by Campaign...</option>' + 
+            campaigns.map(c => `<option value="${c.id}">${c.name} (${c.leadsCount} leads)</option>`).join('');
+        }
         
         if (data.leads && data.leads.length > 0) {
           tbody.innerHTML = data.leads.map(lead => `
             <tr>
               <td><strong>${lead.name || 'N/A'}</strong></td>
               <td>${lead.phone || 'N/A'}</td>
-              <td>${lead.email || 'N/A'}</td>
+              <td style="font-size: 0.875rem;">${lead.address || 'N/A'}</td>
               <td>${lead.neighborhood || 'N/A'}</td>
+              <td style="font-size: 0.875rem;">${lead.category || lead.searchCategory || 'N/A'}</td>
               <td>${lead.rating ? '⭐ ' + lead.rating : 'N/A'}</td>
-              <td><span class="badge badge-info">${lead.status || 'New'}</span></td>
+              <td style="font-size: 0.875rem;">${lead.campaignName || 'N/A'}</td>
             </tr>
           `).join('');
         } else {
-          tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No leads found</td></tr>';
+          tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No leads found - Start scraping to find businesses!</td></tr>';
         }
       } catch (e) {
-        document.getElementById('leads-table').innerHTML = '<tr><td colspan="6">Error loading leads</td></tr>';
+        document.getElementById('leads-table').innerHTML = '<tr><td colspan="7">Error loading leads</td></tr>';
+      }
+    }
+
+    // Load No Website List / Export Page
+    async function loadEmailPage() {
+      try {
+        const [statsRes, campaignsRes] = await Promise.all([
+          fetch('/api/local/stats'),
+          fetch('/api/local/campaigns')
+        ]);
+        
+        const stats = await statsRes.json();
+        const campaigns = await campaignsRes.json();
+        
+        // Update stats
+        document.getElementById('total-no-website').textContent = stats.totalLeads || 0;
+        document.getElementById('total-campaigns').textContent = campaigns.length || 0;
+        const avg = campaigns.length > 0 ? Math.round((stats.totalLeads || 0) / campaigns.length) : 0;
+        document.getElementById('avg-per-campaign').textContent = avg;
+        
+        // Populate campaigns list
+        const campaignsList = document.getElementById('export-campaigns-list');
+        if (campaigns && campaigns.length > 0) {
+          campaignsList.innerHTML = campaigns.map(campaign => `
+            <div style="padding: 1.5rem; background: white; border: 2px solid var(--border); border-radius: 0.75rem;">
+              <h4 style="margin: 0 0 0.5rem 0; color: var(--primary);">${campaign.name}</h4>
+              <p style="margin: 0.25rem 0; font-size: 0.875rem; color: var(--text-light);">
+                <i class="fas fa-building"></i> <strong>${campaign.leadsCount || 0}</strong> businesses without websites
+              </p>
+              <p style="margin: 0.25rem 0; font-size: 0.875rem; color: var(--text-light);">
+                <i class="fas fa-calendar"></i> ${new Date(campaign.createdAt).toLocaleDateString()}
+              </p>
+              <button onclick="exportCampaignToCSVById('${campaign.id}', '${campaign.name}')" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">
+                <i class="fas fa-download"></i> Export to CSV
+              </button>
+            </div>
+          `).join('');
+        } else {
+          campaignsList.innerHTML = '<p style="color: var(--text-light);">No campaigns yet - Start scraping to create campaigns!</p>';
+        }
+      } catch (e) {
+        console.error('Failed to load export page:', e);
+      }
+    }
+
+    // Export Functions
+    function exportAllLeadsToCSV() {
+      window.location.href = '/api/local/export/csv';
+    }
+
+    function exportCampaignToCSV() {
+      const campaignId = document.getElementById('export-campaign-filter').value;
+      if (campaignId) {
+        window.location.href = `/api/local/export/csv?campaign=${campaignId}`;
+        document.getElementById('export-campaign-filter').value = '';
+      }
+    }
+
+    function exportCampaignToCSVById(campaignId, campaignName) {
+      window.location.href = `/api/local/export/csv?campaign=${campaignId}`;
+    }
+
+    function exportTodayLeadsToCSV() {
+      const today = new Date().toISOString().split('T')[0];
+      alert(`Exporting today's leads (${today})`);
+      window.location.href = '/api/local/export/csv';
+    }
+
+    function exportLastWeekLeadsToCSV() {
+      alert('Exporting last 7 days of leads');
+      window.location.href = '/api/local/export/csv';
+    }
+
+    // Load Scrape Form
+    let scrapeSelectedPostalCodes = [];
+    
+    async function loadScrapeForm() {
+      try {
+        const res = await fetch('/api/locations/cities');
+        const data = await res.json();
+        const select = document.getElementById('scrape-city');
+        
+        if (data.cities && data.cities.length > 0) {
+          select.innerHTML = '<option value="">Select a city...</option>' + data.cities.map(city => 
+            `<option value="${city.id}">${city.name} (${city.postalCodeCount} postal codes)</option>`
+          ).join('');
+        } else {
+          select.innerHTML = '<option value="">No cities available</option>';
+        }
+      } catch (e) {
+        console.error('Failed to load cities:', e);
+      }
+    }
+
+    async function loadCityPostalCodes() {
+      const cityId = document.getElementById('scrape-city').value;
+      scrapeSelectedPostalCodes = [];
+      
+      if (!cityId) {
+        document.getElementById('postal-codes-form-group').style.display = 'none';
+        return;
+      }
+
+      document.getElementById('postal-codes-form-group').style.display = 'block';
+      
+      try {
+        const res = await fetch(`/api/locations/cities/${cityId}/postal-codes`);
+        const data = await res.json();
+        const container = document.getElementById('scrape-postal-codes');
+        
+        if (data.postalCodes && data.postalCodes.length > 0) {
+          container.innerHTML = data.postalCodes.map(pc => `
+            <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border: 1px solid var(--border); border-radius: 0.375rem; cursor: pointer; font-size: 0.875rem;">
+              <input type="checkbox" value="${pc.code}" onchange="toggleScrapePostalCode('${pc.code}')" style="width: 16px; height: 16px;">
+              <span><strong>${pc.code}</strong><br><small style="color: var(--text-light);">${pc.area}</small></span>
+            </label>
+          `).join('');
+        } else {
+          container.innerHTML = '<p>No postal codes available</p>';
+        }
+        updateSelectedPCCount();
+      } catch (e) {
+        console.error('Failed to load postal codes:', e);
+      }
+    }
+
+    function toggleScrapePostalCode(code) {
+      if (scrapeSelectedPostalCodes.includes(code)) {
+        scrapeSelectedPostalCodes = scrapeSelectedPostalCodes.filter(c => c !== code);
+      } else {
+        scrapeSelectedPostalCodes.push(code);
+      }
+      updateSelectedPCCount();
+    }
+
+    function selectAllScrapePostalCodes() {
+      const checkboxes = document.querySelectorAll('#scrape-postal-codes input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        cb.checked = true;
+        if (!scrapeSelectedPostalCodes.includes(cb.value)) {
+          scrapeSelectedPostalCodes.push(cb.value);
+        }
+      });
+      updateSelectedPCCount();
+    }
+
+    function deselectAllScrapePostalCodes() {
+      const checkboxes = document.querySelectorAll('#scrape-postal-codes input[type="checkbox"]');
+      checkboxes.forEach(cb => cb.checked = false);
+      scrapeSelectedPostalCodes = [];
+      updateSelectedPCCount();
+    }
+
+    function updateSelectedPCCount() {
+      document.getElementById('selected-pc-count').textContent = scrapeSelectedPostalCodes.length;
+    }
+
+    // Start Scraping
+    let currentJobId = null;
+    async function startScraping() {
+      const campaignName = document.getElementById('scrape-campaign-name').value.trim();
+      const categorySelect = document.getElementById('scrape-category');
+      const categories = Array.from(categorySelect.selectedOptions).map(o => o.value);
+      const cityId = document.getElementById('scrape-city').value;
+      const postalCodes = scrapeSelectedPostalCodes;
+      const limit = parseInt(document.getElementById('scrape-limit').value) || 100;
+      const btn = document.getElementById('start-scrape-btn');
+
+      if (!campaignName) {
+        alert('Please enter a campaign name');
+        return;
+      }
+
+      if (categories.length === 0) {
+        alert('Please select at least one business category');
+        return;
+      }
+
+      if (!cityId) {
+        alert('Please select a city');
+        return;
+      }
+
+      if (postalCodes.length === 0) {
+        alert('Please select at least one postal code area');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Starting...';
+      
+      document.getElementById('scrape-progress').style.display = 'block';
+      document.getElementById('scrape-status').innerHTML = `
+        <div style="padding: 1rem; background: #dbeafe; border-radius: 0.5rem; margin-bottom: 1rem;">
+          <p style="color: #1e40af; margin: 0;"><strong>Starting searches...</strong></p>
+          <p style="color: #1e40af; margin: 0.5rem 0 0 0;">Categories: ${categories.length} | Postal Codes: ${postalCodes.length} | Total Jobs: ${categories.length}</p>
+        </div>
+        <div id="jobs-status"></div>
+      `;
+
+      const jobIds = [];
+
+      try {
+        // Start a job for each category
+        for (let i = 0; i < categories.length; i++) {
+          const category = categories[i];
+          const catCampaignName = `${campaignName} - ${category}`;
+          
+          const response = await fetch('/api/scrape/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              campaignName: catCampaignName,
+              category,
+              postalCodes,
+              cityId,
+              scrapeMode: 'category',
+              limit
+            })
+          });
+
+          const result = await response.json();
+
+          if (result.jobId) {
+            jobIds.push({ id: result.jobId, category, status: 'running' });
+            
+            document.getElementById('jobs-status').innerHTML += `
+              <div id="job-${result.jobId}" style="padding: 1rem; background: var(--bg); border-radius: 0.5rem; margin-bottom: 0.5rem;">
+                <p><strong>${category}</strong> - Job ${i + 1}/${categories.length}</p>
+                <p style="font-size: 0.9rem; color: var(--text-light);">Job ID: ${result.jobId}</p>
+                <div class="job-progress-${result.jobId}">Starting...</div>
+              </div>
+            `;
+          }
+        }
+
+        // Monitor all jobs
+        if (jobIds.length > 0) {
+          monitorMultipleJobs(jobIds, btn);
+        } else {
+          alert('No jobs were started');
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-search-plus"></i> Start Finding Prospects';
+        }
+        
+      } catch (e) {
+        alert('Error: ' + e.message);
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-search-plus"></i> Start Finding Prospects';
+      }
+    }
+
+    // Monitor multiple scraping jobs
+    async function monitorMultipleJobs(jobs, btn) {
+      let allCompleted = false;
+      
+      while (!allCompleted) {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        
+        let completedCount = 0;
+        let totalLeads = 0;
+
+        for (const job of jobs) {
+          try {
+            const response = await fetch(`/api/scrape/status/${job.id}`);
+            const status = await response.json();
+            
+            const progressDiv = document.querySelector(`.job-progress-${job.id}`);
+            
+            if (status.status === 'running') {
+              progressDiv.innerHTML = `
+                <p style="font-size: 0.9rem;">Progress: ${status.currentIndex || 0}/${status.totalNeighborhoods || 0} areas</p>
+                <p style="font-size: 0.9rem;">Found: <strong>${status.leadsCount || 0}</strong> businesses without websites</p>
+              `;
+            } else if (status.status === 'completed') {
+              job.status = 'completed';
+              completedCount++;
+              totalLeads += status.leadsCount || 0;
+              progressDiv.innerHTML = `
+                <p style="color: #10b981; font-weight: bold;">✓ Complete - ${status.leadsCount || 0} businesses found!</p>
+              `;
+            } else if (status.status === 'error') {
+              job.status = 'error';
+              completedCount++;
+              progressDiv.innerHTML = `
+                <p style="color: #ef4444;">✗ Error: ${status.error}</p>
+              `;
+            }
+          } catch (e) {
+            console.error('Error checking job:', job.id, e);
+          }
+        }
+
+        if (completedCount === jobs.length) {
+          allCompleted = true;
+          
+          document.getElementById('scrape-status').innerHTML = `
+            <div style="padding: 1.5rem; background: #d1fae5; border: 1px solid #10b981; border-radius: 0.5rem; text-align: center;">
+              <h3 style="color: #065f46; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> All Searches Complete!</h3>
+              <p style="color: #065f46; font-size: 1.25rem; margin: 0;"><strong>${totalLeads}</strong> businesses without websites found across all categories!</p>
+            </div>
+          ` + document.getElementById('jobs-status').outerHTML;
+          
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-search-plus"></i> Start Finding Prospects';
+          loadDashboard();
+        }
+      }
+    }
+
+    // Check Scrape Progress
+    async function checkScrapeProgress(jobId) {
+      try {
+        const response = await fetch(`/api/scrape/status/${jobId}`);
+        const status = await response.json();
+
+        const statusDiv = document.getElementById('scrape-status');
+        
+        if (status.status === 'running') {
+          statusDiv.innerHTML = `
+            <p><strong>Status:</strong> <span class="badge" style="background: #3b82f6;">Running</span></p>
+            <p><strong>Progress:</strong> ${status.currentIndex || 0} / ${status.totalNeighborhoods || 0} areas</p>
+            <p><strong>Found:</strong> ${status.leadsCount || 0} businesses without websites</p>
+            <div style="margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 0.5rem;">
+              <div style="height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden;">
+                <div style="height: 100%; background: #3b82f6; width: ${(status.currentIndex / status.totalNeighborhoods * 100) || 0}%; transition: width 0.3s;"></div>
+              </div>
+            </div>
+          `;
+          setTimeout(() => checkScrapeProgress(jobId), 3000);
+        } else if (status.status === 'completed') {
+          statusDiv.innerHTML = `
+            <div style="padding: 1.5rem; background: #d1fae5; border: 1px solid #10b981; border-radius: 0.5rem;">
+              <h4 style="color: #065f46; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Search Complete!</h4>
+              <p style="color: #065f46; margin: 0;"><strong>${status.leadsCount || 0}</strong> businesses without websites found and saved!</p>
+            </div>
+          `;
+          document.getElementById('start-scrape-btn').disabled = false;
+          document.getElementById('start-scrape-btn').innerHTML = '<i class="fas fa-search-plus"></i> Start Finding Prospects';
+          loadDashboard();
+        } else if (status.status === 'error') {
+          statusDiv.innerHTML = `
+            <div style="padding: 1.5rem; background: #fee2e2; border: 1px solid #ef4444; border-radius: 0.5rem;">
+              <h4 style="color: #991b1b;"><i class="fas fa-exclamation-circle"></i> Error</h4>
+              <p style="color: #991b1b;">${status.error || 'Unknown error'}</p>
+            </div>
+          `;
+          document.getElementById('start-scrape-btn').disabled = false;
+          document.getElementById('start-scrape-btn').innerHTML = '<i class="fas fa-search-plus"></i> Start Finding Prospects';
+        }
+      } catch (e) {
+        console.error('Failed to check progress:', e);
+        setTimeout(() => checkScrapeProgress(jobId), 5000);
       }
     }
 

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "your_password_here"
+    }
+  ],
+  "dataforseo": {
+    "login": "your_dataforseo_login@example.com",
+    "password": "your_dataforseo_password"
+  },
+  "airtable": {
+    "apiKey": "",
+    "baseId": ""
+  },
+  "defaults": {
+    "locationCode": "2124",
+    "languageCode": "en",
+    "minRating": 3.5,
+    "limitPerNeighborhood": 100
+  }
+}

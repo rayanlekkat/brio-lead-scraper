@@ -17,7 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // ============== PERSISTENCE SETUP ==============
 // Move all data files to a /data folder for Railway Volumes support
@@ -54,6 +54,16 @@ function saveLocalLeads(data) {
 function addLeadsToLocal(leads, campaignName, cityName, postalCodes) {
   const data = loadLocalLeads();
   
+  // ✨ FILTER: Only keep businesses with NO website
+  const leadsWithoutWebsite = leads.filter(lead => !lead.website || lead.website.trim() === '');
+  
+  logEvent('info', 'filter', `NO WEBSITE Filter: ${leads.length} total → ${leadsWithoutWebsite.length} without websites (filtered ${leads.length - leadsWithoutWebsite.length} with websites)`);
+  
+  if (leadsWithoutWebsite.length === 0) {
+    logEvent('warning', 'storage', `No businesses without websites found in this batch for campaign: ${campaignName} (all ${leads.length} had websites)`);
+    return 0;
+  }
+  
   // Add campaign if new
   let campaign = data.campaigns.find(c => c.name === campaignName);
   if (!campaign) {
@@ -69,7 +79,7 @@ function addLeadsToLocal(leads, campaignName, cityName, postalCodes) {
   }
   
   // Add leads with campaign reference
-  const newLeads = leads.map(lead => ({
+  const newLeads = leadsWithoutWebsite.map(lead => ({
     id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
     ...lead,
     campaignId: campaign.id,
@@ -82,7 +92,7 @@ function addLeadsToLocal(leads, campaignName, cityName, postalCodes) {
   campaign.leadsCount += newLeads.length;
   
   saveLocalLeads(data);
-  logEvent('success', 'storage', `Saved ${newLeads.length} leads locally for campaign: ${campaignName}`);
+  logEvent('success', 'storage', `Saved ${newLeads.length} businesses WITHOUT websites locally for campaign: ${campaignName} (filtered ${leads.length - leadsWithoutWebsite.length} with websites)`);
   
   return newLeads.length;
 }
@@ -603,12 +613,17 @@ class DataForSEOAPI {
     // Build keyword from category and location
     const keyword = `${category} ${location}`;
     
-    logEvent('info', 'dataforseo', `Searching: "${keyword}" (depth: 100)`);
+    // INCREASED DEPTH: Since we filter out businesses WITH websites,
+    // we need to scrape 5-10x more to get enough WITHOUT websites
+    // Target: 100 businesses without websites = scrape 500-700 total
+    const depth = 700; // Maximum depth to get comprehensive results
+    
+    logEvent('info', 'dataforseo', `Searching: "${keyword}" (depth: ${depth} - will filter for NO WEBSITE)`);
     
     const results = await this.searchGoogleMaps({
       keyword,
       locationCode: 2124, // Canada
-      depth: 100 // Maximum depth for comprehensive results
+      depth
     });
 
     // Filter by rating if specified, but keep all phones (even without)
@@ -620,9 +635,10 @@ class DataForSEOAPI {
     // Keep businesses WITH phone numbers for cold calling
     const withPhone = filtered.filter(r => r.phone);
 
-    logEvent('success', 'dataforseo', `Found ${results.length} total, ${withPhone.length} with phone numbers`);
+    logEvent('success', 'dataforseo', `Found ${results.length} total, ${withPhone.length} with phone numbers (before website filter)`);
     
-    return withPhone.slice(0, limit || 100);
+    // Return ALL results - the NO WEBSITE filter happens in addLeadsToLocal()
+    return withPhone; // Don't limit here - we need all of them for filtering
   }
 
   // Calculate lead score
@@ -1011,7 +1027,7 @@ const ALL_BUSINESS_CATEGORIES = [
 ];
 
 app.post('/api/scrape/start', requireAuth, async (req, res) => {
-  const { category, campaignName, neighborhoods: selectedIds, scrapeMode = 'category', postalCodes, cityId } = req.body;
+  const { category, campaignName, neighborhoods: selectedIds, scrapeMode = 'category', postalCodes, cityId, limit } = req.body;
   
   if (!config.dataforseo.login || !config.dataforseo.password) {
     return res.status(400).json({ error: 'DataForSEO credentials not configured' });
@@ -1058,6 +1074,7 @@ app.post('/api/scrape/start', requireAuth, async (req, res) => {
     cityId,
     postalCodes: postalCodes || [],
     neighborhoods: targets, // Now called targets internally
+    limit: limit || config.defaults.limitPerNeighborhood || 100, // Results per area
     progress: 0,
     totalNeighborhoods: targets.length,
     currentNeighborhood: '',
@@ -1106,7 +1123,7 @@ async function runScrapingJob(jobId, job) {
         location: neighborhood.location,
         category: job.category,
         minRating: config.defaults.minRating,
-        limit: config.defaults.limitPerNeighborhood,
+        limit: job.limit || 100,
         locationCode: config.defaults.locationCode,
         languageCode: config.defaults.languageCode,
       });
@@ -1355,8 +1372,8 @@ async function runBroadScrapingJob(jobId, job) {
   const totalOperations = job.neighborhoods.length * categoriesToSearch.length;
   let completedOperations = 0;
   
-  // Higher limit per category for comprehensive results
-  const limitPerCategory = 50; // Get up to 50 results per category per location
+  // Use limit from job or default to 100
+  const limitPerCategory = job.limit || 100;
   
   logEvent('start', 'workflow', `Starting COMPREHENSIVE scraping job: ${job.campaignName}`, {
     jobId,
@@ -2654,7 +2671,7 @@ app.listen(PORT, () => {
   console.log('');
   console.log('\u250F\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513');
   console.log('\u2503                                                              \u2503');
-  console.log('\u2503   BRIO NETTOYAGE - B2B Lead Scraper                         \u2503');
+  console.log('\u2503   LEAD FINDER PRO - No Website Businesses                 \u2503');
   console.log('\u2503                                                              \u2503');
   console.log(`\u2503   Server running at: http://localhost:${PORT}                  \u2503`);
   console.log('\u2503                                                              \u2503');

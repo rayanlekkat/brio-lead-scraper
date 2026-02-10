@@ -1,5 +1,13 @@
-.vercel
+# Dependencies
 node_modules/
+package-lock.json
+
+# Environment and Config (contains API keys)
+.env
+.env.local
+.env.production
+config.json
+data/config.json
 
 # Large data files (will be in Railway Volume)
 data/local-leads.json
@@ -7,10 +15,25 @@ data/logs.json
 data/scrape-progress.json
 data/dnc-list.json
 data/leads-pool.json
+data/neighborhoods.json
 local-leads.json
 logs.json
 scrape-progress.json
 
-# But keep config templates
-!data/config.json
-!data/neighborhoods.json
+# Deployment
+.vercel
+.railway
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
